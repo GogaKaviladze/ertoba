@@ -1,0 +1,41 @@
+DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <title>ერთობა • Ertoba</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ძალა ერთობაშია ✊">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Erdtruppe Logo" class="logo" />
+    <h1>ერთობა • Ertoba</h1>
+    <p class="subtitle">ერთობა იბრძვის ქვეყნის თავისუფლებისთვის 🔥! ერთობა აერთიანებს აქტივისტების და საპროტესტო საზოგადოების ძალისხმევას ✊. 
+</p>
+  </header>
+
+  <main>
+    <section class="links">
+      <h2>🌐ერთობის ქსელი🌐</h2>
+      <a href="https://t.me/kargisaqartvelo" target="_blank">შემოგვიერთდი</a>
+      <a href="https://www.facebook.com/profile.php?id=61575292328706" target="_blank">Facebook</a>
+      <a href="ლინკი აკლია" target="_blank">შემავალი ორგანიზაციები</a>
+    </section>
+
+    <section class="partners">
+      <h2>⛏️რესურსები⛏️</h2>
+      <ul>
+        <li><a href="https://Politpatimrebi.ge" target="_blank">Politpatimrebi.ge</a></li>
+	რეჟიმის პატიმრები 2024-2025. სასამართლო პროცესების საერთო კალენდარი
+        <li><a href="https://Gaanate.org" target="_blank">Gaanate.org</a></li>
+	მარტივი, ჯანსაღი არგუმენტები სიმართლის დასაცავად.
+     </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; ერთობა 2025 • ძალა ერთობაშია ✊</p>
+  </footer>
+</body>
+</html>
