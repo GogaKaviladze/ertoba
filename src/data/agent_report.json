@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-04-03T00:28:28.921664+00:00",
+  "confidence": 0.85,
+  "risk_level": "HIGH",
+  "executive_summary": "Analysis of 500 articles (2025-05-14 — 2025-08-10). Dominant framing: გეოპოლიტიკური გავლენა. Final confidence: 85%.",
+  "key_findings": [
+    "Card Stacking",
+    "Appeal to Fear",
+    "Name Calling",
+    "Demonizing",
+    "Whataboutism"
+  ],
+  "recommended_actions": [],
+  "data_context": {
+    "total_articles": 500,
+    "date_range": {
+      "from": "2025-05-14",
+      "to": "2025-08-10"
+    },
+    "source_distribution": {
+      "imedi": 73,
+      "tabula": 73,
+      "rustavi": 62,
+      "gpb": 75,
+      "ipn": 69,
+      "other": 74,
+      "mtavari": 74
+    },
+    "anomalies": [],
+    "chunks_analysed": 10
+  },
+  "reasoning": {
+    "dominant_framing": "გეოპოლიტიკური გავლენა",
+    "detected_patterns": [
+      "Card Stacking",
+      "Appeal to Fear",
+      "Name Calling",
+      "Demonizing",
+      "Whataboutism"
+    ],
+    "hypotheses": [
+      {
+        "id": "h_card_stacking",
+        "claim": "'Card Stacking' is a dominant tactic, appearing in 16.2% of articles.",
+        "evidence": [
+          "81 articles tagged 'Card Stacking'",
+          "Source: corpus aggregate across 10 chunks"
+        ],
+        "confidence": 0.486
+      },
+      {
+        "id": "h_appeal_to_fear",
+        "claim": "'Appeal to Fear' is a dominant tactic, appearing in 16.0% of articles.",
+        "evidence": [
+          "80 articles tagged 'Appeal to Fear'",
+          "Source: corpus aggregate across 10 chunks"
+        ],
+        "confidence": 0.48
+      },
+      {
+        "id": "h_name_calling",
+        "claim": "'Name Calling' is a dominant tactic, appearing in 14.2% of articles.",
+        "evidence": [
+          "71 articles tagged 'Name Calling'",
+          "Source: corpus aggregate across 10 chunks"
+        ],
+        "confidence": 0.42599999999999993
+      }
+    ],
+    "narrative_summary": ""
+  },
+  "agent_trace": {
+    "data_inspector": {
+      "stats": {
+        "source_distribution": {
+          "imedi": 73,
+          "tabula": 73,
+          "rustavi": 62,
+          "gpb": 75,
+          "ipn": 69,
+          "other": 74,
+          "mtavari": 74
+        },
+        "date_range": {
+          "from": "2025-05-14",
+          "to": "2025-08-10"
+        },
+        "total_articles": 500,
+        "low_confidence_articles": 115,
+        "chunks_analysed": 10
+      },
+      "anomalies": [],
+      "data_quality_note": "",
+      "confidence": 0.85
+    },
+    "pattern_detector": {
+      "top_tags": {
+        "Card Stacking": 81,
+        "Appeal to Fear": 80,
+        "Name Calling": 71,
+        "Demonizing": 67,
+        "Whataboutism": 66
+      },
+      "top_frames": {
+        "გეოპოლიტიკური გავლენა": 110,
+        "ნეიტრალური": 110,
+        "ფსიქოლოგიური ზეწოლა": 101,
+        "სოციალური გაყოფა": 94,
+        "ინსტიტუციური შეზღუდვა": 85
+      },
+      "top_persuasion": {
+        "Pride": 94,
+        "Moral": 92,
+        "Economic": 87
+      },
+      "hypotheses_count": 3,
+      "dominant_framing": "გეოპოლიტიკური გავლენა",
+      "confidence": 0.85
+    },
+    "verification_agent": null
+  }
+}

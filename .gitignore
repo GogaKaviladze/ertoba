@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js
+.next/
+out/
+build/
+coverage/
+playwright-report/
+test-results/
+
+# Env
+.env*
+!.env.example
+
+# Data (große JSON-Dateien)
+data/*.json
+!data/.gitkeep
+Propaganda.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Supabase CLI temp
+supabase/.temp/
+
+# OS
+.DS_Store
+*.pem
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+/src/generated/prisma

@@ -1,0 +1,47 @@
+{
+  "case_title": "სახელმწიფო სასადილოების თაღლითობა",
+  "case_title_de": "Staatskantinen-Betrugsfall",
+  "investigation_period": "2023–2026",
+  "arrested_at": "2026",
+  "total_suspects": 5,
+  "suspects_breakdown": {
+    "directors": 4,
+    "employees": 1
+  },
+  "legal_article": "სსსკ 180-ე მუხლი, ნაწ. 3, ქვეპ. 'ბ'",
+  "sentence_range": "6–9 წელი",
+  "main_company": "შპს Aladashvili & co",
+  "subcontractors": ["შპს გიდი", "შპს ბადე", "შპს ალიონი"],
+  "districts": ["ისნის", "ჩუღურეთის", "მთაწმინდის", "კრწანისის"],
+  "total_cafeterias": 22,
+  "subcontracted_cafeterias": 4,
+  "total_contracts": 12,
+  "total_daily_beneficiaries": 14451,
+  "financials": {
+    "total_contract_value_gel": 26513573,
+    "total_paid_gel": 18909104,
+    "fraudulent_amount_gel": 3529000,
+    "legitimate_paid_gel": 15380104
+  },
+  "contracts_by_district": [
+    { "district": "ისნის", "contracts": 3, "value_gel": 7254120 },
+    { "district": "ჩუღურეთის", "contracts": 3, "value_gel": 6843217 },
+    { "district": "მთაწმინდის", "contracts": 3, "value_gel": 6891436 },
+    { "district": "კრწანისის", "contracts": 3, "value_gel": 5524800 }
+  ],
+  "timeline": [
+    { "year": 2023, "event": "ხელშეკრულებების გაფორმება", "event_de": "Vertragsabschlüsse", "amount_gel": 0 },
+    { "year": 2024, "event": "არაჯეროვანი შესრულება დაიწყო", "event_de": "Unregelmäßige Ausführung begann", "amount_gel": 1176333 },
+    { "year": 2025, "event": "თაღლითობა გაგრძელდა", "event_de": "Betrug fortgesetzt", "amount_gel": 1176333 },
+    { "year": 2026, "event": "დაკავება", "event_de": "Verhaftung", "amount_gel": 1176334 }
+  ],
+  "fund_distribution": [
+    { "label": "კანონიერად გახარჯული", "label_de": "Rechtmäßig ausgegeben", "value": 15380104, "color": "#10b981" },
+    { "label": "თაღლითურად მიტაცებული", "label_de": "Betrügerisch angeeignet", "value": 3529000, "color": "#ef4444" },
+    { "label": "გადაუხდელი (ნაშთი)", "label_de": "Nicht bezahlt (Rest)", "value": 7604469, "color": "#64748b" }
+  ],
+  "cafeteria_distribution": [
+    { "label": "პირდაპირი მართვა", "label_de": "Direktbetrieb", "value": 18, "color": "#6366f1" },
+    { "label": "ქვეკონტრაქტორები", "label_de": "Subunternehmer", "value": 4, "color": "#f59e0b" }
+  ]
+}

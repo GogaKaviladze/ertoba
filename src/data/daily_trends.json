@@ -1,0 +1,2100 @@
+{
+  "date_range": {
+    "from": "2025-05-14",
+    "to": "2025-08-10"
+  },
+  "last_updated": "2026-04-02",
+  "daily": [
+    {
+      "date": "2025-05-14",
+      "total": 161,
+      "categories": {
+        "როგორ გვზღუდავენ": 108,
+        "როგორ გვთრგუნავენ": 158,
+        "როგორ გვყოფენ": 78,
+        "გავლენები და ეკლესია": 93
+      },
+      "by_source": {
+        "rustavi": 30,
+        "imedi": 51,
+        "gpb": 35,
+        "other": 22,
+        "mtavari": 23
+      },
+      "sentiment": {
+        "Negative": 119,
+        "Neutral": 15,
+        "Positive": 27
+      }
+    },
+    {
+      "date": "2025-05-15",
+      "total": 176,
+      "categories": {
+        "როგორ გვზღუდავენ": 157,
+        "როგორ გვთრგუნავენ": 150,
+        "როგორ გვყოფენ": 103,
+        "გავლენები და ეკლესია": 104
+      },
+      "by_source": {
+        "rustavi": 40,
+        "gpb": 41,
+        "imedi": 50,
+        "other": 17,
+        "mtavari": 28
+      },
+      "sentiment": {
+        "Negative": 133,
+        "Neutral": 17,
+        "Positive": 26
+      }
+    },
+    {
+      "date": "2025-05-16",
+      "total": 177,
+      "categories": {
+        "როგორ გვზღუდავენ": 116,
+        "როგორ გვთრგუნავენ": 181,
+        "როგორ გვყოფენ": 116,
+        "გავლენები და ეკლესია": 94
+      },
+      "by_source": {
+        "imedi": 49,
+        "rustavi": 36,
+        "other": 17,
+        "gpb": 49,
+        "mtavari": 26
+      },
+      "sentiment": {
+        "Negative": 137,
+        "Neutral": 19,
+        "Positive": 21
+      }
+    },
+    {
+      "date": "2025-05-17",
+      "total": 97,
+      "categories": {
+        "როგორ გვზღუდავენ": 79,
+        "როგორ გვთრგუნავენ": 84,
+        "როგორ გვყოფენ": 45,
+        "გავლენები და ეკლესია": 48
+      },
+      "by_source": {
+        "other": 11,
+        "mtavari": 15,
+        "rustavi": 25,
+        "imedi": 29,
+        "gpb": 17
+      },
+      "sentiment": {
+        "Negative": 69,
+        "Neutral": 15,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-05-18",
+      "total": 99,
+      "categories": {
+        "როგორ გვზღუდავენ": 72,
+        "როგორ გვთრგუნავენ": 124,
+        "როგორ გვყოფენ": 44,
+        "გავლენები და ეკლესია": 49
+      },
+      "by_source": {
+        "mtavari": 19,
+        "imedi": 22,
+        "gpb": 24,
+        "other": 12,
+        "rustavi": 22
+      },
+      "sentiment": {
+        "Negative": 85,
+        "Neutral": 8,
+        "Positive": 6
+      }
+    },
+    {
+      "date": "2025-05-19",
+      "total": 168,
+      "categories": {
+        "როგორ გვზღუდავენ": 160,
+        "როგორ გვთრგუნავენ": 133,
+        "როგორ გვყოფენ": 45,
+        "გავლენები და ეკლესია": 94
+      },
+      "by_source": {
+        "imedi": 46,
+        "gpb": 35,
+        "mtavari": 28,
+        "rustavi": 35,
+        "other": 24
+      },
+      "sentiment": {
+        "Negative": 130,
+        "Neutral": 18,
+        "Positive": 20
+      }
+    },
+    {
+      "date": "2025-05-20",
+      "total": 115,
+      "categories": {
+        "როგორ გვზღუდავენ": 78,
+        "როგორ გვთრგუნავენ": 105,
+        "როგორ გვყოფენ": 56,
+        "გავლენები და ეკლესია": 70
+      },
+      "by_source": {
+        "gpb": 25,
+        "imedi": 31,
+        "mtavari": 20,
+        "other": 10,
+        "rustavi": 29
+      },
+      "sentiment": {
+        "Negative": 94,
+        "Neutral": 9,
+        "Positive": 12
+      }
+    },
+    {
+      "date": "2025-05-21",
+      "total": 167,
+      "categories": {
+        "როგორ გვზღუდავენ": 116,
+        "როგორ გვთრგუნავენ": 164,
+        "როგორ გვყოფენ": 90,
+        "გავლენები და ეკლესია": 109
+      },
+      "by_source": {
+        "rustavi": 34,
+        "mtavari": 30,
+        "gpb": 41,
+        "imedi": 46,
+        "other": 16
+      },
+      "sentiment": {
+        "Negative": 129,
+        "Neutral": 14,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-05-22",
+      "total": 150,
+      "categories": {
+        "როგორ გვზღუდავენ": 117,
+        "როგორ გვთრგუნავენ": 124,
+        "როგორ გვყოფენ": 68,
+        "გავლენები და ეკლესია": 111
+      },
+      "by_source": {
+        "imedi": 42,
+        "gpb": 41,
+        "rustavi": 39,
+        "mtavari": 17,
+        "other": 11
+      },
+      "sentiment": {
+        "Negative": 118,
+        "Neutral": 13,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-05-23",
+      "total": 115,
+      "categories": {
+        "როგორ გვზღუდავენ": 84,
+        "როგორ გვთრგუნავენ": 96,
+        "როგორ გვყოფენ": 51,
+        "გავლენები და ეკლესია": 90
+      },
+      "by_source": {
+        "rustavi": 20,
+        "other": 11,
+        "gpb": 32,
+        "imedi": 35,
+        "mtavari": 17
+      },
+      "sentiment": {
+        "Negative": 87,
+        "Neutral": 12,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-05-24",
+      "total": 88,
+      "categories": {
+        "როგორ გვზღუდავენ": 63,
+        "როგორ გვთრგუნავენ": 80,
+        "როგორ გვყოფენ": 48,
+        "გავლენები და ეკლესია": 50
+      },
+      "by_source": {
+        "gpb": 20,
+        "mtavari": 11,
+        "imedi": 23,
+        "rustavi": 27,
+        "other": 7
+      },
+      "sentiment": {
+        "Negative": 66,
+        "Neutral": 6,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-05-25",
+      "total": 149,
+      "categories": {
+        "როგორ გვზღუდავენ": 126,
+        "როგორ გვთრგუნავენ": 116,
+        "როგორ გვყოფენ": 76,
+        "გავლენები და ეკლესია": 84
+      },
+      "by_source": {
+        "gpb": 31,
+        "mtavari": 20,
+        "imedi": 45,
+        "rustavi": 39,
+        "other": 14
+      },
+      "sentiment": {
+        "Negative": 122,
+        "Neutral": 11,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-05-26",
+      "total": 138,
+      "categories": {
+        "როგორ გვზღუდავენ": 97,
+        "როგორ გვთრგუნავენ": 136,
+        "როგორ გვყოფენ": 68,
+        "გავლენები და ეკლესია": 67
+      },
+      "by_source": {
+        "imedi": 36,
+        "gpb": 32,
+        "mtavari": 26,
+        "rustavi": 31,
+        "other": 13
+      },
+      "sentiment": {
+        "Negative": 107,
+        "Neutral": 12,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-05-27",
+      "total": 125,
+      "categories": {
+        "როგორ გვზღუდავენ": 84,
+        "როგორ გვთრგუნავენ": 114,
+        "როგორ გვყოფენ": 39,
+        "გავლენები და ეკლესია": 93
+      },
+      "by_source": {
+        "other": 13,
+        "rustavi": 27,
+        "imedi": 40,
+        "gpb": 29,
+        "mtavari": 16
+      },
+      "sentiment": {
+        "Negative": 93,
+        "Neutral": 18,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-05-28",
+      "total": 137,
+      "categories": {
+        "როგორ გვზღუდავენ": 132,
+        "როგორ გვთრგუნავენ": 105,
+        "როგორ გვყოფენ": 75,
+        "გავლენები და ეკლესია": 83
+      },
+      "by_source": {
+        "rustavi": 30,
+        "other": 11,
+        "imedi": 37,
+        "gpb": 36,
+        "mtavari": 23
+      },
+      "sentiment": {
+        "Negative": 104,
+        "Neutral": 13,
+        "Positive": 20
+      }
+    },
+    {
+      "date": "2025-05-29",
+      "total": 197,
+      "categories": {
+        "როგორ გვზღუდავენ": 159,
+        "როგორ გვთრგუნავენ": 188,
+        "როგორ გვყოფენ": 58,
+        "გავლენები და ეკლესია": 105
+      },
+      "by_source": {
+        "rustavi": 48,
+        "imedi": 59,
+        "mtavari": 28,
+        "gpb": 46,
+        "other": 16
+      },
+      "sentiment": {
+        "Negative": 147,
+        "Neutral": 25,
+        "Positive": 25
+      }
+    },
+    {
+      "date": "2025-05-30",
+      "total": 123,
+      "categories": {
+        "როგორ გვზღუდავენ": 102,
+        "როგორ გვთრგუნავენ": 97,
+        "როგორ გვყოფენ": 47,
+        "გავლენები და ეკლესია": 62
+      },
+      "by_source": {
+        "gpb": 28,
+        "rustavi": 25,
+        "imedi": 38,
+        "mtavari": 16,
+        "other": 16
+      },
+      "sentiment": {
+        "Negative": 94,
+        "Neutral": 16,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-05-31",
+      "total": 184,
+      "categories": {
+        "როგორ გვზღუდავენ": 162,
+        "როგორ გვთრგუნავენ": 127,
+        "როგორ გვყოფენ": 70,
+        "გავლენები და ეკლესია": 99
+      },
+      "by_source": {
+        "rustavi": 44,
+        "gpb": 41,
+        "imedi": 54,
+        "mtavari": 30,
+        "other": 15
+      },
+      "sentiment": {
+        "Negative": 133,
+        "Neutral": 20,
+        "Positive": 31
+      }
+    },
+    {
+      "date": "2025-06-01",
+      "total": 178,
+      "categories": {
+        "როგორ გვზღუდავენ": 132,
+        "როგორ გვთრგუნავენ": 157,
+        "როგორ გვყოფენ": 103,
+        "გავლენები და ეკლესია": 84
+      },
+      "by_source": {
+        "imedi": 54,
+        "rustavi": 41,
+        "other": 19,
+        "mtavari": 21,
+        "gpb": 43
+      },
+      "sentiment": {
+        "Negative": 138,
+        "Neutral": 13,
+        "Positive": 27
+      }
+    },
+    {
+      "date": "2025-06-02",
+      "total": 143,
+      "categories": {
+        "როგორ გვზღუდავენ": 105,
+        "როგორ გვთრგუნავენ": 79,
+        "როგორ გვყოფენ": 63,
+        "გავლენები და ეკლესია": 102
+      },
+      "by_source": {
+        "imedi": 44,
+        "rustavi": 34,
+        "gpb": 32,
+        "mtavari": 20,
+        "other": 13
+      },
+      "sentiment": {
+        "Negative": 97,
+        "Neutral": 19,
+        "Positive": 27
+      }
+    },
+    {
+      "date": "2025-06-03",
+      "total": 141,
+      "categories": {
+        "როგორ გვზღუდავენ": 109,
+        "როგორ გვთრგუნავენ": 134,
+        "როგორ გვყოფენ": 50,
+        "გავლენები და ეკლესია": 89
+      },
+      "by_source": {
+        "other": 17,
+        "rustavi": 29,
+        "gpb": 38,
+        "mtavari": 21,
+        "imedi": 36
+      },
+      "sentiment": {
+        "Negative": 103,
+        "Neutral": 14,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-06-04",
+      "total": 167,
+      "categories": {
+        "როგორ გვზღუდავენ": 90,
+        "როგორ გვთრგუნავენ": 188,
+        "როგორ გვყოფენ": 105,
+        "გავლენები და ეკლესია": 97
+      },
+      "by_source": {
+        "mtavari": 22,
+        "gpb": 46,
+        "rustavi": 38,
+        "imedi": 46,
+        "other": 15
+      },
+      "sentiment": {
+        "Negative": 147,
+        "Neutral": 10,
+        "Positive": 10
+      }
+    },
+    {
+      "date": "2025-06-05",
+      "total": 186,
+      "categories": {
+        "როგორ გვზღუდავენ": 170,
+        "როგორ გვთრგუნავენ": 144,
+        "როგორ გვყოფენ": 66,
+        "გავლენები და ეკლესია": 120
+      },
+      "by_source": {
+        "other": 22,
+        "gpb": 39,
+        "rustavi": 39,
+        "mtavari": 35,
+        "imedi": 51
+      },
+      "sentiment": {
+        "Negative": 136,
+        "Neutral": 19,
+        "Positive": 31
+      }
+    },
+    {
+      "date": "2025-06-06",
+      "total": 150,
+      "categories": {
+        "როგორ გვზღუდავენ": 121,
+        "როგორ გვთრგუნავენ": 133,
+        "როგორ გვყოფენ": 64,
+        "გავლენები და ეკლესია": 62
+      },
+      "by_source": {
+        "mtavari": 17,
+        "imedi": 45,
+        "gpb": 40,
+        "other": 11,
+        "rustavi": 37
+      },
+      "sentiment": {
+        "Negative": 105,
+        "Neutral": 23,
+        "Positive": 22
+      }
+    },
+    {
+      "date": "2025-06-07",
+      "total": 131,
+      "categories": {
+        "როგორ გვზღუდავენ": 73,
+        "როგორ გვთრგუნავენ": 136,
+        "როგორ გვყოფენ": 68,
+        "გავლენები და ეკლესია": 80
+      },
+      "by_source": {
+        "gpb": 40,
+        "other": 13,
+        "imedi": 38,
+        "rustavi": 26,
+        "mtavari": 14
+      },
+      "sentiment": {
+        "Negative": 94,
+        "Neutral": 9,
+        "Positive": 28
+      }
+    },
+    {
+      "date": "2025-06-08",
+      "total": 107,
+      "categories": {
+        "როგორ გვზღუდავენ": 90,
+        "როგორ გვთრგუნავენ": 112,
+        "როგორ გვყოფენ": 44,
+        "გავლენები და ეკლესია": 52
+      },
+      "by_source": {
+        "imedi": 33,
+        "mtavari": 21,
+        "other": 13,
+        "rustavi": 22,
+        "gpb": 18
+      },
+      "sentiment": {
+        "Negative": 84,
+        "Neutral": 9,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-06-09",
+      "total": 172,
+      "categories": {
+        "როგორ გვზღუდავენ": 124,
+        "როგორ გვთრგუნავენ": 141,
+        "როგორ გვყოფენ": 79,
+        "გავლენები და ეკლესია": 127
+      },
+      "by_source": {
+        "gpb": 49,
+        "imedi": 44,
+        "mtavari": 24,
+        "rustavi": 33,
+        "other": 22
+      },
+      "sentiment": {
+        "Negative": 135,
+        "Neutral": 17,
+        "Positive": 20
+      }
+    },
+    {
+      "date": "2025-06-10",
+      "total": 155,
+      "categories": {
+        "როგორ გვზღუდავენ": 126,
+        "როგორ გვთრგუნავენ": 125,
+        "როგორ გვყოფენ": 52,
+        "გავლენები და ეკლესია": 119
+      },
+      "by_source": {
+        "rustavi": 27,
+        "imedi": 49,
+        "other": 14,
+        "gpb": 42,
+        "mtavari": 23
+      },
+      "sentiment": {
+        "Negative": 118,
+        "Neutral": 14,
+        "Positive": 23
+      }
+    },
+    {
+      "date": "2025-06-11",
+      "total": 123,
+      "categories": {
+        "როგორ გვზღუდავენ": 68,
+        "როგორ გვთრგუნავენ": 135,
+        "როგორ გვყოფენ": 66,
+        "გავლენები და ეკლესია": 69
+      },
+      "by_source": {
+        "imedi": 36,
+        "gpb": 25,
+        "rustavi": 27,
+        "other": 15,
+        "mtavari": 20
+      },
+      "sentiment": {
+        "Negative": 82,
+        "Neutral": 17,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-06-12",
+      "total": 168,
+      "categories": {
+        "როგორ გვზღუდავენ": 124,
+        "როგორ გვთრგუნავენ": 154,
+        "როგორ გვყოფენ": 84,
+        "გავლენები და ეკლესია": 99
+      },
+      "by_source": {
+        "imedi": 41,
+        "gpb": 43,
+        "other": 17,
+        "rustavi": 39,
+        "mtavari": 28
+      },
+      "sentiment": {
+        "Negative": 128,
+        "Neutral": 15,
+        "Positive": 25
+      }
+    },
+    {
+      "date": "2025-06-13",
+      "total": 106,
+      "categories": {
+        "როგორ გვზღუდავენ": 73,
+        "როგორ გვთრგუნავენ": 116,
+        "როგორ გვყოფენ": 46,
+        "გავლენები და ეკლესია": 55
+      },
+      "by_source": {
+        "other": 10,
+        "gpb": 29,
+        "mtavari": 18,
+        "rustavi": 25,
+        "imedi": 24
+      },
+      "sentiment": {
+        "Negative": 75,
+        "Neutral": 15,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-06-14",
+      "total": 128,
+      "categories": {
+        "როგორ გვზღუდავენ": 90,
+        "როგორ გვთრგუნავენ": 128,
+        "როგორ გვყოფენ": 55,
+        "გავლენები და ეკლესია": 80
+      },
+      "by_source": {
+        "rustavi": 27,
+        "imedi": 43,
+        "other": 14,
+        "gpb": 28,
+        "mtavari": 16
+      },
+      "sentiment": {
+        "Negative": 100,
+        "Neutral": 17,
+        "Positive": 11
+      }
+    },
+    {
+      "date": "2025-06-15",
+      "total": 138,
+      "categories": {
+        "როგორ გვზღუდავენ": 114,
+        "როგორ გვთრგუნავენ": 111,
+        "როგორ გვყოფენ": 46,
+        "გავლენები და ეკლესია": 62
+      },
+      "by_source": {
+        "imedi": 36,
+        "gpb": 37,
+        "rustavi": 28,
+        "mtavari": 19,
+        "other": 18
+      },
+      "sentiment": {
+        "Negative": 96,
+        "Neutral": 16,
+        "Positive": 26
+      }
+    },
+    {
+      "date": "2025-06-16",
+      "total": 175,
+      "categories": {
+        "როგორ გვზღუდავენ": 129,
+        "როგორ გვთრგუნავენ": 138,
+        "როგორ გვყოფენ": 94,
+        "გავლენები და ეკლესია": 87
+      },
+      "by_source": {
+        "gpb": 48,
+        "rustavi": 29,
+        "imedi": 41,
+        "mtavari": 32,
+        "other": 25
+      },
+      "sentiment": {
+        "Negative": 128,
+        "Neutral": 21,
+        "Positive": 26
+      }
+    },
+    {
+      "date": "2025-06-17",
+      "total": 198,
+      "categories": {
+        "როგორ გვზღუდავენ": 133,
+        "როგორ გვთრგუნავენ": 176,
+        "როგორ გვყოფენ": 69,
+        "გავლენები და ეკლესია": 158
+      },
+      "by_source": {
+        "rustavi": 41,
+        "mtavari": 25,
+        "gpb": 50,
+        "imedi": 73,
+        "other": 9
+      },
+      "sentiment": {
+        "Negative": 146,
+        "Neutral": 18,
+        "Positive": 34
+      }
+    },
+    {
+      "date": "2025-06-18",
+      "total": 86,
+      "categories": {
+        "როგორ გვზღუდავენ": 47,
+        "როგორ გვთრგუნავენ": 85,
+        "როგორ გვყოფენ": 37,
+        "გავლენები და ეკლესია": 58
+      },
+      "by_source": {
+        "imedi": 23,
+        "gpb": 27,
+        "rustavi": 16,
+        "other": 6,
+        "mtavari": 14
+      },
+      "sentiment": {
+        "Negative": 64,
+        "Neutral": 12,
+        "Positive": 10
+      }
+    },
+    {
+      "date": "2025-06-19",
+      "total": 153,
+      "categories": {
+        "როგორ გვზღუდავენ": 133,
+        "როგორ გვთრგუნავენ": 92,
+        "როგორ გვყოფენ": 84,
+        "გავლენები და ეკლესია": 76
+      },
+      "by_source": {
+        "mtavari": 18,
+        "imedi": 52,
+        "gpb": 37,
+        "rustavi": 33,
+        "other": 13
+      },
+      "sentiment": {
+        "Negative": 119,
+        "Neutral": 15,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-06-20",
+      "total": 168,
+      "categories": {
+        "როგორ გვზღუდავენ": 101,
+        "როგორ გვთრგუნავენ": 144,
+        "როგორ გვყოფენ": 41,
+        "გავლენები და ეკლესია": 155
+      },
+      "by_source": {
+        "other": 18,
+        "mtavari": 26,
+        "gpb": 40,
+        "imedi": 50,
+        "rustavi": 34
+      },
+      "sentiment": {
+        "Negative": 124,
+        "Neutral": 15,
+        "Positive": 29
+      }
+    },
+    {
+      "date": "2025-06-21",
+      "total": 154,
+      "categories": {
+        "როგორ გვზღუდავენ": 112,
+        "როგორ გვთრგუნავენ": 134,
+        "როგორ გვყოფენ": 75,
+        "გავლენები და ეკლესია": 100
+      },
+      "by_source": {
+        "imedi": 54,
+        "gpb": 40,
+        "rustavi": 22,
+        "mtavari": 29,
+        "other": 9
+      },
+      "sentiment": {
+        "Negative": 124,
+        "Neutral": 13,
+        "Positive": 17
+      }
+    },
+    {
+      "date": "2025-06-22",
+      "total": 83,
+      "categories": {
+        "როგორ გვზღუდავენ": 42,
+        "როგორ გვთრგუნავენ": 61,
+        "როგორ გვყოფენ": 59,
+        "გავლენები და ეკლესია": 52
+      },
+      "by_source": {
+        "gpb": 22,
+        "mtavari": 13,
+        "imedi": 25,
+        "other": 9,
+        "rustavi": 14
+      },
+      "sentiment": {
+        "Negative": 59,
+        "Neutral": 10,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-06-23",
+      "total": 151,
+      "categories": {
+        "როგორ გვზღუდავენ": 104,
+        "როგორ გვთრგუნავენ": 115,
+        "როგორ გვყოფენ": 102,
+        "გავლენები და ეკლესია": 67
+      },
+      "by_source": {
+        "rustavi": 33,
+        "mtavari": 21,
+        "gpb": 38,
+        "other": 11,
+        "imedi": 48
+      },
+      "sentiment": {
+        "Negative": 119,
+        "Neutral": 17,
+        "Positive": 15
+      }
+    },
+    {
+      "date": "2025-06-24",
+      "total": 115,
+      "categories": {
+        "როგორ გვზღუდავენ": 71,
+        "როგორ გვთრგუნავენ": 110,
+        "როგორ გვყოფენ": 47,
+        "გავლენები და ეკლესია": 88
+      },
+      "by_source": {
+        "imedi": 39,
+        "gpb": 27,
+        "other": 10,
+        "rustavi": 22,
+        "mtavari": 17
+      },
+      "sentiment": {
+        "Negative": 90,
+        "Neutral": 7,
+        "Positive": 18
+      }
+    },
+    {
+      "date": "2025-06-25",
+      "total": 185,
+      "categories": {
+        "როგორ გვზღუდავენ": 147,
+        "როგორ გვთრგუნავენ": 145,
+        "როგორ გვყოფენ": 63,
+        "გავლენები და ეკლესია": 164
+      },
+      "by_source": {
+        "mtavari": 21,
+        "rustavi": 39,
+        "imedi": 57,
+        "gpb": 52,
+        "other": 16
+      },
+      "sentiment": {
+        "Negative": 152,
+        "Neutral": 20,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-06-26",
+      "total": 113,
+      "categories": {
+        "როგორ გვზღუდავენ": 103,
+        "როგორ გვთრგუნავენ": 101,
+        "როგორ გვყოფენ": 36,
+        "გავლენები და ეკლესია": 60
+      },
+      "by_source": {
+        "rustavi": 24,
+        "gpb": 37,
+        "imedi": 32,
+        "mtavari": 9,
+        "other": 11
+      },
+      "sentiment": {
+        "Negative": 87,
+        "Neutral": 9,
+        "Positive": 17
+      }
+    },
+    {
+      "date": "2025-06-27",
+      "total": 172,
+      "categories": {
+        "როგორ გვზღუდავენ": 110,
+        "როგორ გვთრგუნავენ": 160,
+        "როგორ გვყოფენ": 75,
+        "გავლენები და ეკლესია": 102
+      },
+      "by_source": {
+        "imedi": 51,
+        "gpb": 37,
+        "rustavi": 39,
+        "mtavari": 28,
+        "other": 17
+      },
+      "sentiment": {
+        "Negative": 128,
+        "Neutral": 22,
+        "Positive": 22
+      }
+    },
+    {
+      "date": "2025-06-28",
+      "total": 122,
+      "categories": {
+        "როგორ გვზღუდავენ": 70,
+        "როგორ გვთრგუნავენ": 130,
+        "როგორ გვყოფენ": 53,
+        "გავლენები და ეკლესია": 54
+      },
+      "by_source": {
+        "rustavi": 30,
+        "other": 12,
+        "imedi": 26,
+        "mtavari": 24,
+        "gpb": 30
+      },
+      "sentiment": {
+        "Negative": 90,
+        "Neutral": 19,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-06-29",
+      "total": 103,
+      "categories": {
+        "როგორ გვზღუდავენ": 86,
+        "როგორ გვთრგუნავენ": 75,
+        "როგორ გვყოფენ": 50,
+        "გავლენები და ეკლესია": 56
+      },
+      "by_source": {
+        "imedi": 36,
+        "mtavari": 15,
+        "gpb": 22,
+        "rustavi": 21,
+        "other": 9
+      },
+      "sentiment": {
+        "Negative": 89,
+        "Neutral": 7,
+        "Positive": 7
+      }
+    },
+    {
+      "date": "2025-06-30",
+      "total": 113,
+      "categories": {
+        "როგორ გვზღუდავენ": 69,
+        "როგორ გვთრგუნავენ": 126,
+        "როგორ გვყოფენ": 66,
+        "გავლენები და ეკლესია": 60
+      },
+      "by_source": {
+        "mtavari": 24,
+        "rustavi": 26,
+        "imedi": 38,
+        "gpb": 17,
+        "other": 8
+      },
+      "sentiment": {
+        "Negative": 95,
+        "Neutral": 7,
+        "Positive": 11
+      }
+    },
+    {
+      "date": "2025-07-01",
+      "total": 191,
+      "categories": {
+        "როგორ გვზღუდავენ": 129,
+        "როგორ გვთრგუნავენ": 207,
+        "როგორ გვყოფენ": 73,
+        "გავლენები და ეკლესია": 111
+      },
+      "by_source": {
+        "mtavari": 31,
+        "rustavi": 34,
+        "other": 16,
+        "gpb": 51,
+        "imedi": 59
+      },
+      "sentiment": {
+        "Negative": 133,
+        "Neutral": 23,
+        "Positive": 35
+      }
+    },
+    {
+      "date": "2025-07-02",
+      "total": 91,
+      "categories": {
+        "როგორ გვზღუდავენ": 59,
+        "როგორ გვთრგუნავენ": 70,
+        "როგორ გვყოფენ": 37,
+        "გავლენები და ეკლესია": 86
+      },
+      "by_source": {
+        "imedi": 24,
+        "other": 11,
+        "gpb": 27,
+        "rustavi": 12,
+        "mtavari": 17
+      },
+      "sentiment": {
+        "Negative": 75,
+        "Neutral": 6,
+        "Positive": 10
+      }
+    },
+    {
+      "date": "2025-07-03",
+      "total": 114,
+      "categories": {
+        "როგორ გვზღუდავენ": 111,
+        "როგორ გვთრგუნავენ": 93,
+        "როგორ გვყოფენ": 37,
+        "გავლენები და ეკლესია": 88
+      },
+      "by_source": {
+        "rustavi": 23,
+        "mtavari": 25,
+        "imedi": 37,
+        "other": 9,
+        "gpb": 20
+      },
+      "sentiment": {
+        "Negative": 86,
+        "Neutral": 12,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-07-04",
+      "total": 86,
+      "categories": {
+        "როგორ გვზღუდავენ": 66,
+        "როგორ გვთრგუნავენ": 63,
+        "როგორ გვყოფენ": 33,
+        "გავლენები და ეკლესია": 47
+      },
+      "by_source": {
+        "imedi": 20,
+        "gpb": 27,
+        "other": 12,
+        "rustavi": 16,
+        "mtavari": 11
+      },
+      "sentiment": {
+        "Negative": 62,
+        "Neutral": 12,
+        "Positive": 12
+      }
+    },
+    {
+      "date": "2025-07-05",
+      "total": 98,
+      "categories": {
+        "როგორ გვზღუდავენ": 85,
+        "როგორ გვთრგუნავენ": 78,
+        "როგორ გვყოფენ": 43,
+        "გავლენები და ეკლესია": 65
+      },
+      "by_source": {
+        "imedi": 31,
+        "other": 12,
+        "rustavi": 17,
+        "mtavari": 10,
+        "gpb": 28
+      },
+      "sentiment": {
+        "Negative": 73,
+        "Neutral": 8,
+        "Positive": 17
+      }
+    },
+    {
+      "date": "2025-07-06",
+      "total": 155,
+      "categories": {
+        "როგორ გვზღუდავენ": 115,
+        "როგორ გვთრგუნავენ": 142,
+        "როგორ გვყოფენ": 65,
+        "გავლენები და ეკლესია": 104
+      },
+      "by_source": {
+        "gpb": 44,
+        "imedi": 43,
+        "rustavi": 32,
+        "other": 18,
+        "mtavari": 18
+      },
+      "sentiment": {
+        "Negative": 119,
+        "Neutral": 12,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-07-07",
+      "total": 142,
+      "categories": {
+        "როგორ გვზღუდავენ": 133,
+        "როგორ გვთრგუნავენ": 125,
+        "როგორ გვყოფენ": 47,
+        "გავლენები და ეკლესია": 77
+      },
+      "by_source": {
+        "imedi": 45,
+        "mtavari": 17,
+        "gpb": 32,
+        "rustavi": 33,
+        "other": 15
+      },
+      "sentiment": {
+        "Negative": 109,
+        "Neutral": 15,
+        "Positive": 18
+      }
+    },
+    {
+      "date": "2025-07-08",
+      "total": 153,
+      "categories": {
+        "როგორ გვზღუდავენ": 91,
+        "როგორ გვთრგუნავენ": 125,
+        "როგორ გვყოფენ": 68,
+        "გავლენები და ეკლესია": 99
+      },
+      "by_source": {
+        "imedi": 42,
+        "gpb": 49,
+        "other": 13,
+        "rustavi": 23,
+        "mtavari": 26
+      },
+      "sentiment": {
+        "Negative": 112,
+        "Neutral": 26,
+        "Positive": 15
+      }
+    },
+    {
+      "date": "2025-07-09",
+      "total": 84,
+      "categories": {
+        "როგორ გვზღუდავენ": 62,
+        "როგორ გვთრგუნავენ": 84,
+        "როგორ გვყოფენ": 33,
+        "გავლენები და ეკლესია": 49
+      },
+      "by_source": {
+        "imedi": 29,
+        "gpb": 24,
+        "mtavari": 8,
+        "other": 8,
+        "rustavi": 15
+      },
+      "sentiment": {
+        "Negative": 61,
+        "Neutral": 8,
+        "Positive": 15
+      }
+    },
+    {
+      "date": "2025-07-10",
+      "total": 117,
+      "categories": {
+        "როგორ გვზღუდავენ": 87,
+        "როგორ გვთრგუნავენ": 97,
+        "როგორ გვყოფენ": 56,
+        "გავლენები და ეკლესია": 84
+      },
+      "by_source": {
+        "imedi": 35,
+        "rustavi": 26,
+        "other": 9,
+        "gpb": 30,
+        "mtavari": 17
+      },
+      "sentiment": {
+        "Negative": 83,
+        "Neutral": 13,
+        "Positive": 21
+      }
+    },
+    {
+      "date": "2025-07-11",
+      "total": 181,
+      "categories": {
+        "როგორ გვზღუდავენ": 147,
+        "როგორ გვთრგუნავენ": 191,
+        "როგორ გვყოფენ": 69,
+        "გავლენები და ეკლესია": 108
+      },
+      "by_source": {
+        "imedi": 46,
+        "rustavi": 51,
+        "gpb": 41,
+        "mtavari": 20,
+        "other": 23
+      },
+      "sentiment": {
+        "Negative": 151,
+        "Neutral": 9,
+        "Positive": 21
+      }
+    },
+    {
+      "date": "2025-07-12",
+      "total": 176,
+      "categories": {
+        "როგორ გვზღუდავენ": 172,
+        "როგორ გვთრგუნავენ": 166,
+        "როგორ გვყოფენ": 78,
+        "გავლენები და ეკლესია": 125
+      },
+      "by_source": {
+        "imedi": 50,
+        "mtavari": 27,
+        "rustavi": 39,
+        "other": 16,
+        "gpb": 44
+      },
+      "sentiment": {
+        "Negative": 136,
+        "Neutral": 12,
+        "Positive": 28
+      }
+    },
+    {
+      "date": "2025-07-13",
+      "total": 173,
+      "categories": {
+        "როგორ გვზღუდავენ": 123,
+        "როგორ გვთრგუნავენ": 177,
+        "როგორ გვყოფენ": 93,
+        "გავლენები და ეკლესია": 83
+      },
+      "by_source": {
+        "other": 17,
+        "imedi": 52,
+        "rustavi": 31,
+        "mtavari": 29,
+        "gpb": 44
+      },
+      "sentiment": {
+        "Negative": 137,
+        "Neutral": 16,
+        "Positive": 20
+      }
+    },
+    {
+      "date": "2025-07-14",
+      "total": 85,
+      "categories": {
+        "როგორ გვზღუდავენ": 71,
+        "როგორ გვთრგუნავენ": 72,
+        "როგორ გვყოფენ": 20,
+        "გავლენები და ეკლესია": 67
+      },
+      "by_source": {
+        "imedi": 31,
+        "other": 8,
+        "gpb": 15,
+        "mtavari": 15,
+        "rustavi": 16
+      },
+      "sentiment": {
+        "Negative": 63,
+        "Neutral": 6,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-07-15",
+      "total": 115,
+      "categories": {
+        "როგორ გვზღუდავენ": 87,
+        "როგორ გვთრგუნავენ": 95,
+        "როგორ გვყოფენ": 70,
+        "გავლენები და ეკლესია": 64
+      },
+      "by_source": {
+        "imedi": 35,
+        "mtavari": 14,
+        "rustavi": 19,
+        "gpb": 35,
+        "other": 12
+      },
+      "sentiment": {
+        "Negative": 92,
+        "Neutral": 12,
+        "Positive": 11
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "total": 160,
+      "categories": {
+        "როგორ გვზღუდავენ": 141,
+        "როგორ გვთრგუნავენ": 104,
+        "როგორ გვყოფენ": 70,
+        "გავლენები და ეკლესია": 130
+      },
+      "by_source": {
+        "mtavari": 28,
+        "other": 11,
+        "gpb": 47,
+        "rustavi": 32,
+        "imedi": 42
+      },
+      "sentiment": {
+        "Negative": 131,
+        "Neutral": 12,
+        "Positive": 17
+      }
+    },
+    {
+      "date": "2025-07-17",
+      "total": 155,
+      "categories": {
+        "როგორ გვზღუდავენ": 142,
+        "როგორ გვთრგუნავენ": 149,
+        "როგორ გვყოფენ": 89,
+        "გავლენები და ეკლესია": 73
+      },
+      "by_source": {
+        "gpb": 29,
+        "rustavi": 33,
+        "mtavari": 32,
+        "imedi": 41,
+        "other": 20
+      },
+      "sentiment": {
+        "Negative": 120,
+        "Neutral": 17,
+        "Positive": 18
+      }
+    },
+    {
+      "date": "2025-07-18",
+      "total": 153,
+      "categories": {
+        "როგორ გვზღუდავენ": 99,
+        "როგორ გვთრგუნავენ": 154,
+        "როგორ გვყოფენ": 91,
+        "გავლენები და ეკლესია": 75
+      },
+      "by_source": {
+        "imedi": 47,
+        "rustavi": 29,
+        "gpb": 43,
+        "other": 12,
+        "mtavari": 22
+      },
+      "sentiment": {
+        "Negative": 116,
+        "Neutral": 18,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-07-19",
+      "total": 169,
+      "categories": {
+        "როგორ გვზღუდავენ": 130,
+        "როგორ გვთრგუნავენ": 150,
+        "როგორ გვყოფენ": 86,
+        "გავლენები და ეკლესია": 96
+      },
+      "by_source": {
+        "gpb": 44,
+        "imedi": 54,
+        "mtavari": 29,
+        "rustavi": 30,
+        "other": 12
+      },
+      "sentiment": {
+        "Negative": 135,
+        "Neutral": 13,
+        "Positive": 21
+      }
+    },
+    {
+      "date": "2025-07-20",
+      "total": 160,
+      "categories": {
+        "როგორ გვზღუდავენ": 114,
+        "როგორ გვთრგუნავენ": 122,
+        "როგორ გვყოფენ": 78,
+        "გავლენები და ეკლესია": 128
+      },
+      "by_source": {
+        "rustavi": 37,
+        "gpb": 48,
+        "imedi": 46,
+        "mtavari": 20,
+        "other": 9
+      },
+      "sentiment": {
+        "Negative": 127,
+        "Neutral": 12,
+        "Positive": 21
+      }
+    },
+    {
+      "date": "2025-07-21",
+      "total": 132,
+      "categories": {
+        "როგორ გვზღუდავენ": 124,
+        "როგორ გვთრგუნავენ": 93,
+        "როგორ გვყოფენ": 86,
+        "გავლენები და ეკლესია": 79
+      },
+      "by_source": {
+        "imedi": 36,
+        "gpb": 40,
+        "other": 12,
+        "mtavari": 21,
+        "rustavi": 23
+      },
+      "sentiment": {
+        "Negative": 98,
+        "Neutral": 9,
+        "Positive": 25
+      }
+    },
+    {
+      "date": "2025-07-22",
+      "total": 117,
+      "categories": {
+        "როგორ გვზღუდავენ": 60,
+        "როგორ გვთრგუნავენ": 107,
+        "როგორ გვყოფენ": 70,
+        "გავლენები და ეკლესია": 80
+      },
+      "by_source": {
+        "imedi": 43,
+        "other": 11,
+        "gpb": 28,
+        "rustavi": 16,
+        "mtavari": 19
+      },
+      "sentiment": {
+        "Negative": 92,
+        "Neutral": 11,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-07-23",
+      "total": 187,
+      "categories": {
+        "როგორ გვზღუდავენ": 165,
+        "როგორ გვთრგუნავენ": 153,
+        "როგორ გვყოფენ": 106,
+        "გავლენები და ეკლესია": 117
+      },
+      "by_source": {
+        "mtavari": 35,
+        "gpb": 48,
+        "other": 23,
+        "imedi": 49,
+        "rustavi": 32
+      },
+      "sentiment": {
+        "Negative": 146,
+        "Neutral": 17,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-07-24",
+      "total": 166,
+      "categories": {
+        "როგორ გვზღუდავენ": 81,
+        "როგორ გვთრგუნავენ": 203,
+        "როგორ გვყოფენ": 62,
+        "გავლენები და ეკლესია": 122
+      },
+      "by_source": {
+        "imedi": 48,
+        "mtavari": 26,
+        "gpb": 43,
+        "rustavi": 32,
+        "other": 17
+      },
+      "sentiment": {
+        "Negative": 136,
+        "Neutral": 11,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-07-25",
+      "total": 84,
+      "categories": {
+        "როგორ გვზღუდავენ": 35,
+        "როგორ გვთრგუნავენ": 137,
+        "როგორ გვყოფენ": 33,
+        "გავლენები და ეკლესია": 35
+      },
+      "by_source": {
+        "imedi": 26,
+        "gpb": 21,
+        "rustavi": 17,
+        "mtavari": 14,
+        "other": 6
+      },
+      "sentiment": {
+        "Negative": 61,
+        "Neutral": 6,
+        "Positive": 17
+      }
+    },
+    {
+      "date": "2025-07-26",
+      "total": 99,
+      "categories": {
+        "როგორ გვზღუდავენ": 112,
+        "როგორ გვთრგუნავენ": 109,
+        "როგორ გვყოფენ": 37,
+        "გავლენები და ეკლესია": 47
+      },
+      "by_source": {
+        "imedi": 38,
+        "gpb": 25,
+        "mtavari": 11,
+        "rustavi": 14,
+        "other": 11
+      },
+      "sentiment": {
+        "Negative": 78,
+        "Neutral": 8,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-07-27",
+      "total": 183,
+      "categories": {
+        "როგორ გვზღუდავენ": 153,
+        "როგორ გვთრგუნავენ": 148,
+        "როგორ გვყოფენ": 64,
+        "გავლენები და ეკლესია": 101
+      },
+      "by_source": {
+        "gpb": 49,
+        "other": 22,
+        "imedi": 59,
+        "rustavi": 27,
+        "mtavari": 26
+      },
+      "sentiment": {
+        "Negative": 141,
+        "Neutral": 18,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-07-28",
+      "total": 155,
+      "categories": {
+        "როგორ გვზღუდავენ": 130,
+        "როგორ გვთრგუნავენ": 147,
+        "როგორ გვყოფენ": 89,
+        "გავლენები და ეკლესია": 85
+      },
+      "by_source": {
+        "gpb": 35,
+        "mtavari": 24,
+        "rustavi": 29,
+        "imedi": 47,
+        "other": 20
+      },
+      "sentiment": {
+        "Negative": 114,
+        "Neutral": 15,
+        "Positive": 26
+      }
+    },
+    {
+      "date": "2025-07-29",
+      "total": 136,
+      "categories": {
+        "როგორ გვზღუდავენ": 117,
+        "როგორ გვთრგუნავენ": 142,
+        "როგორ გვყოფენ": 57,
+        "გავლენები და ეკლესია": 43
+      },
+      "by_source": {
+        "rustavi": 28,
+        "imedi": 41,
+        "mtavari": 25,
+        "gpb": 36,
+        "other": 6
+      },
+      "sentiment": {
+        "Negative": 105,
+        "Neutral": 15,
+        "Positive": 16
+      }
+    },
+    {
+      "date": "2025-07-30",
+      "total": 170,
+      "categories": {
+        "როგორ გვზღუდავენ": 151,
+        "როგორ გვთრგუნავენ": 157,
+        "როგორ გვყოფენ": 77,
+        "გავლენები და ეკლესია": 90
+      },
+      "by_source": {
+        "imedi": 46,
+        "gpb": 41,
+        "other": 19,
+        "rustavi": 33,
+        "mtavari": 31
+      },
+      "sentiment": {
+        "Negative": 130,
+        "Neutral": 14,
+        "Positive": 26
+      }
+    },
+    {
+      "date": "2025-07-31",
+      "total": 94,
+      "categories": {
+        "როგორ გვზღუდავენ": 70,
+        "როგორ გვთრგუნავენ": 76,
+        "როგორ გვყოფენ": 44,
+        "გავლენები და ეკლესია": 58
+      },
+      "by_source": {
+        "imedi": 32,
+        "mtavari": 15,
+        "rustavi": 16,
+        "gpb": 21,
+        "other": 10
+      },
+      "sentiment": {
+        "Negative": 67,
+        "Neutral": 13,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-08-01",
+      "total": 188,
+      "categories": {
+        "როგორ გვზღუდავენ": 172,
+        "როგორ გვთრგუნავენ": 148,
+        "როგორ გვყოფენ": 93,
+        "გავლენები და ეკლესია": 120
+      },
+      "by_source": {
+        "gpb": 47,
+        "imedi": 63,
+        "mtavari": 23,
+        "other": 16,
+        "rustavi": 39
+      },
+      "sentiment": {
+        "Negative": 149,
+        "Neutral": 14,
+        "Positive": 25
+      }
+    },
+    {
+      "date": "2025-08-02",
+      "total": 151,
+      "categories": {
+        "როგორ გვზღუდავენ": 99,
+        "როგორ გვთრგუნავენ": 173,
+        "როგორ გვყოფენ": 65,
+        "გავლენები და ეკლესია": 84
+      },
+      "by_source": {
+        "imedi": 41,
+        "gpb": 43,
+        "mtavari": 24,
+        "rustavi": 29,
+        "other": 14
+      },
+      "sentiment": {
+        "Negative": 119,
+        "Neutral": 13,
+        "Positive": 19
+      }
+    },
+    {
+      "date": "2025-08-03",
+      "total": 179,
+      "categories": {
+        "როგორ გვზღუდავენ": 148,
+        "როგორ გვთრგუნავენ": 126,
+        "როგორ გვყოფენ": 86,
+        "გავლენები და ეკლესია": 120
+      },
+      "by_source": {
+        "gpb": 41,
+        "other": 18,
+        "imedi": 47,
+        "mtavari": 28,
+        "rustavi": 45
+      },
+      "sentiment": {
+        "Negative": 142,
+        "Neutral": 14,
+        "Positive": 23
+      }
+    },
+    {
+      "date": "2025-08-04",
+      "total": 151,
+      "categories": {
+        "როგორ გვზღუდავენ": 74,
+        "როგორ გვთრგუნავენ": 151,
+        "როგორ გვყოფენ": 96,
+        "გავლენები და ეკლესია": 81
+      },
+      "by_source": {
+        "imedi": 47,
+        "other": 16,
+        "gpb": 37,
+        "rustavi": 31,
+        "mtavari": 20
+      },
+      "sentiment": {
+        "Negative": 112,
+        "Neutral": 15,
+        "Positive": 24
+      }
+    },
+    {
+      "date": "2025-08-05",
+      "total": 133,
+      "categories": {
+        "როგორ გვზღუდავენ": 104,
+        "როგორ გვთრგუნავენ": 105,
+        "როგორ გვყოფენ": 56,
+        "გავლენები და ეკლესია": 69
+      },
+      "by_source": {
+        "imedi": 39,
+        "other": 18,
+        "mtavari": 22,
+        "gpb": 26,
+        "rustavi": 28
+      },
+      "sentiment": {
+        "Negative": 99,
+        "Neutral": 14,
+        "Positive": 20
+      }
+    },
+    {
+      "date": "2025-08-06",
+      "total": 139,
+      "categories": {
+        "როგორ გვზღუდავენ": 99,
+        "როგორ გვთრგუნავენ": 98,
+        "როგორ გვყოფენ": 77,
+        "გავლენები და ეკლესია": 70
+      },
+      "by_source": {
+        "rustavi": 19,
+        "imedi": 47,
+        "gpb": 37,
+        "mtavari": 27,
+        "other": 9
+      },
+      "sentiment": {
+        "Negative": 114,
+        "Neutral": 11,
+        "Positive": 14
+      }
+    },
+    {
+      "date": "2025-08-07",
+      "total": 146,
+      "categories": {
+        "როგორ გვზღუდავენ": 119,
+        "როგორ გვთრგუნავენ": 110,
+        "როგორ გვყოფენ": 57,
+        "გავლენები და ეკლესია": 104
+      },
+      "by_source": {
+        "imedi": 39,
+        "mtavari": 26,
+        "rustavi": 32,
+        "other": 17,
+        "gpb": 32
+      },
+      "sentiment": {
+        "Negative": 116,
+        "Neutral": 17,
+        "Positive": 13
+      }
+    },
+    {
+      "date": "2025-08-08",
+      "total": 174,
+      "categories": {
+        "როგორ გვზღუდავენ": 129,
+        "როგორ გვთრგუნავენ": 149,
+        "როგორ გვყოფენ": 88,
+        "გავლენები და ეკლესია": 101
+      },
+      "by_source": {
+        "rustavi": 34,
+        "gpb": 47,
+        "imedi": 53,
+        "other": 19,
+        "mtavari": 21
+      },
+      "sentiment": {
+        "Negative": 133,
+        "Neutral": 12,
+        "Positive": 29
+      }
+    },
+    {
+      "date": "2025-08-09",
+      "total": 177,
+      "categories": {
+        "როგორ გვზღუდავენ": 152,
+        "როგორ გვთრგუნავენ": 158,
+        "როგორ გვყოფენ": 74,
+        "გავლენები და ეკლესია": 107
+      },
+      "by_source": {
+        "imedi": 55,
+        "gpb": 50,
+        "rustavi": 39,
+        "mtavari": 28,
+        "other": 5
+      },
+      "sentiment": {
+        "Negative": 137,
+        "Neutral": 22,
+        "Positive": 18
+      }
+    },
+    {
+      "date": "2025-08-10",
+      "total": 154,
+      "categories": {
+        "როგორ გვზღუდავენ": 137,
+        "როგორ გვთრგუნავენ": 167,
+        "როგორ გვყოფენ": 76,
+        "გავლენები და ეკლესია": 76
+      },
+      "by_source": {
+        "rustavi": 43,
+        "imedi": 40,
+        "mtavari": 29,
+        "gpb": 34,
+        "other": 8
+      },
+      "sentiment": {
+        "Negative": 117,
+        "Neutral": 7,
+        "Positive": 30
+      }
+    }
+  ],
+  "by_source_total": {
+    "rustavi": {
+      "count": 2630,
+      "dominant_framing": "როგორ გვთრგუნავენ",
+      "pct_negative": 75
+    },
+    "imedi": {
+      "count": 3743,
+      "dominant_framing": "როგორ გვთრგუნავენ",
+      "pct_negative": 76
+    },
+    "gpb": {
+      "count": 3179,
+      "dominant_framing": "როგორ გვთრგუნავენ",
+      "pct_negative": 77
+    },
+    "other": {
+      "count": 1232,
+      "dominant_framing": "როგორ გვთრგუნავენ",
+      "pct_negative": 78
+    },
+    "mtavari": {
+      "count": 1939,
+      "dominant_framing": "როგორ გვთრგუნავენ",
+      "pct_negative": 78
+    }
+  },
+  "weekly_trends": {
+    "week_2025_20": {
+      "როგორ გვზღუდავენ": 532,
+      "როგორ გვთრგუნავენ": 697,
+      "როგორ გვყოფენ": 386,
+      "გავლენები და ეკლესია": 388,
+      "total": 710,
+      "change_pct": null
+    },
+    "week_2025_21": {
+      "როგორ გვზღუდავენ": 744,
+      "როგორ გვთრგუნავენ": 818,
+      "როგორ გვყოფენ": 434,
+      "გავლენები და ეკლესია": 608,
+      "total": 952,
+      "change_pct": 34.1
+    },
+    "week_2025_22": {
+      "როგორ გვზღუდავენ": 868,
+      "როგორ გვთრგუნავენ": 924,
+      "როგორ გვყოფენ": 460,
+      "გავლენები და ეკლესია": 593,
+      "total": 1082,
+      "change_pct": 13.7
+    },
+    "week_2025_23": {
+      "როგორ გვზღუდავენ": 758,
+      "როგორ გვთრგუნავენ": 926,
+      "როგორ გვყოფენ": 460,
+      "გავლენები და ეკლესია": 602,
+      "total": 1025,
+      "change_pct": -5.3
+    },
+    "week_2025_24": {
+      "როგორ გვზღუდავენ": 719,
+      "როგორ გვთრგუნავენ": 910,
+      "როგორ გვყოფენ": 428,
+      "გავლენები და ეკლესია": 611,
+      "total": 990,
+      "change_pct": -3.4
+    },
+    "week_2025_25": {
+      "როგორ გვზღუდავენ": 697,
+      "როგორ გვთრგუნავენ": 830,
+      "როგორ გვყოფენ": 459,
+      "გავლენები და ეკლესია": 686,
+      "total": 1017,
+      "change_pct": 2.7
+    },
+    "week_2025_26": {
+      "როგორ გვზღუდავენ": 691,
+      "როგორ გვთრგუნავენ": 836,
+      "როგორ გვყოფენ": 426,
+      "გავლენები და ეკლესია": 591,
+      "total": 961,
+      "change_pct": -5.5
+    },
+    "week_2025_27": {
+      "როგორ გვზღუდავენ": 634,
+      "როგორ გვთრგუნავენ": 779,
+      "როგორ გვყოფენ": 354,
+      "გავლენები და ეკლესია": 561,
+      "total": 848,
+      "change_pct": -11.8
+    },
+    "week_2025_28": {
+      "როგორ გვზღუდავენ": 815,
+      "როგორ გვთრგუნავენ": 965,
+      "როგორ გვყოფენ": 444,
+      "გავლენები და ეკლესია": 625,
+      "total": 1026,
+      "change_pct": 21.0
+    },
+    "week_2025_29": {
+      "როგორ გვზღუდავენ": 784,
+      "როგორ გვთრგუნავენ": 846,
+      "როგორ გვყოფენ": 504,
+      "გავლენები და ეკლესია": 633,
+      "total": 997,
+      "change_pct": -2.8
+    },
+    "week_2025_30": {
+      "როგორ გვზღუდავენ": 730,
+      "როგორ გვთრგუნავენ": 950,
+      "როგორ გვყოფენ": 458,
+      "გავლენები და ეკლესია": 581,
+      "total": 968,
+      "change_pct": -2.9
+    },
+    "week_2025_31": {
+      "როგორ გვზღუდავენ": 887,
+      "როგორ გვთრგუნავენ": 969,
+      "როგორ გვყოფენ": 511,
+      "გავლენები და ეკლესია": 600,
+      "total": 1073,
+      "change_pct": 10.8
+    },
+    "week_2025_32": {
+      "როგორ გვზღუდავენ": 814,
+      "როგორ გვთრგუნავენ": 938,
+      "როგორ გვყოფენ": 524,
+      "გავლენები და ეკლესია": 608,
+      "total": 1074,
+      "change_pct": 0.1
+    }
+  }
+}

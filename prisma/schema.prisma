@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AccountType {
+  B2B
+  PERSONAL
+}
+
+model User {
+  id             String             @id @default(uuid())
+  email          String?            @unique
+  accountType    AccountType        @default(PERSONAL)
+  username       String?
+  coins          Int                @default(100)
+  createdAt      DateTime           @default(now())
+  completions    SurveyCompletion[]
+  transactions   Transaction[]
+}
+
+model Assessment {
+  id             String             @id @default(uuid())
+  type           String             // e.g., 'BigFive', 'Burnout', 'Pulse'
+  title          String
+  description    String?
+  rewardCoins    Int                @default(10)
+  createdAt      DateTime           @default(now())
+  completions    SurveyCompletion[]
+}
+
+model SurveyCompletion {
+  id             String       @id @default(uuid())
+  userId         String
+  assessmentId   String
+  earnedCoins    Int
+  results        Json?        // Stores the actual answers or computed scores
+  completedAt    DateTime     @default(now())
+  
+  user           User         @relation(fields: [userId], references: [id])
+  assessment     Assessment   @relation(fields: [assessmentId], references: [id])
+}
+
+model RewardItem {
+  id             String        @id @default(uuid())
+  title          String
+  description    String?
+  cost           Int
+  imageUrl       String?
+  createdAt      DateTime      @default(now())
+  transactions   Transaction[]
+}
+
+model Transaction {
+  id             String       @id @default(uuid())
+  userId         String
+  rewardId       String
+  cost           Int
+  createdAt      DateTime     @default(now())
+  
+  user           User         @relation(fields: [userId], references: [id])
+  reward         RewardItem   @relation(fields: [rewardId], references: [id])
+}
+
+// ==========================================
+// PHASE 4: DYNAMIC PROPAGANDA ANALYTICS
+// ==========================================
+
+model PropagandaArticle {
+  id              String   @id @default(uuid())
+  headline        String?
+  bodyText        String?
+  publishedAt     DateTime?
+  sourcePublisher String?
+  dominantFraming String?  // e.g. "როგორ გვთრგუნავენ"
+  framingScore    Int?
+  url             String?
+  createdAt       DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String
+  action     String   // READ | WRITE | DELETE
+  entity     String   // e.g. 'SurveyCompletion'
+  entityId   String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model DailyPulse {
+  id              String   @id @default(uuid())
+  date            DateTime @unique
+  institutional   Int      @default(0) // როგორ გვზღუდავენ
+  psychological   Int      @default(0) // როგორ გვთრგუნავენ
+  societal        Int      @default(0) // როგორ გვყოფენ
+  geopolitical    Int      @default(0) // გავლენები და ეკლესია
+  createdAt       DateTime @default(now())
+}

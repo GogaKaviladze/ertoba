@@ -1,0 +1,19 @@
+# Ertoba Analytics — Python Agent Runtime Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── LangChain + LangGraph (Agentic AI Runtime) ─────────────────────────────
+langgraph>=0.2.73,<0.3.0
+langchain>=0.3.25,<0.4.0
+langchain-core>=0.3.60,<0.4.0
+
+# ── LLM Providers (at least one required for real runs) ────────────────────
+# Uncomment the provider you use and set the corresponding env var.
+# langchain-openai>=0.2.0,<0.3.0          # OPENAI_API_KEY
+# langchain-google-genai>=2.0.0,<3.0.0    # GOOGLE_API_KEY
+# langchain-anthropic>=0.3.0,<0.4.0       # ANTHROPIC_API_KEY
+
+# ── Data Processing ─────────────────────────────────────────────────────────
+ijson>=3.3.0
+
+# ── Utilities ───────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
