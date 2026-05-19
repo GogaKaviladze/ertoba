@@ -93,10 +93,11 @@ App runs at [http://localhost:3000](http://localhost:3000).
 ### Required Environment Variables
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=       # Your Supabase project URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=  # Public anon key
-DATABASE_URL=                   # Supabase Connection Pooler, Port 6543
-ENCRYPTION_KEY=                 # AES-256-GCM, 32-byte hex string
+NEXT_PUBLIC_SUPABASE_URL=         # Your Supabase project URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=    # Public anon key
+DATABASE_URL=                     # Supabase Connection Pooler, Port 6543
+ASSESSMENT_ENCRYPTION_KEY=        # AES-256-GCM, 32-byte hex string
+SUPABASE_SERVICE_ROLE_KEY=        # Server-side only
 ```
 
 ---
@@ -142,9 +143,13 @@ npm run test:e2e -- --debug   # Step-through debugger
 | [SETUP.md](SETUP.md) | Step-by-step local setup: Supabase, env vars, database, troubleshooting |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute, branch naming, PR process, team roles |
 | [ROADMAP.md](ROADMAP.md) | Project phases: done, in progress, planned |
-| [docs/](docs/) | Architecture documentation |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Tech stack, database schema, data flow, file structure |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Vercel deployment, production env vars, database pooling |
+| [docs/DATABASE.md](docs/DATABASE.md) | Prisma schema, migrations, database models |
+| [docs/SECURITY.md](docs/SECURITY.md) | RLS policies, encryption workflow, security practices |
+| [docs/TESTING.md](docs/TESTING.md) | E2E test setup, Playwright patterns, test selectors |
 | [agents/README.md](agents/README.md) | Python AI agent (LangGraph) setup and run instructions |
-| [SECURITY.md](SECURITY.md) | Security tasks, credential rotation, RLS setup |
+| [SECURITY.md](SECURITY.md) | Security disclosure policy and reporting |
 
 ---
 

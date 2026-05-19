@@ -53,5 +53,5 @@
 - **Data Engineer** — Python / SQL: Fraud detection pipeline, OSINT data ingestion
 - **Backend Dev** — Node.js / Prisma: Survey actions, API endpoints
 
-Open issues: https://github.com/GogaKaviladze/Ertoba-Analytics/issues
+Open issues: https://github.com/GogaKaviladze/ertoba/issues
 Contact: goga.kaviladze@anthronode.io

@@ -15,7 +15,7 @@ Only the latest release on the `main` branch receives security fixes.
 
 Please report vulnerabilities through one of these private channels:
 
-- **GitHub Private Advisory:** [Security → Report a vulnerability](https://github.com/GogaKaviladze/Ertoba-Analytics/security/advisories/new)
+- **GitHub Private Advisory:** [Security → Report a vulnerability](https://github.com/GogaKaviladze/ertoba/security/advisories/new)
 - **Email:** goga.kaviladze@anthronode.io
 
 ### What to include

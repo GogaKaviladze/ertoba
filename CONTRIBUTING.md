@@ -18,7 +18,7 @@ Before contributing, make sure you have the following installed:
 | Git | any recent | Version control |
 | Supabase account | — | Database & Auth (free tier works) |
 
-> For full local setup instructions, see **SETUP.md** (coming soon).
+> For full local setup instructions, see [SETUP.md](SETUP.md).
 
 ---
 
@@ -30,7 +30,7 @@ We are actively seeking contributors in these areas:
 - **Data Engineer** — Python pipelines, LangGraph/LangChain agents, NLP/framing analysis
 - **Frontend Developer** — Next.js 16, React 19, Tailwind CSS 4, Recharts, data visualization
 
-If you are unsure where to start, check the [open issues](https://github.com/GogaKaviladze/Ertoba-Analytics/issues) and look for the `good first issue` label.
+If you are unsure where to start, check the [open issues](https://github.com/GogaKaviladze/ertoba/issues) and look for the `good first issue` label.
 
 ---
 
@@ -106,7 +106,6 @@ Every contribution must satisfy all of the following before merging:
 ## Running Tests
 
 ```bash
-cd ertoba-analytics-dashboard
 npm run test:e2e              # All E2E tests
 npm run test:e2e -- --ui      # Visual test runner
 npm run test:e2e -- --debug   # Step-through debugger
@@ -124,7 +123,7 @@ New features require E2E test coverage. Use `data-testid` attributes for selecto
 - **RLS** for all database access — never bypass row-level security
 - **No secrets in code** — use `.env.local` locally, Vercel env vars in production
 
-For full architecture details and design patterns, see [context/ARCH.md](context/ARCH.md).
+For full architecture details and design patterns, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ---
 
@@ -138,4 +137,4 @@ See [SECURITY.md](SECURITY.md) for our security practices and pre-production che
 
 ## Questions?
 
-Open a [GitHub issue](https://github.com/GogaKaviladze/Ertoba-Analytics/issues) or reach out via goga.kaviladze@anthronode.io.
+Open a [GitHub issue](https://github.com/GogaKaviladze/ertoba/issues) or reach out via goga.kaviladze@anthronode.io.
