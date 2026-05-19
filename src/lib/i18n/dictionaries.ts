@@ -2,7 +2,7 @@ export type Language = 'ka' | 'en' | 'de'
 
 export const ka = {
   // --- COMMON / BRAND ---
-  badge: 'კონფიდენციალურობაზე ორიენტირებული პლატფორმა · Anthronode.io',
+  badge: 'კონფიდენციალურობაზე ორიენტირებული პლატფორმა · Ertoba Analytics',
   bigFiveTitle: 'Big Five Assessment',
   bigFiveDesc: 'პიროვნული თვისებების სამეცნიერო სტანდარტი. ზომავს ღიაობას, კეთილსინდისიერებას, ექსტრავერსიას, თანხმობას და ნევროტიზმს.',
   startAssessment: 'ტესტის დაწყება',
@@ -109,7 +109,7 @@ export const ka = {
   landingStep3Desc: 'მიიღე უკეთესი გადაწყვეტილებები სამსახურსა და ცხოვრებაში. ან გაააქტიურე გუნდური ფუნქციები.',
   landingCta: 'უფასოდ აღმოაჩინე',
   landingAlreadyAccount: 'უკვე გაქვს ანგარიში?',
-  landingMissionBadge: 'ღია კვლევა · Anthronode.io',
+  landingMissionBadge: 'ღია კვლევა · Ertoba Analytics',
 
   // --- NEW LANDING SECTIONS ---
   landingWhatTitle: 'რას მიიღებ 10 წუთში',
@@ -212,7 +212,7 @@ export const ka = {
   imprintPageTitle: 'იმპრესუმი',
   privacyIntro: 'ეს კონფიდენციალურობის პოლიტიკა განმარტავს, თუ რა პერსონალურ მონაცემებს ვაგროვებთ, როგორ ვიყენებთ მათ და რა უფლებები გაქვთ GDPR-ის შესაბამისად.',
   privacySection1Title: '1. მონაცემთა დამმუშავებელი',
-  privacySection1Body: 'Anthronode.io / Goga Kaviladze · hello@anthronode.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
   privacySection2Title: '2. რა მონაცემებს ვაგროვებთ',
   privacySection2Body: 'ელ-ფოსტის მისამართი (Supabase Auth-ის მეშვეობით), ფსიქოლოგიური შეფასებების პასუხები, ენის პრეფერენცია (cookie: ertoba_lang).',
   privacySection3Title: '3. სამართლებრივი საფუძველი',
@@ -224,14 +224,14 @@ export const ka = {
   privacySection6Title: '6. Cookies',
   privacySection6Body: 'ertoba_lang cookie გამოიყენება ენის პრეფერენციის შენახვისთვის. ეს არის აუცილებელი cookie — ბანერი არ სჭირდება.',
   privacySection7Title: '7. თქვენი უფლებები',
-  privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — hello@anthronode.io-ზე მიწერით.',
+  privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — contact@ertoba.io-ზე მიწერით.',
   privacySection8Title: '8. კონტაქტი',
-  privacySection8Body: 'hello@anthronode.io',
+  privacySection8Body: 'contact@ertoba.io',
 };
 
 export const en = {
   // --- COMMON / BRAND ---
-  badge: 'Privacy-First Platform · Anthronode.io',
+  badge: 'Privacy-First Platform · Ertoba Analytics',
   bigFiveTitle: 'Big Five Assessment',
   bigFiveDesc: 'The scientific gold standard for personality testing. Measures Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.',
   startAssessment: 'Start Assessment',
@@ -338,7 +338,7 @@ export const en = {
   landingStep3Desc: 'Make better decisions in work and life. Or unlock team features for your organization.',
   landingCta: 'Discover Now — Free',
   landingAlreadyAccount: 'Already have an account?',
-  landingMissionBadge: 'Open Research · Anthronode.io',
+  landingMissionBadge: 'Open Research · Ertoba Analytics',
 
   // --- NEW LANDING SECTIONS ---
   landingWhatTitle: 'What You Get in 10 Minutes',
@@ -441,7 +441,7 @@ export const en = {
   imprintPageTitle: 'Imprint',
   privacyIntro: 'This Privacy Policy explains what personal data Ertoba Analytics collects, how we use it, and your rights under the GDPR.',
   privacySection1Title: '1. Data Controller',
-  privacySection1Body: 'Anthronode.io / Goga Kaviladze · hello@anthronode.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
   privacySection2Title: '2. Data We Collect',
   privacySection2Body: 'Email address (via Supabase Auth), psychological assessment responses, language preference (cookie: ertoba_lang).',
   privacySection3Title: '3. Legal Basis',
@@ -453,14 +453,14 @@ export const en = {
   privacySection6Title: '6. Cookies',
   privacySection6Body: 'The ertoba_lang cookie stores your language preference. This is a strictly necessary cookie — no consent banner is required.',
   privacySection7Title: '7. Your Rights',
-  privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at hello@anthronode.io.',
+  privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at contact@ertoba.io.',
   privacySection8Title: '8. Contact',
-  privacySection8Body: 'hello@anthronode.io',
+  privacySection8Body: 'contact@ertoba.io',
 };
 
 export const de = {
   // --- COMMON / BRAND ---
-  badge: 'Datenschutz zuerst · Anthronode.io',
+  badge: 'Datenschutz zuerst · Ertoba Analytics',
   bigFiveTitle: 'Big Five Persönlichkeitstest',
   bigFiveDesc: 'Der wissenschaftliche Goldstandard für Persönlichkeitstests. Misst Offenheit, Gewissenhaftigkeit, Extraversion, Verträglichkeit und Neurotizismus.',
   startAssessment: 'Test starten',
@@ -475,7 +475,7 @@ export const de = {
   loading: 'Lade Daten...',
   noDataFound: 'Keine Daten in dieser Kategorie gefunden.',
   welcome: 'Willkommen',
-  signIn: 'Einloggen',
+  signIn: 'Anmelden',
   contactUs: 'Kontakt aufnehmen',
 
   // --- QUESTIONS ---
@@ -529,7 +529,7 @@ export const de = {
   summaryDominant: 'Stärkstes Signal:',
   summaryMentions: 'Erwähnungen',
   questionnaires: 'Fragebögen',
-  myWallet: 'Meine Brieftasche',
+  myWallet: 'Mein Wallet',
   viewBalance: 'Kontostand anzeigen',
   activeTasks: 'Aktive Aufgaben',
   start: 'Starten',
@@ -543,7 +543,7 @@ export const de = {
   logScaleHint: 'Balkenbreiten verwenden eine logarithmische Skala — extreme Ausreißer bleiben vergleichbar.',
 
   // --- LANDING PAGE ---
-  landingHeroTitle: 'entdecke dich selbst',
+  landingHeroTitle: 'Entdecke dich selbst.',
   landingHeroTitleAccent: 'Big Five + Burnout-Index + Open-Source-Intelligence.',
   landingHeroSubtitle: 'Verstehe dein Persönlichkeitsprofil, deine Karriere-Stärken und viele weitere interessante Fakten über dich. 100% anonym, DSGVO-konform, keine E-Mail nötig.',
   landingStatArticles: '47.000+',
@@ -559,15 +559,15 @@ export const de = {
   landingStatAnonTooltip: 'Keine E-Mail. Keine Anmeldung. Kein Tracking. Reine Anonymität.',
   landingCtaCallout: '10 Minuten • Kostenlos • Keine E-Mail • Sofort Ergebnisse',
   landingHowTitle: 'So funktioniert es',
-  landingStep1Title: 'Beantworte ehrlich',
-  landingStep1Desc: 'Teile deine echten Gedanken. Verstehe deine Stärken und Blindspots.',
-  landingStep2Title: 'Sehe deine Analyse',
-  landingStep2Desc: 'Bekomme personalisierte Empfehlungen zum Wachstum. Actionable Insights für deine Karriere.',
-  landingStep3Title: 'Nutze deine Insights',
-  landingStep3Desc: 'Triff bessere Entscheidungen in Beruf und Leben. Oder freischaltung Team-Features.',
+  landingStep1Title: 'Antworte ehrlich',
+  landingStep1Desc: 'Teile deine echten Gedanken. Erkenne deine Stärken und blinden Flecken.',
+  landingStep2Title: 'Sieh deine Analyse',
+  landingStep2Desc: 'Erhalte personalisierte Empfehlungen für dein Wachstum. Konkrete Erkenntnisse für deine Karriere.',
+  landingStep3Title: 'Nutze deine Erkenntnisse',
+  landingStep3Desc: 'Triff bessere Entscheidungen in Beruf und Leben. Oder schalte Team-Features frei.',
   landingCta: 'Kostenlos entdecken',
   landingAlreadyAccount: 'Bereits ein Konto?',
-  landingMissionBadge: 'Offene Forschung · Anthronode.io',
+  landingMissionBadge: 'Offene Forschung · Ertoba Analytics',
 
   // --- NEW LANDING SECTIONS ---
   landingWhatTitle: 'Was du in 10 Minuten bekommst',
@@ -575,12 +575,12 @@ export const de = {
   landingWhatItem1: 'Dein Big Five Persönlichkeitsprofil',
   landingWhatItem2: 'Burnout-Risiko-Score & Empfehlungen',
   landingWhatItem3: 'Viele weitere interessante Fakten über dich',
-  landingWhatItem4: 'Personalisierte Karriere-Insights',
-  landingWhatUsers: '5000+ Nutzer haben ihre Ergebnisse bereits entdeckt',
+  landingWhatItem4: 'Personalisierte Karriere-Erkenntnisse',
+  landingWhatUsers: '5.000+ Nutzer haben ihre Ergebnisse bereits entdeckt',
   landingForYouTitle: 'Für dich',
-  landingForYouDesc: 'Kostenlose Bewertung, persönliche Insights',
+  landingForYouDesc: 'Kostenlose Auswertung, persönliche Erkenntnisse',
   landingForTeamTitle: 'Für dein Team',
-  landingForTeamDesc: 'Unternehmen, Compliance, Analytik',
+  landingForTeamDesc: 'Unternehmenseinsatz, Compliance, Analytik',
 
   // --- ONBOARDING MODAL ---
   onboardingStep1Title: 'Willkommen bei Ertoba',
@@ -628,17 +628,17 @@ export const de = {
   contactFormSuccess: 'Vielen Dank! Wir melden uns in Kürze.',
 
   // --- AGENT REPORT ---
-  agentScanTitle: 'Georgische Medien-Einflusskontrolle',
+  agentScanTitle: 'Einfluss-Scan georgischer Medien',
   agentScanSubtitle: 'Wie werden Einfluss und Propaganda in georgischen Nachrichten eingesetzt?',
   agentRiskCriticalText: '🔴 Sehr hohe Aktivität',
   agentRiskHighText: '🟠 Hohe Aktivität',
   agentRiskMediumText: '🟡 Mittlere Aktivität',
   agentRiskLowText: '🟢 Geringe Aktivität',
   agentArticlesLabel: 'Analysierte Nachrichtenartikel',
-  agentDaysLabel: 'Abgedeckte Tage',
+  agentDaysLabel: 'Erfasste Tage',
   agentSourcesLabel: 'Verfolgte Nachrichtenquellen',
   agentAnalysisPeriod: 'Analyse umfasst',
-  agentTacticsTitle: 'Gefundene Einflussstrategien',
+  agentTacticsTitle: 'Erkannte Einfluss-Taktiken',
   agentSourcesTitle: 'Welche Nachrichtenquellen analysiert wurden',
   agentDisclaimer: 'Ergebnisse sind richtungsweisend, keine rechtliche Aussage',
   agentAutoAnalysed: 'Automatisch von KI analysiert',
@@ -657,7 +657,7 @@ export const de = {
 
   // --- B2B ---
   b2bTitle: 'Für Organisationen',
-  b2bSubtitle: 'Team-Assessments, DSGVO-Konformität und Intelligenz — für Ihre Organisation.',
+  b2bSubtitle: 'Team-Assessments, DSGVO-Konformität und handlungsrelevante Erkenntnisse — für deine Organisation.',
   b2bFeature1: 'Team Big Five Assessments',
   b2bFeature2: 'Datenschutz & DSGVO-konform',
   b2bFeature3: 'Analytik & Reporting',
@@ -668,23 +668,23 @@ export const de = {
   footerImprint: 'Impressum',
   privacyPageTitle: 'Datenschutzerklärung',
   imprintPageTitle: 'Impressum',
-  privacyIntro: 'Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten Ertoba Analytics erhebt, wie wir sie verwenden und welche Rechte Ihnen nach der DSGVO zustehen.',
+  privacyIntro: 'Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten Ertoba Analytics erhebt, wie wir sie verwenden und welche Rechte dir nach der DSGVO zustehen.',
   privacySection1Title: '1. Verantwortlicher',
-  privacySection1Body: 'Anthronode.io / Goga Kaviladze · hello@anthronode.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
   privacySection2Title: '2. Erhobene Daten',
   privacySection2Body: 'E-Mail-Adresse (über Supabase Auth), Antworten auf psychologische Assessments, Sprachpräferenz (Cookie: ertoba_lang).',
   privacySection3Title: '3. Rechtsgrundlage',
-  privacySection3Body: 'Art. 6 Abs. 1 lit. a DSGVO — Ihre Einwilligung. Art. 6 Abs. 1 lit. b DSGVO — Vertragserfüllung (Bereitstellung des Dienstes).',
+  privacySection3Body: 'Art. 6 Abs. 1 lit. a DSGVO — deine Einwilligung. Art. 6 Abs. 1 lit. b DSGVO — Vertragserfüllung (Bereitstellung des Dienstes).',
   privacySection4Title: '4. Speicherdauer',
-  privacySection4Body: 'Daten werden gespeichert, solange Ihr Konto aktiv ist. Nach der Löschung werden die Daten innerhalb von 30 Tagen entfernt.',
+  privacySection4Body: 'Daten werden gespeichert, solange dein Konto aktiv ist. Nach der Löschung werden die Daten innerhalb von 30 Tagen entfernt.',
   privacySection5Title: '5. Drittanbieter',
   privacySection5Body: 'Supabase (Auth & Datenbank, EU-Region) · Vercel (Hosting, EU-Edge) · Resend (E-Mail-Versand). Alle Anbieter sind DSGVO-konform.',
   privacySection6Title: '6. Cookies',
-  privacySection6Body: 'Das Cookie ertoba_lang speichert Ihre Sprachpräferenz. Es handelt sich um ein technisch notwendiges Cookie — kein Cookie-Banner erforderlich.',
-  privacySection7Title: '7. Ihre Rechte',
-  privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — kontaktieren Sie uns unter hello@anthronode.io.',
+  privacySection6Body: 'Das Cookie ertoba_lang speichert deine Sprachpräferenz. Es handelt sich um ein technisch notwendiges Cookie — kein Cookie-Banner erforderlich.',
+  privacySection7Title: '7. Deine Rechte',
+  privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — schreib uns an contact@ertoba.io.',
   privacySection8Title: '8. Kontakt',
-  privacySection8Body: 'hello@anthronode.io',
+  privacySection8Body: 'contact@ertoba.io',
 };
 
 export function isLanguage(value: string | null | undefined): value is Language {

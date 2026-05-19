@@ -74,32 +74,19 @@ export function Header({ initialLanguage = 'ka', balance = 0 }: { initialLanguag
           <span className="text-xs font-bold text-indigo-50 sm:text-sm">{balance.toLocaleString()} ERTC</span>
         </div>
 
-        <div className="hidden items-center gap-1 rounded-lg border border-white/10 bg-white/5 p-1 sm:flex">
-          <Globe className="ml-1 h-4 w-4 text-indigo-400" />
-          <button
-            type="button"
-            onClick={() => switchLanguage('ka')}
-            className={`rounded px-3 py-2 text-xs font-bold transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${language === 'ka' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-white/70 hover:text-white hover:bg-white/10'}`}
-            aria-pressed={language === 'ka'}
-          >
-            KA
-          </button>
-          <button
-            type="button"
-            onClick={() => switchLanguage('en')}
-            className={`rounded px-3 py-2 text-xs font-bold transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${language === 'en' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-white/70 hover:text-white hover:bg-white/10'}`}
-            aria-pressed={language === 'en'}
-          >
-            EN
-          </button>
-          <button
-            type="button"
-            onClick={() => switchLanguage('de')}
-            className={`rounded px-3 py-2 text-xs font-bold transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none ${language === 'de' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-white/70 hover:text-white hover:bg-white/10'}`}
-            aria-pressed={language === 'de'}
-          >
-            DE
-          </button>
+        <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 p-1">
+          <Globe className="ml-1 hidden h-4 w-4 text-indigo-400 sm:block" />
+          {(['ka', 'en', 'de'] as const).map((lang) => (
+            <button
+              key={lang}
+              type="button"
+              onClick={() => switchLanguage(lang)}
+              className={`rounded px-2 py-1.5 text-xs font-bold uppercase transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none sm:px-3 sm:py-2 ${language === lang ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}
+              aria-pressed={language === lang}
+            >
+              {lang}
+            </button>
+          ))}
         </div>
 
         <button

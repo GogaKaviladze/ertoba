@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Impressum | Ertoba',
-  description: 'Angaben gemäß § 5 TMG — Ertoba Analytics / Anthronode.io',
+  description: 'Angaben gemäß § 5 TMG — Ertoba Analytics',
 }
 
 export default async function ImpressumPage() {
@@ -33,25 +33,25 @@ export default async function ImpressumPage() {
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">Angaben gemäß § 5 TMG</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Anthronode.io<br />
-              Goga Kaviladze<br />
-              [Adresse wird ergänzt]<br />
-              Deutschland
+              Ertoba Analytics<br />
+              Ertoba Team<br />
+              [Address on file]<br />
+              Germany
             </p>
           </div>
 
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">Kontakt</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
-              E-Mail: hello@anthronode.io
+              E-Mail: contact@ertoba.io
             </p>
           </div>
 
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Goga Kaviladze<br />
-              hello@anthronode.io
+              Ertoba Team<br />
+              contact@ertoba.io
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default async function ImpressumPage() {
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">English Note</h2>
             <p className="text-sm text-slate-400 leading-relaxed">
-              This imprint page is required by German law (§ 5 TMG). The responsible entity for Ertoba Analytics is Anthronode.io. For inquiries, contact hello@anthronode.io.
+              This imprint page is required by German law (§ 5 TMG). The responsible entity for Ertoba Analytics is Ertoba Analytics. For inquiries, contact contact@ertoba.io.
             </p>
           </div>
         </div>

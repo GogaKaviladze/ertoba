@@ -24,7 +24,7 @@ export function ContactForm({ dict }: { dict: Dict }) {
     const form = e.currentTarget
     const data = new FormData(form)
 
-    await fetch('https://formsubmit.co/ajax/hello@anthronode.io', {
+    await fetch('https://formsubmit.co/ajax/contact@ertoba.io', {
       method: 'POST',
       headers: { Accept: 'application/json' },
       body: data,

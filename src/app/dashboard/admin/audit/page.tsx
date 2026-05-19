@@ -2,7 +2,7 @@ import prisma from '@/lib/prisma'
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
-const ADMIN_EMAIL = 'goga.kaviladze@anthronode.io'
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? '[your-admin-email@example.com]'
 
 export default async function AuditLogPage() {
   const supabase = await createClient()

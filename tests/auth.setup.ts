@@ -6,7 +6,7 @@ const authFile = path.join(__dirname, '../playwright/.auth/user.json');
 setup('authenticate', async ({ page }) => {
   await page.goto('/login');
 
-  const email = 'social@anthronode.io';
+  const email = 'test@example.com';
   const password = 'TestPassword123!';
 
   // Select the B2B (Organization) account type first, then try to login
