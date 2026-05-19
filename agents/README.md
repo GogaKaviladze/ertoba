@@ -1,6 +1,8 @@
-# Ertoba Analytics — LangGraph Agent
+# Ertoba Analytics — LangGraph Agent (Phase 3 Parking)
 
-A multi-step LangGraph agent that analyses Georgian media articles from `Propaganda.json` and produces a structured propaganda-framing report.
+**Status:** Not implemented yet. Planned for Phase 3 (Scale).
+
+A multi-step LangGraph agent that will analyze Georgian media articles from `Propaganda.json` and produce a structured propaganda-framing report.
 
 ---
 
