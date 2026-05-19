@@ -1,17 +1,17 @@
 # Database Migration Pipeline
 
-## Überblick
+## Overview
 
-Diese Dokumentation beschreibt die automatisierte Datenbank-Migrationspipeline für die Ertoba Analytics Production Database (Supabase).
+This documentation describes the automated database migration pipeline for the Ertoba Analytics Production Database (Supabase).
 
 ---
 
-## Architektur
+## Architecture
 
 ```
 git push (main branch)
     ↓
-    Prisma migrations/** Änderungen erkannt
+    Prisma migrations/** changes detected
     ↓
 GitHub Action db-migrate.yml
     ↓
@@ -20,137 +20,137 @@ npx prisma migrate deploy (via Supabase Session Pooler, Port 5432)
 Production Database (dzcdsmcduywsncdkjnpx)
 ```
 
-**Wichtig:** Die Pipeline nutzt den **Supabase Session Pooler** (`aws-0-<region>.pooler.supabase.com:5432`), nicht die direkte PostgreSQL-Verbindung zu `db.<ref>.supabase.co:5432`. Der Session Pooler ist aus GitHub Actions erreichbar und unterstützt DDL mit Prepared Statements (anders als der Transaction Pooler auf Port 6543, den die App nutzt).
+**Important:** The pipeline uses the **Supabase Session Pooler** (`aws-0-<region>.pooler.supabase.com:5432`), not the direct PostgreSQL connection to `db.<ref>.supabase.co:5432`. The Session Pooler is accessible from GitHub Actions and supports DDL with Prepared Statements (unlike the Transaction Pooler on Port 6543, which the app uses).
 
 ---
 
-## Komponenten
+## Components
 
 ### 1. GitHub Workflow (`.github/workflows/db-migrate.yml`)
 
-**Trigger:**
-- Push zu `main` Branch
-- Änderungen im Pfad `ertoba-analytics-dashboard/prisma/migrations/**`
-- Environment: `production` (benötigt manuelles Approval bei jedem Run)
+**Triggers:**
+- Push to `main` branch
+- Changes in path `ertoba-analytics-dashboard/prisma/migrations/**`
+- Environment: `production` (requires manual approval on each run)
 
-**Secrets erforderlich (GitHub Repo → Settings → Secrets and variables → Actions):**
-| Secret | Quelle | Beschreibung |
+**Required Secrets (GitHub Repo → Settings → Secrets and variables → Actions):**
+| Secret | Source | Description |
 |--------|--------|-------------|
-| `DATABASE_URL_MIGRATIONS` | Supabase Dashboard → Project Settings → Database → Connection String → **Session pooler** Tab | Vollständige Postgres-URL mit Password, z.B. `postgresql://postgres.<ref>:<pw>@aws-0-<region>.pooler.supabase.com:5432/postgres` |
+| `DATABASE_URL_MIGRATIONS` | Supabase Dashboard → Project Settings → Database → Connection String → **Session pooler** Tab | Full Postgres URL with password, e.g., `postgresql://postgres.<ref>:<pw>@aws-0-<region>.pooler.supabase.com:5432/postgres` |
 
-> **Achtung:** Es muss der **Session Pooler** (Port 5432 am Pooler-Host) sein — nicht der Transaction Pooler (6543, kein DDL) und nicht die Direct Connection zu `db.<ref>.supabase.co:5432` (aus GitHub Actions unerreichbar).
+> **Warning:** Must be the **Session Pooler** (Port 5432 on pooler host) — not the Transaction Pooler (6543, no DDL) and not the Direct Connection to `db.<ref>.supabase.co:5432` (unreachable from GitHub Actions).
 
-### 2. Prisma Schema & Migrationen
+### 2. Prisma Schema & Migrations
 
-**Pfad:** `ertoba-analytics-dashboard/prisma/`
+**Path:** `ertoba-analytics-dashboard/prisma/`
 
 ```
 prisma/
-├── schema.prisma              # Datenmodelle + Generatoren
-├── migration_lock.toml        # Prisma Lock für Validierung
+├── schema.prisma              # Data models + generators
+├── migration_lock.toml        # Prisma lock for validation
 └── migrations/
     └── 20260411192700_rls_surveycompletion_policies/
-        └── migration.sql      # Idempotente SQL-Statements
+        └── migration.sql      # Idempotent SQL statements
 ```
 
-**migration_lock.toml** — Validiert dass das migrations/ Verzeichnis korrekt struktur ist. **Muss committed sein!**
+**migration_lock.toml** — Validates that the migrations/ directory is correctly structured. **Must be committed!**
 
-**Schema-Anforderung:**
+**Schema Requirement:**
 ```prisma
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")  // wird von Supabase CLI gefüllt
+  url      = env("DATABASE_URL")  // filled by Supabase CLI
 }
 ```
 
 ---
 
-## Migrationen schreiben
+## Writing Migrations
 
-### Regel: Idempotente Statements
+### Rule: Idempotent Statements
 
-Jede Migration muss mehrmals sicher ausgeführt werden können:
+Each migration must be safely executable multiple times:
 
 ```sql
--- ❌ NICHT idempotent (schlägt fehl bei 2. Run)
+-- ❌ NOT idempotent (fails on 2nd run)
 CREATE POLICY select_own_user ON "User" FOR SELECT USING (auth.uid()::uuid = "id");
 
--- ✅ Idempotent (sicher mehrfach ausführbar)
+-- ✅ Idempotent (safe to run multiple times)
 DROP POLICY IF EXISTS select_own_user ON "User";
 CREATE POLICY select_own_user ON "User" FOR SELECT USING (auth.uid()::uuid = "id");
 ```
 
-### Migration erstellen
+### Creating a Migration
 
 ```bash
 cd ertoba-analytics-dashboard
 
-# 1. Schema ändern (schema.prisma)
+# 1. Modify schema (schema.prisma)
 vim prisma/schema.prisma
 
-# 2. Migration generieren
-npx prisma migrate dev --name <beschreibung>
-# z.B. npx prisma migrate dev --name add_rls_policies
+# 2. Generate migration
+npx prisma migrate dev --name <description>
+# e.g., npx prisma migrate dev --name add_rls_policies
 
-# 3. Überprüfen
+# 3. Review
 cat prisma/migrations/<timestamp>_<name>/migration.sql
 
-# 4. Lokal testen (mit Docker PostgreSQL oder lokaler Dev-DB)
-npm run test:db  # falls vorhanden
+# 4. Test locally (with Docker PostgreSQL or local dev DB)
+npm run test:db  # if available
 
 # 5. Commit & Push
 git add prisma/migrations/
 git add prisma/schema.prisma
-git commit -m "migration: <beschreibung>"
+git commit -m "migration: <description>"
 git push
 ```
 
-Danach wird GitHub Action automatisch ausgelöst.
+After this, the GitHub Action is automatically triggered.
 
 ---
 
-## Lokale Entwicklung
+## Local Development
 
 ### Setup
 
 ```bash
 cd ertoba-analytics-dashboard
 
-# 1. .env.local mit lokaler DB
+# 1. .env.local with local DB
 DATABASE_URL=postgresql://user:password@localhost:5432/ertoba_dev
 
-# 2. Migrations anwenden
+# 2. Apply migrations
 npx prisma migrate dev
 
-# 3. (Optional) Seed-Daten
+# 3. (Optional) Seed data
 npx prisma db seed
 ```
 
-### Vergebene Migrationen zurückrollen
+### Rolling Back Applied Migrations
 
 ```bash
-# Letzten Schritt rückgängig machen (dev mode nur)
+# Undo the last step (dev mode only)
 npx prisma migrate resolve --rolled-back 20260411192700_rls_surveycompletion_policies
 
-# Neu erstellen
+# Recreate
 npx prisma migrate dev
 ```
 
-⚠️ **Production:** `migrate resolve` ist nicht verfügbar. Nur vorwärts!
+⚠️ **Production:** `migrate resolve` is not available. Only forward!
 
 ---
 
 ## Troubleshooting
 
-### GitHub Action schlägt fehl: "Can't reach database server"
+### GitHub Action fails: "Can't reach database server"
 
-**Ursache:** GitHub Actions hat keinen direkten Port 5432 Zugang zu Supabase  
-**Lösung:** Wird durch `supabase db push` (Management API) behoben ✓
+**Cause:** GitHub Actions has no direct port 5432 access to Supabase  
+**Solution:** Fixed by `supabase db push` (Management API) ✓
 
-### Fehler: "migration_lock.toml missing"
+### Error: "migration_lock.toml missing"
 
-**Ursache:** Migration-Verzeichnis wird von Prisma nicht erkannt  
-**Lösung:**
+**Cause:** Migration directory is not recognized by Prisma  
+**Solution:**
 ```bash
 touch prisma/migration_lock.toml
 cat > prisma/migration_lock.toml << 'EOF'
@@ -159,21 +159,21 @@ EOF
 git add prisma/migration_lock.toml
 ```
 
-### Fehler: "DATABASE_URL not set"
+### Error: "DATABASE_URL not set"
 
-**Ursache:** Supabase CLI konnte Umgebungsvariable nicht setzen  
-**Lösung:** Überprüfe dass `schema.prisma` `url = env("DATABASE_URL")` hat
+**Cause:** Supabase CLI could not set the environment variable  
+**Solution:** Verify that `schema.prisma` contains `url = env("DATABASE_URL")`
 
-### Fehler: "Permission denied: CREATE POLICY"
+### Error: "Permission denied: CREATE POLICY"
 
-**Ursache:** Database-Benutzer hat keine Superuser-Rechte
-**Lösung:** `supabase db push` authentifiziert sich mit dem `SUPABASE_ACCESS_TOKEN` als Projekt-Owner — Token-Owner prüfen.
+**Cause:** Database user lacks superuser privileges  
+**Solution:** `supabase db push` authenticates with `SUPABASE_ACCESS_TOKEN` as project owner — verify token owner.
 
-### Fehler: "migration already applied" oder Migration fehlt in `_prisma_migrations`
+### Error: "migration already applied" or Migration missing from `_prisma_migrations`
 
-**Ursache:** Eine Migration wurde manuell via SQL Editor ausgeführt, aber nicht in der Prisma Migration History registriert. `supabase db push` versucht sie erneut anzuwenden.
+**Cause:** A migration was manually applied via SQL Editor but not registered in Prisma Migration History. `supabase db push` attempts to reapply it.
 
-**Lösung:** Einmalig im Supabase SQL Editor registrieren:
+**Solution:** Register once in the Supabase SQL Editor:
 
 ```sql
 INSERT INTO "_prisma_migrations" (
@@ -183,7 +183,7 @@ INSERT INTO "_prisma_migrations" (
   gen_random_uuid(),
   'manual',
   now(),
-  '20260411192700_rls_surveycompletion_policies',  -- Ordnername der Migration
+  '20260411192700_rls_surveycompletion_policies',  -- Directory name of the migration
   'Applied manually via SQL Editor',
   NULL,
   now(),
@@ -191,7 +191,7 @@ INSERT INTO "_prisma_migrations" (
 );
 ```
 
-`migration_name` muss exakt dem Ordnernamen unter `prisma/migrations/` entsprechen.
+The `migration_name` must exactly match the directory name under `prisma/migrations/`.
 
 ---
 
@@ -199,24 +199,24 @@ INSERT INTO "_prisma_migrations" (
 
 ### ✅ Do's
 
-- ✅ Migrationen sind **unveränderlich** (nie ändern, nur neue erstellen)
-- ✅ Idempotente Statements (`IF NOT EXISTS`, `DROP IF EXISTS`)
-- ✅ Aussagekräftige Namen: `20260414_add_user_email_unique`
-- ✅ Dokumentation in SQL-Kommentaren
-- ✅ RLS (Row Level Security) zuerst planen, dann implementieren
-- ✅ In `schema.prisma` entwerfen, dann `prisma migrate dev`
+- ✅ Migrations are **immutable** (never modify, only create new ones)
+- ✅ Idempotent statements (`IF NOT EXISTS`, `DROP IF EXISTS`)
+- ✅ Meaningful names: `20260414_add_user_email_unique`
+- ✅ Documentation in SQL comments
+- ✅ Plan RLS (Row Level Security) first, then implement
+- ✅ Design in `schema.prisma`, then `prisma migrate dev`
 
 ### ❌ Don'ts
 
-- ❌ Alte Migrationen editieren
-- ❌ `prisma migrate reset` in Production (LÖSCHT ALLES!)
-- ❌ Nicht-idempotente Statements
-- ❌ `prisma db push` verwenden (nur Migration über `migrate deploy`)
-- ❌ Credentials in Migrations-Code
+- ❌ Modify old migrations
+- ❌ `prisma migrate reset` in Production (DELETES EVERYTHING!)
+- ❌ Non-idempotent statements
+- ❌ Use `prisma db push` (only migrate via `migrate deploy`)
+- ❌ Credentials in migration code
 
 ---
 
-## Referenzen
+## References
 
 - [Prisma Migrations Docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)
 - [Supabase CLI Docs](https://supabase.com/docs/reference/cli/supabase-db-push)

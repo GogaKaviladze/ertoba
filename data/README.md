@@ -1,5 +1,5 @@
-# Datenablage für das Dashboard
+# Data Storage for the Dashboard
 
-Hier können große JSON-, CSV- oder andere Datendateien für Analysen und Visualisierungen abgelegt werden.
+This directory stores large JSON, CSV, and other data files for analysis and visualization.
 
-Beispiel: `Propaganda.json`
+Example: `Propaganda.json`
