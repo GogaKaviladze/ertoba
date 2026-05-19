@@ -43,7 +43,7 @@ export default async function ImpressumPage() {
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">Kontakt</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
-              E-Mail: contact@ertoba.io
+              E-Mail: contact@ertoba.info
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default async function ImpressumPage() {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)</h2>
             <p className="text-sm text-slate-300 leading-relaxed">
               Ertoba Team<br />
-              contact@ertoba.io
+              contact@ertoba.info
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default async function ImpressumPage() {
           <div>
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-400">English Note</h2>
             <p className="text-sm text-slate-400 leading-relaxed">
-              This imprint page is required by German law (§ 5 TMG). The responsible entity for Ertoba Analytics is Ertoba Analytics. For inquiries, contact contact@ertoba.io.
+              This imprint page is required by German law (§ 5 TMG). The responsible entity for Ertoba Analytics is Ertoba Analytics. For inquiries, contact contact@ertoba.info.
             </p>
           </div>
         </div>

@@ -290,7 +290,7 @@ export function BigFive({ initialScores = null }: Props) {
                 {t('b2bCtaDesc')}
               </p>
               <a
-                href="mailto:contact@ertoba.io"
+                href="mailto:contact@ertoba.info"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white font-medium px-5 py-2.5 rounded-xl transition-all active:scale-95 border border-white/20 text-sm"
               >
                 {t('b2bCtaButton')} <ArrowRight className="h-4 w-4" />

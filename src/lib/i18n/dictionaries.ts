@@ -212,7 +212,7 @@ export const ka = {
   imprintPageTitle: 'იმპრესუმი',
   privacyIntro: 'ეს კონფიდენციალურობის პოლიტიკა განმარტავს, თუ რა პერსონალურ მონაცემებს ვაგროვებთ, როგორ ვიყენებთ მათ და რა უფლებები გაქვთ GDPR-ის შესაბამისად.',
   privacySection1Title: '1. მონაცემთა დამმუშავებელი',
-  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.info',
   privacySection2Title: '2. რა მონაცემებს ვაგროვებთ',
   privacySection2Body: 'ელ-ფოსტის მისამართი (Supabase Auth-ის მეშვეობით), ფსიქოლოგიური შეფასებების პასუხები, ენის პრეფერენცია (cookie: ertoba_lang).',
   privacySection3Title: '3. სამართლებრივი საფუძველი',
@@ -224,9 +224,9 @@ export const ka = {
   privacySection6Title: '6. Cookies',
   privacySection6Body: 'ertoba_lang cookie გამოიყენება ენის პრეფერენციის შენახვისთვის. ეს არის აუცილებელი cookie — ბანერი არ სჭირდება.',
   privacySection7Title: '7. თქვენი უფლებები',
-  privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — contact@ertoba.io-ზე მიწერით.',
+  privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — contact@ertoba.info-ზე მიწერით.',
   privacySection8Title: '8. კონტაქტი',
-  privacySection8Body: 'contact@ertoba.io',
+  privacySection8Body: 'contact@ertoba.info',
 };
 
 export const en = {
@@ -441,7 +441,7 @@ export const en = {
   imprintPageTitle: 'Imprint',
   privacyIntro: 'This Privacy Policy explains what personal data Ertoba Analytics collects, how we use it, and your rights under the GDPR.',
   privacySection1Title: '1. Data Controller',
-  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.info',
   privacySection2Title: '2. Data We Collect',
   privacySection2Body: 'Email address (via Supabase Auth), psychological assessment responses, language preference (cookie: ertoba_lang).',
   privacySection3Title: '3. Legal Basis',
@@ -453,9 +453,9 @@ export const en = {
   privacySection6Title: '6. Cookies',
   privacySection6Body: 'The ertoba_lang cookie stores your language preference. This is a strictly necessary cookie — no consent banner is required.',
   privacySection7Title: '7. Your Rights',
-  privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at contact@ertoba.io.',
+  privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at contact@ertoba.info.',
   privacySection8Title: '8. Contact',
-  privacySection8Body: 'contact@ertoba.io',
+  privacySection8Body: 'contact@ertoba.info',
 };
 
 export const de = {
@@ -670,7 +670,7 @@ export const de = {
   imprintPageTitle: 'Impressum',
   privacyIntro: 'Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten Ertoba Analytics erhebt, wie wir sie verwenden und welche Rechte dir nach der DSGVO zustehen.',
   privacySection1Title: '1. Verantwortlicher',
-  privacySection1Body: 'Ertoba Analytics · contact@ertoba.io',
+  privacySection1Body: 'Ertoba Analytics · contact@ertoba.info',
   privacySection2Title: '2. Erhobene Daten',
   privacySection2Body: 'E-Mail-Adresse (über Supabase Auth), Antworten auf psychologische Assessments, Sprachpräferenz (Cookie: ertoba_lang).',
   privacySection3Title: '3. Rechtsgrundlage',
@@ -682,9 +682,9 @@ export const de = {
   privacySection6Title: '6. Cookies',
   privacySection6Body: 'Das Cookie ertoba_lang speichert deine Sprachpräferenz. Es handelt sich um ein technisch notwendiges Cookie — kein Cookie-Banner erforderlich.',
   privacySection7Title: '7. Deine Rechte',
-  privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — schreib uns an contact@ertoba.io.',
+  privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — schreib uns an contact@ertoba.info.',
   privacySection8Title: '8. Kontakt',
-  privacySection8Body: 'contact@ertoba.io',
+  privacySection8Body: 'contact@ertoba.info',
 };
 
 export function isLanguage(value: string | null | undefined): value is Language {

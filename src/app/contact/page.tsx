@@ -29,7 +29,7 @@ export default async function ContactPage() {
         </Link>
 
         <h1 className="mb-1 text-2xl font-bold tracking-tight text-white">{d.contactPageTitle}</h1>
-        <p className="mb-8 text-sm text-slate-400">contact@ertoba.io</p>
+        <p className="mb-8 text-sm text-slate-400">contact@ertoba.info</p>
 
         <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-md">
           <ContactForm dict={{
