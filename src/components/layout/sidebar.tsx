@@ -18,7 +18,6 @@ const navigation = [
   { key: 'navDashboard' as const, href: '/dashboard', icon: LayoutDashboard },
   { key: 'navAssessments' as const, href: '/dashboard/assessments', icon: Brain },
   { key: 'navSurveys' as const, href: '/dashboard/surveys', icon: ClipboardList, badge: 2 },
-  { key: 'navMarket' as const, href: '/dashboard/market', icon: ShoppingBag },
   { key: 'navProfile' as const, href: '/dashboard/profile', icon: User },
 ]
 
@@ -55,13 +54,24 @@ export function Sidebar({
                         {labels[item.key]}
                       </div>
                       {item.badge ? (
-                        <span className="flex h-5 items-center justify-center rounded-full bg-indigo-500 px-2 text-[10px] font-bold text-white">
+                        <span className="flex h-5 items-center justify-center rounded-full bg-teal-500 px-2 text-[10px] font-bold text-white">
                           {item.badge}
                         </span>
                       ) : null}
                     </Link>
                   </li>
                 ))}
+
+                {/* Market — Coming Soon */}
+                <li>
+                  <div className="flex justify-between items-center gap-x-3 rounded-lg p-3 text-sm/6 font-medium text-slate-600 cursor-not-allowed">
+                    <div className="flex items-center gap-3">
+                      <ShoppingBag className="h-5 w-5 shrink-0" aria-hidden="true" />
+                      {labels.navMarket}
+                    </div>
+                    <span className="text-[10px] text-slate-700 font-medium">Soon</span>
+                  </div>
+                </li>
               </ul>
             </li>
             <li>
