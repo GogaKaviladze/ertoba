@@ -44,21 +44,19 @@ const MOCK_REPORT = {
     "Run 'python run_agent.py' in Phase 3 to generate real reports from Propaganda.json",
 }
 
-export async function GET() {
-  let agentReport = MOCK_REPORT
+const CACHE_HEADERS = {
+  'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+}
 
+export async function GET() {
   try {
     const report = await import('@/data/agent_report.json')
     if (report.default) {
-      agentReport = report.default
+      return NextResponse.json(report.default, { headers: CACHE_HEADERS })
     }
   } catch {
     // Fall back to mock if file doesn't exist (development)
   }
 
-  return NextResponse.json(agentReport, {
-    headers: {
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-    },
-  })
+  return NextResponse.json(MOCK_REPORT, { headers: CACHE_HEADERS })
 }
