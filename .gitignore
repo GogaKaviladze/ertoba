@@ -36,3 +36,6 @@ supabase/.temp/
 *.tsbuildinfo
 next-env.d.ts
 /src/generated/prisma
+
+# Private Claude.md
+Claude.md
