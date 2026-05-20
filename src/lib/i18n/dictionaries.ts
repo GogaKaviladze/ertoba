@@ -85,9 +85,9 @@ export const ka = {
   logScaleHint: 'ზოლების სიგანე ლოგარითმული სკალით — ძლიერი გამონაკლისები შედარებადია სხვა სიტყვებთან.',
 
   // --- LANDING PAGE ---
-  landingHeroTitle: 'აღმოაჩინე შენი ნამდვილი მე.',
-  landingHeroTitleAccent: 'Big Five + ბერნაუთი + OSINT.',
-  landingHeroSubtitle: 'შეიცანი შენი პიროვნული პროფილი, პროფესიული ძლიერი მხარეები და სხვა მრავალი საინტერესო ფაქტი შენს შესახებ. 100% ანონიმური, GDPR-თან სრულად შესაბამისი, ელფოსტის გარეშე.',
+  landingHeroTitle: 'აღმოაჩინე შენი თავი.',
+  landingHeroTitleAccent: 'პიროვნების ტესტი, Burnout, და მრავალი სხვა.',
+  landingHeroSubtitle: 'შეიცანი შენი პიროვნული პროფილი, პროფესიული ძლიერი მხარეები და დააგროვე ERTC კოინები. 100% ანონიმური, GDPR-თან სრულად შესაბამისი, ელფოსტის გარეშე.',
   landingStatArticles: '47 000+',
   landingStatArticlesLabel: 'გაანალიზებული სტატია',
   landingStatAssessments: '5+',
@@ -345,9 +345,9 @@ export const en = {
   logScaleHint: 'Bar widths use a logarithmic scale — extreme outliers remain visually comparable.',
 
   // --- LANDING PAGE ---
-  landingHeroTitle: 'Discover Your True Self.',
-  landingHeroTitleAccent: 'Big Five + Burnout + open source Intelligence.',
-  landingHeroSubtitle: 'Understand your personality profile, career strengths, and many other interesting facts about yourself. 100% anonymous, GDPR-compliant, no email required.',
+  landingHeroTitle: 'Discover Yourself.',
+  landingHeroTitleAccent: 'Personality Test, Burnout, and much more.',
+  landingHeroSubtitle: 'Get to know your personality profile, professional strengths, and earn ERTC coins. 100% anonymous, fully GDPR-compliant, no email required.',
   landingStatArticles: '47,000+',
   landingStatArticlesLabel: 'Articles Analyzed',
   landingStatAssessments: '5+',
@@ -606,8 +606,8 @@ export const de = {
 
   // --- LANDING PAGE ---
   landingHeroTitle: 'Entdecke dich selbst.',
-  landingHeroTitleAccent: 'Big Five + Burnout-Index + Open-Source-Intelligence.',
-  landingHeroSubtitle: 'Verstehe dein Persönlichkeitsprofil, deine Karriere-Stärken und viele weitere interessante Fakten über dich. 100% anonym, DSGVO-konform, keine E-Mail nötig.',
+  landingHeroTitleAccent: 'Persönlichkeitstest, Burnout und vieles mehr.',
+  landingHeroSubtitle: 'Lerne dein Persönlichkeitsprofil, berufliche Stärken kennen und sammle ERTC-Coins. 100% anonym, vollständig DSGVO-konform, keine E-Mail nötig.',
   landingStatArticles: '47.000+',
   landingStatArticlesLabel: 'Analysierte Artikel',
   landingStatAssessments: '5+',
