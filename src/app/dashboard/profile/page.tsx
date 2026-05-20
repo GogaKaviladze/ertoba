@@ -13,6 +13,7 @@ function buildProfileIdentity(email: string | undefined, userId: string) {
       displayEmail: `ID ${userId.slice(0, 8)}`,
       tierLabel: 'Secure Session',
       initials: 'EU',
+      isTokenUser: true,
     }
   }
 
@@ -23,6 +24,7 @@ function buildProfileIdentity(email: string | undefined, userId: string) {
       displayEmail: tokenLabel,
       tierLabel: 'Zero-Knowledge',
       initials: 'PI',
+      isTokenUser: true,
     }
   }
 
@@ -40,6 +42,7 @@ function buildProfileIdentity(email: string | undefined, userId: string) {
     displayEmail: email,
     tierLabel: 'Verified Account',
     initials,
+    isTokenUser: false,
   }
 }
 
@@ -89,14 +92,16 @@ export default async function ProfilePage() {
                 </span>
               </div>
               
-              <div className="pt-6 flex flex-col sm:flex-row justify-center sm:justify-start gap-3">
-                <Button className="h-10 px-6 bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20 font-semibold border-0">
-                  Edit Profile
-                </Button>
-                <Button variant="outline" className="h-10 px-6 border-indigo-500/30 bg-indigo-500/5 text-slate-300 hover:bg-indigo-500/10 hover:text-white font-semibold transition-all">
-                  Change Password
-                </Button>
-              </div>
+              {!profile.isTokenUser && (
+                <div className="pt-6 flex flex-col sm:flex-row justify-center sm:justify-start gap-3">
+                  <Button className="h-10 px-6 bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20 font-semibold border-0">
+                    Edit Profile
+                  </Button>
+                  <Button variant="outline" className="h-10 px-6 border-indigo-500/30 bg-indigo-500/5 text-slate-300 hover:bg-indigo-500/10 hover:text-white font-semibold transition-all">
+                    Change Password
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </CardContent>
