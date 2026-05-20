@@ -8,9 +8,13 @@ export const metadata = {
 }
 
 export default async function BigFivePage() {
-  const previousResult = await getAssessmentCompletion('BigFive')
-
-  const initialScores = previousResult as BigFiveScores | null
+  let initialScores: BigFiveScores | null = null
+  try {
+    const previousResult = await getAssessmentCompletion('BigFive')
+    initialScores = previousResult as BigFiveScores | null
+  } catch {
+    // DB unreachable (e.g. TLS issue in dev) — show the test without prior results
+  }
 
   return (
     <LanguageProvider>

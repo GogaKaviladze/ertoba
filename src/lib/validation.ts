@@ -50,7 +50,7 @@ export const purchaseRewardSchema = z.object({
 // assessments.ts
 // ---------------------------------------------------------------------------
 
-const ALLOWED_ASSESSMENT_TYPES = ['BigFive'] as const
+const ALLOWED_ASSESSMENT_TYPES = ['BigFive', 'Burnout'] as const
 
 export const saveAssessmentResultSchema = z.object({
   type: z.enum(ALLOWED_ASSESSMENT_TYPES, {
