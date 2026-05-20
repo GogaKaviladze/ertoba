@@ -135,7 +135,9 @@ export function Burnout({ initialScores = null }: Props) {
       await saveAssessmentResult('Burnout', newScores, 30)
       setScores(newScores)
       setIsTakingTest(false)
-    } catch {
+    } catch (error) {
+      console.error('Failed to save burnout assessment', error)
+      alert('Login to save your results!')
       setScores(newScores)
       setIsTakingTest(false)
     } finally {
