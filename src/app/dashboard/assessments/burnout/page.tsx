@@ -8,8 +8,13 @@ export const metadata = {
 }
 
 export default async function BurnoutPage() {
-  const previousResult = await getAssessmentCompletion('Burnout')
-  const initialScores = previousResult as BurnoutScores | null
+  let initialScores: BurnoutScores | null = null
+  try {
+    const previousResult = await getAssessmentCompletion('Burnout')
+    initialScores = previousResult as BurnoutScores | null
+  } catch {
+    // DB unreachable (e.g. TLS issue in dev) — show the test without prior results
+  }
 
   return (
     <LanguageProvider>
