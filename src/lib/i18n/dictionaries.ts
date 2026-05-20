@@ -227,6 +227,26 @@ export const ka = {
   privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — contact@ertoba.info-ზე მიწერით.',
   privacySection8Title: '8. კონტაქტი',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'ყოველდღიური გამოკითხვა',
+  surveyDailyDesc: 'დააკლასიფიცირე, როგორ არის ჩარჩოში მოქცეული ბოლოდროინდელი სათაურები — შენი პასუხები გვეხმარება მოდელების გაწვრთნაში.',
+  surveyDailyDuration: 'დაახ. 2 წუთი',
+  surveyStartButton: 'გამოკითხვის დაწყება',
+  surveyViewHistory: 'ისტორიის ნახვა',
+  surveyQuestionPrompt: 'რომელ ნარატივს ავრცელებს ეს სათაური?',
+  surveySubmit: 'შედეგების ნახვა',
+  surveySubmitting: 'ინახება...',
+  surveyResultTitle: 'შენი შედეგები',
+  surveyResultMatchLabel: 'დამთხვევა ჩვენს მოდელთან:',
+  surveyYouSaid: 'შენ თქვი',
+  surveyModelSaid: 'ჩვენი მოდელი',
+  surveyRewardEarned: 'მიღებულია +15 ETC',
+  surveyAlreadyDone: 'დღევანდელი გამოკითხვა უკვე დაასრულე. დაბრუნდი ხვალ!',
+  surveyBackToSurveys: 'გამოკითხვებში დაბრუნება',
+  surveyCalendarCompletedLabel: 'დასრულებული გამოკითხვები:',
+  surveyCalendarSelectDay: 'აირჩიე დასრულებული დღე პასუხების სანახავად.',
+  surveyCalendarNoData: 'ამ თვეში გამოკითხვა არ დაგისრულებია.',
 };
 
 export const en = {
@@ -456,6 +476,26 @@ export const en = {
   privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at contact@ertoba.info.',
   privacySection8Title: '8. Contact',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'Daily Feedback Survey',
+  surveyDailyDesc: 'Classify how recent Georgian headlines are framed — your answers help train our models.',
+  surveyDailyDuration: 'Est. 2 mins',
+  surveyStartButton: 'Start Survey',
+  surveyViewHistory: 'View history',
+  surveyQuestionPrompt: 'Which narrative does this headline push?',
+  surveySubmit: 'See Results',
+  surveySubmitting: 'Saving...',
+  surveyResultTitle: 'Your Results',
+  surveyResultMatchLabel: 'Matches with our model:',
+  surveyYouSaid: 'You said',
+  surveyModelSaid: 'Our model said',
+  surveyRewardEarned: '+15 ETC earned',
+  surveyAlreadyDone: 'You have already completed today’s survey. Come back tomorrow!',
+  surveyBackToSurveys: 'Back to Surveys',
+  surveyCalendarCompletedLabel: 'Surveys completed:',
+  surveyCalendarSelectDay: 'Select a completed day to see your answers.',
+  surveyCalendarNoData: 'No surveys completed this month.',
 };
 
 export const de = {
@@ -685,6 +725,26 @@ export const de = {
   privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — schreib uns an contact@ertoba.info.',
   privacySection8Title: '8. Kontakt',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'Tägliche Feedback-Umfrage',
+  surveyDailyDesc: 'Klassifiziere, wie aktuelle georgische Schlagzeilen gerahmt werden — deine Antworten helfen, unsere Modelle zu trainieren.',
+  surveyDailyDuration: 'ca. 2 Min.',
+  surveyStartButton: 'Umfrage starten',
+  surveyViewHistory: 'Verlauf ansehen',
+  surveyQuestionPrompt: 'Welches Narrativ verbreitet diese Schlagzeile?',
+  surveySubmit: 'Ergebnisse ansehen',
+  surveySubmitting: 'Wird gespeichert...',
+  surveyResultTitle: 'Deine Ergebnisse',
+  surveyResultMatchLabel: 'Übereinstimmungen mit unserem Modell:',
+  surveyYouSaid: 'Du sagtest',
+  surveyModelSaid: 'Unser Modell sagte',
+  surveyRewardEarned: '+15 ETC erhalten',
+  surveyAlreadyDone: 'Du hast die heutige Umfrage bereits abgeschlossen. Komm morgen wieder!',
+  surveyBackToSurveys: 'Zurück zu den Umfragen',
+  surveyCalendarCompletedLabel: 'Abgeschlossene Umfragen:',
+  surveyCalendarSelectDay: 'Wähle einen abgeschlossenen Tag, um deine Antworten zu sehen.',
+  surveyCalendarNoData: 'In diesem Monat keine Umfragen abgeschlossen.',
 };
 
 export function isLanguage(value: string | null | undefined): value is Language {
