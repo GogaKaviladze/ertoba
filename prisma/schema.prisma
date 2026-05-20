@@ -20,6 +20,7 @@ model User {
   createdAt      DateTime           @default(now())
   completions    SurveyCompletion[]
   transactions   Transaction[]
+  dailyFeedback  DailyFeedback[]
 }
 
 model Assessment {
@@ -102,4 +103,19 @@ model DailyPulse {
   societal        Int      @default(0) // როგორ გვყოფენ
   geopolitical    Int      @default(0) // გავლენები და ეკლესია
   createdAt       DateTime @default(now())
+}
+
+model DailyFeedback {
+  id          String   @id @default(uuid())
+  userId      String
+  surveyDate  DateTime          // UTC midnight of the survey day
+  responses   Json              // FeedbackResponseItem[] — see src/app/actions/dailyFeedback.ts
+  matchCount  Int               // 0–3: picks that matched the model's dominantFraming
+  earnedCoins Int      @default(15)
+  completedAt DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, surveyDate])
+  @@index([userId])
 }
