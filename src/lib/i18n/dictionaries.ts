@@ -2,7 +2,7 @@ export type Language = 'ka' | 'en' | 'de'
 
 export const ka = {
   // --- COMMON / BRAND ---
-  badge: 'კონფიდენციალურობაზე ორიენტირებული პლატფორმა · Ertoba Analytics',
+  badge: 'Open Source Intelligence · Ertoba Analytics',
   bigFiveTitle: 'Big Five Assessment',
   bigFiveDesc: 'პიროვნული თვისებების სამეცნიერო სტანდარტი. ზომავს ღიაობას, კეთილსინდისიერებას, ექსტრავერსიას, თანხმობას და ნევროტიზმს.',
   startAssessment: 'ტესტის დაწყება',
@@ -262,7 +262,7 @@ export const ka = {
 
 export const en = {
   // --- COMMON / BRAND ---
-  badge: 'Privacy-First Platform · Ertoba Analytics',
+  badge: 'Open Source Intelligence · Ertoba Analytics',
   bigFiveTitle: 'Big Five Assessment',
   bigFiveDesc: 'The scientific gold standard for personality testing. Measures Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.',
   startAssessment: 'Start Assessment',
@@ -522,7 +522,7 @@ export const en = {
 
 export const de = {
   // --- COMMON / BRAND ---
-  badge: 'Datenschutz zuerst · Ertoba Analytics',
+  badge: 'Open Source Intelligence · Ertoba Analytics',
   bigFiveTitle: 'Big Five Persönlichkeitstest',
   bigFiveDesc: 'Der wissenschaftliche Goldstandard für Persönlichkeitstests. Misst Offenheit, Gewissenhaftigkeit, Extraversion, Verträglichkeit und Neurotizismus.',
   startAssessment: 'Test starten',
