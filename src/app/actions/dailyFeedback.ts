@@ -111,7 +111,7 @@ export async function submitDailyFeedback(picks: { articleId: string; userFramin
       articleId: article.id,
       headline: article.headline ?? '',
       sourcePublisher: article.sourcePublisher,
-      userFraming: pick.userFraming as Framing,
+      userFraming: pick.userFraming,
       modelFraming,
     })
   }

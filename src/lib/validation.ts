@@ -6,6 +6,7 @@
  */
 
 import { z } from 'zod'
+import { FRAMINGS } from '@/lib/framing'
 
 // ---------------------------------------------------------------------------
 // Reusable primitives
@@ -109,9 +110,7 @@ export const submitDailyFeedbackSchema = z.object({
     .array(
       z.object({
         articleId: z.string().uuid({ message: 'Invalid article ID.' }),
-        userFraming: z.enum(['institutional', 'psychological', 'societal', 'geopolitical'], {
-          error: 'Invalid framing choice.',
-        }),
+        userFraming: z.enum(FRAMINGS, { error: 'Invalid framing choice.' }),
       })
     )
     .length(3, { message: 'Exactly 3 answers are required.' }),
