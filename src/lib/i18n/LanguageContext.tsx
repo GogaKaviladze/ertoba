@@ -48,8 +48,14 @@ function getInitialLanguage(): Language {
   return isLanguage(cookieLanguage) ? cookieLanguage : 'ka'
 }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage)
+export function LanguageProvider({
+  children,
+  initialLanguage,
+}: {
+  children: React.ReactNode
+  initialLanguage?: Language
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage ?? getInitialLanguage)
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
