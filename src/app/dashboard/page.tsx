@@ -1,4 +1,4 @@
-import { Coins, ClipboardList, FileBarChart, ShoppingBag, ArrowRight } from 'lucide-react'
+import { ClipboardList, FileBarChart, ShoppingBag, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,14 +16,8 @@ export default async function DashboardOverview() {
       <WelcomeModal />
 
       {/* Header */}
-      <div className="flex items-center justify-between gap-3 pt-2">
+      <div className="pt-2">
         <h1 className="text-xl sm:text-2xl font-bold text-white truncate">{dictionary.welcome}</h1>
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shrink-0">
-          <Coins className="h-3.5 w-3.5 text-indigo-400" />
-          <span className="text-xs font-bold text-white">
-            1,250 <span className="text-slate-500 font-normal">ETC</span>
-          </span>
-        </div>
       </div>
 
       {/* PRIMARY ACTION */}
