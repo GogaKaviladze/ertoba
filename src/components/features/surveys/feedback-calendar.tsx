@@ -97,7 +97,7 @@ export function FeedbackCalendar() {
                   key={day}
                   type="button"
                   disabled={!completed}
-                  onClick={() => record && setSelected(record)}
+                  onClick={() => record && setSelected((cur) => (cur?.id === record.id ? null : record))}
                   data-testid={completed ? 'calendar-day-completed' : 'calendar-day'}
                   className={`aspect-square rounded-lg text-xs font-medium flex items-center justify-center transition-all ${
                     completed
