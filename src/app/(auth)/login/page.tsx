@@ -107,22 +107,16 @@ export default function LoginPage() {
                     <span className="text-xs text-slate-500">{t('loginAnonDesc')}</span>
                   </button>
 
-                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] space-y-1.5">
+                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02]">
                     <p className="text-[11px] text-slate-500 leading-relaxed">
-                      თუ თქვენი ორგანიზაციისთვის ეძებთ ანონიმურ გამოკითხვებს, დაგვიკავშირდით.
+                      {t('loginOrgContact')}{' '}
+                      <a
+                        href="mailto:ertoba@anthronode.io"
+                        className="text-indigo-400 hover:text-indigo-300 transition-colors font-mono"
+                      >
+                        ertoba@anthronode.io
+                      </a>
                     </p>
-                    <p className="text-[11px] text-slate-500 leading-relaxed">
-                      Benötigt Ihr Team anonyme Umfragen? Schreiben Sie uns.
-                    </p>
-                    <p className="text-[11px] text-slate-500 leading-relaxed">
-                      If your team needs anonymous surveys, let&apos;s talk.
-                    </p>
-                    <a
-                      href="mailto:ertoba@anthronode.io"
-                      className="block text-[11px] text-indigo-400 hover:text-indigo-300 transition-colors font-mono mt-2"
-                    >
-                      ertoba@anthronode.io
-                    </a>
                   </div>
                 </div>
               </div>
