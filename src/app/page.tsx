@@ -2,9 +2,15 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowRight, Brain, Building2, Globe, Lock, Shield, Users } from 'lucide-react'
+import { ArrowRight, Brain, Building2, Globe, Lock, Shield, Users, ChevronDown } from 'lucide-react'
 import { getDictionary, type Language } from '@/lib/i18n/dictionaries'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu'
 
 const LANG_LABELS: Record<Language, string> = { ka: 'ქართული', en: 'English', de: 'Deutsch' }
 const LANG_FLAGS: Record<Language, string> = { ka: '🇬🇪', en: '🇬🇧', de: '🇩🇪' }
@@ -35,24 +41,24 @@ export default function LandingPage() {
 
         <div className="flex items-center gap-3">
           {/* Language switcher */}
-          <div className="flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/10">
-            {(Object.keys(LANG_LABELS) as Language[]).map((l) => (
-              <button
-                key={l}
-                onClick={() => changeLang(l)}
-                aria-label={LANG_LABELS[l]}
-                title={LANG_LABELS[l]}
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
-                  lang === l
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                <span className="text-sm leading-none" aria-hidden="true">{LANG_FLAGS[l]}</span>
-                <span className="hidden sm:inline">{l.toUpperCase()}</span>
-              </button>
-            ))}
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full px-3 py-1.5 transition-all outline-none">
+              <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[lang]}</span>
+              <ChevronDown className="h-3 w-3 text-slate-400" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent side="bottom" align="end" className="min-w-0 w-auto bg-[#111] border-white/10">
+              {(Object.keys(LANG_FLAGS) as Language[]).map((l) => (
+                <DropdownMenuItem
+                  key={l}
+                  onClick={() => changeLang(l)}
+                  className={`flex items-center gap-2.5 px-3 py-2 cursor-pointer ${lang === l ? 'text-white' : 'text-slate-400'}`}
+                >
+                  <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[l]}</span>
+                  <span className="text-xs font-medium">{LANG_LABELS[l]}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <Link
             href="/login"
