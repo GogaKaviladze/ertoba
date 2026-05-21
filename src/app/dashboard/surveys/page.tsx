@@ -1,8 +1,18 @@
-import { ClipboardList, CheckCircle2 } from 'lucide-react'
+import { ClipboardList, CheckCircle2, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { cookies } from 'next/headers'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { getDictionary, isLanguage } from '@/lib/i18n/dictionaries'
 
-export default function SurveysPage() {
+export default async function SurveysPage() {
+  const cookieStore = await cookies()
+  const languageCookie = cookieStore.get('ertoba_lang')?.value
+  const language = isLanguage(languageCookie) ? languageCookie : 'ka'
+  const dictionary = getDictionary(language)
+
   return (
     <div className="space-y-8">
       <div>
@@ -18,21 +28,34 @@ export default function SurveysPage() {
                 <ClipboardList className="h-6 w-6 text-teal-400" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">Daily Feedback Survey</h3>
-                <p className="text-sm text-slate-400 mb-2">Share your thoughts on recent geopolitical events to help train our models.</p>
+                <h3 className="text-lg font-semibold text-white">{dictionary.surveyDailyTitle}</h3>
+                <p className="text-sm text-slate-400 mb-2">{dictionary.surveyDailyDesc}</p>
                 <div className="flex gap-2">
                   <span className="inline-flex items-center rounded-md bg-indigo-400/10 px-2 py-1 text-xs font-medium text-indigo-400 ring-1 ring-inset ring-indigo-400/30">
                     Reward: +15 ETC
                   </span>
                   <span className="inline-flex items-center rounded-md bg-slate-400/10 px-2 py-1 text-xs font-medium text-slate-400 ring-1 ring-inset ring-slate-400/20">
-                    Est. 2 mins
+                    {dictionary.surveyDailyDuration}
                   </span>
                 </div>
               </div>
             </div>
-            <Button className="w-full md:w-auto bg-indigo-500 hover:bg-indigo-600 border-0 shrink-0">
-              Start Survey
-            </Button>
+            <div className="flex flex-col items-stretch gap-2 w-full md:w-auto shrink-0">
+              <Link
+                href="/dashboard/surveys/daily"
+                data-testid="start-survey-link"
+                className={cn(buttonVariants({ size: 'lg' }), 'bg-indigo-500 hover:bg-indigo-600 text-white border-0')}
+              >
+                {dictionary.surveyStartButton} <ArrowRight className="ml-1.5 h-4 w-4" />
+              </Link>
+              <Link
+                href="/dashboard/surveys/history"
+                data-testid="survey-history-link"
+                className="text-center text-xs text-slate-400 hover:text-white transition-colors"
+              >
+                {dictionary.surveyViewHistory}
+              </Link>
+            </div>
           </CardContent>
         </Card>
 

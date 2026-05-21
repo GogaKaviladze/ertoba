@@ -26,3 +26,18 @@ test.describe('Daily Feedback Survey route', () => {
     await expect(nextBtn).toBeEnabled()
   })
 })
+
+test.describe('Surveys page wiring', () => {
+  test('Start Survey navigates to the daily survey route', async ({ page }) => {
+    await page.goto('/dashboard/surveys')
+    await page.getByTestId('start-survey-link').click()
+    await expect(page).toHaveURL(/\/dashboard\/surveys\/daily/)
+    await expect(page.getByTestId('daily-survey-page')).toBeVisible()
+  })
+
+  test('View history link navigates to the history route', async ({ page }) => {
+    await page.goto('/dashboard/surveys')
+    await page.getByTestId('survey-history-link').click()
+    await expect(page).toHaveURL(/\/dashboard\/surveys\/history/)
+  })
+})
