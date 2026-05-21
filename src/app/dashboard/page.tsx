@@ -16,9 +16,9 @@ export default async function DashboardOverview() {
       <WelcomeModal />
 
       {/* Header */}
-      <div className="flex items-center justify-between pt-2">
-        <h1 className="text-2xl font-bold text-white">{dictionary.welcome}</h1>
-        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
+      <div className="flex items-center justify-between gap-3 pt-2">
+        <h1 className="text-xl sm:text-2xl font-bold text-white truncate">{dictionary.welcome}</h1>
+        <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1.5 shrink-0">
           <Coins className="h-3.5 w-3.5 text-indigo-400" />
           <span className="text-xs font-bold text-white">
             1,250 <span className="text-slate-500 font-normal">ETC</span>
@@ -29,15 +29,15 @@ export default async function DashboardOverview() {
       {/* PRIMARY ACTION */}
       <Link href="/dashboard/surveys">
         <Card className="border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-slate-950/80 hover:from-teal-500/20 transition-all cursor-pointer group">
-          <CardContent className="p-6 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
+          <CardContent className="p-4 sm:p-6 flex items-center justify-between gap-3 sm:gap-4">
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <div className="p-3 bg-teal-500/15 rounded-xl shrink-0">
                 <ClipboardList className="h-6 w-6 text-teal-400" />
               </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <h2 className="text-lg font-bold text-white">{dictionary.activeTasks}</h2>
-                  <span className="bg-teal-500 text-white text-[11px] font-bold px-2 py-0.5 rounded-full">2</span>
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
+                  <h2 className="text-base sm:text-lg font-bold text-white">{dictionary.activeTasks}</h2>
+                  <span className="bg-teal-500 text-white text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0">2</span>
                 </div>
                 <p className="text-sm text-slate-400">Daily Feedback · +15 ETC</p>
               </div>

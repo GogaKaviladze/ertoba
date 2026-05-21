@@ -135,10 +135,11 @@ export default function LoginPage() {
                     type="text"
                     placeholder={t('loginKeyPlaceholder')}
                     required
+                    autoComplete="username"
                     className="pl-10 bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/50 h-11"
                   />
                 </div>
-                <input type="hidden" name="password" value="dummy" />
+                <input type="hidden" name="password" value="dummy" autoComplete="current-password" />
 
                 {error && <p className="text-xs text-red-400 text-center font-medium">{error}</p>}
                 {message && <p className="text-xs text-teal-400 text-center font-medium">{message}</p>}

@@ -84,13 +84,13 @@ test.describe('RLS: SurveyCompletion Access Control', () => {
 
     // Verify all returned transactions belong to User B
     const allUserBTransactions = transactions.every(
-      (t: any) => t.userId === userBId
+      (t: { userId: string }) => t.userId === userBId
     )
     expect(allUserBTransactions).toBe(true)
 
     // Verify User A's transactions are NOT in the list
     const hasUserATransactions = transactions.some(
-      (t: any) => t.userId === userAId
+      (t: { userId: string }) => t.userId === userAId
     )
     expect(hasUserATransactions).toBe(false)
   })

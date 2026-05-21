@@ -1,6 +1,8 @@
 import { Burnout, type BurnoutScores } from '@/components/features/assessments/burnout'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
+import { isLanguage } from '@/lib/i18n/dictionaries'
 import { getAssessmentCompletion } from '@/app/actions/assessments'
+import { cookies } from 'next/headers'
 
 export const metadata = {
   title: 'Burnout Assessment | Ertoba Analytics',
@@ -8,6 +10,10 @@ export const metadata = {
 }
 
 export default async function BurnoutPage() {
+  const cookieStore = await cookies()
+  const rawLang = cookieStore.get('ertoba_lang')?.value
+  const initialLanguage = isLanguage(rawLang) ? rawLang : 'ka'
+
   let initialScores: BurnoutScores | null = null
   try {
     const previousResult = await getAssessmentCompletion('Burnout')
@@ -17,7 +23,7 @@ export default async function BurnoutPage() {
   }
 
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={initialLanguage}>
       <div className="space-y-8">
         <Burnout initialScores={initialScores} />
       </div>
