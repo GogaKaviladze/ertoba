@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { LogOut, Menu, Coins, ChevronDown } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -25,6 +26,7 @@ const mobileNav = [
 
 export function Header({ balance = 0 }: { balance?: number }) {
   const { language, setLanguage } = useLanguage()
+  const router = useRouter()
 
   const handleLogout = async () => {
     const { createClient } = await import('@/lib/supabase/client')
@@ -83,7 +85,7 @@ export function Header({ balance = 0 }: { balance?: number }) {
             {(Object.keys(LANG_FLAGS) as Language[]).map((l) => (
               <DropdownMenuItem
                 key={l}
-                onClick={() => setLanguage(l)}
+                onClick={() => { setLanguage(l); router.refresh() }}
                 className={`flex items-center gap-2.5 px-3 py-2 cursor-pointer ${language === l ? 'text-white' : 'text-slate-400'}`}
               >
                 <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[l]}</span>
