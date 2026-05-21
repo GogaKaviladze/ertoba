@@ -12,11 +12,11 @@ export default async function DashboardOverview() {
   const dictionary = getDictionary(language)
 
   return (
-    <div className="space-y-6 pb-10 max-w-xl mx-auto">
+    <div className="space-y-10 pb-10 max-w-xl mx-auto">
       <WelcomeModal />
 
       {/* Header */}
-      <div className="pt-2">
+      <div className="pt-4">
         <h1 className="text-xl sm:text-2xl font-bold text-white truncate">{dictionary.welcome}</h1>
       </div>
 
@@ -42,7 +42,7 @@ export default async function DashboardOverview() {
       </Link>
 
       {/* Secondary */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-4">
         <Link href="/dashboard/reports" className="group">
           <Card className="border-white/5 bg-white/5 hover:bg-white/10 transition-colors h-full">
             <CardContent className="p-4 flex flex-col gap-3">
