@@ -10,7 +10,7 @@ const prismaClientSingleton = () => {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
   const pool = new Pool({ connectionString: process.env.DATABASE_URL })
-  const adapter = new PrismaPg(pool as any)
+  const adapter = new PrismaPg(pool as unknown as Parameters<typeof PrismaPg>[0])
   return new PrismaClient({ adapter })
 }
 
