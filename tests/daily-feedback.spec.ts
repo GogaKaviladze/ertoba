@@ -41,3 +41,18 @@ test.describe('Surveys page wiring', () => {
     await expect(page).toHaveURL(/\/dashboard\/surveys\/history/)
   })
 })
+
+test.describe('Survey history page', () => {
+  test('renders the calendar', async ({ page }) => {
+    await page.goto('/dashboard/surveys/history')
+    await expect(page.getByTestId('survey-history-page')).toBeVisible()
+    await expect(page.getByTestId('feedback-calendar')).toBeVisible()
+  })
+
+  test('month navigation works', async ({ page }) => {
+    await page.goto('/dashboard/surveys/history')
+    await expect(page.getByTestId('feedback-calendar')).toBeVisible()
+    await page.getByTestId('calendar-prev').click()
+    await expect(page.getByTestId('feedback-calendar')).toBeVisible()
+  })
+})
