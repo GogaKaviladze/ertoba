@@ -15,6 +15,8 @@ export const ka = {
   coins: 'ქოინი',
   close: 'დახურვა',
   loading: 'მონაცემების ჩატვირთვა...',
+  back: 'უკან',
+  next: 'შემდეგი',
   noDataFound: 'ვერ მოიძებნა მონაცემები ამ კატეგორიაში.',
   welcome: 'მოგესალმებით',
   signIn: 'შესვლა',
@@ -228,10 +230,6 @@ export const ka = {
   loginFooterSecured: 'დაცულია Ertoba-ს მიერ',
   loginBackHome: '← მთავარ გვერდზე',
 
-  // --- COMMON NAVIGATION ---
-  back: 'უკან',
-  next: 'შემდეგი',
-
   // --- ASSESSMENTS HUB ---
   assessmentsHubTitle: 'შეფასებები',
   assessmentsHubSubtitle: 'ფსიქომეტრული ტესტები პიროვნული შეხედულებებისთვის და ERTC ჟეტონების საპოვნელად.',
@@ -276,14 +274,10 @@ export const ka = {
   // --- SURVEYS ---
   surveysTitle: 'ხელმისაწვდომი გამოკითხვები',
   surveysSubtitle: 'შეასრულე დავალებები და მიიღე ERTC ჟეტონები.',
-  surveyDailyTitle: 'ყოველდღიური გამოკითხვა',
-  surveyDailyDesc: 'გაგვიზიარე შენი შეხედულება ბოლო გეოპოლიტიკური მოვლენების შესახებ.',
   surveyOnboardingTitle: 'ადაპტაციის კითხვარი',
   surveyOnboardingDesc: 'ადაპტაციის საწყისი კითხვარი.',
-  surveyStartBtn: 'გამოკითხვის დაწყება',
   surveyDoneBtn: 'შესრულებულია',
   surveyCompleted: 'დასრულებულია',
-  surveyEstTime: 'დაახ. 2 წუთი',
   surveyRewardLabel: 'ჯილდო:',
 
   // --- PROFILE ---
@@ -326,6 +320,26 @@ export const ka = {
   privacySection7Body: 'წვდომა, გასწორება, წაშლა, გადატანა და დამუშავებაზე წინააღმდეგობა — contact@ertoba.info-ზე მიწერით.',
   privacySection8Title: '8. კონტაქტი',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'ყოველდღიური გამოკითხვა',
+  surveyDailyDesc: 'დააკლასიფიცირე, როგორ არის ჩარჩოში მოქცეული ბოლოდროინდელი სათაურები — შენი პასუხები გვეხმარება მოდელების გაწვრთნაში.',
+  surveyDailyDuration: 'დაახ. 2 წუთი',
+  surveyStartButton: 'გამოკითხვის დაწყება',
+  surveyViewHistory: 'ისტორიის ნახვა',
+  surveyQuestionPrompt: 'რომელ ნარატივს ავრცელებს ეს სათაური?',
+  surveySubmit: 'შედეგების ნახვა',
+  surveySubmitting: 'ინახება...',
+  surveyResultTitle: 'შენი შედეგები',
+  surveyResultMatchLabel: 'დამთხვევა ჩვენს მოდელთან:',
+  surveyYouSaid: 'შენ თქვი',
+  surveyModelSaid: 'ჩვენი მოდელი',
+  surveyRewardEarned: 'მიღებულია +15 ETC',
+  surveyAlreadyDone: 'დღევანდელი გამოკითხვა უკვე დაასრულე. დაბრუნდი ხვალ!',
+  surveyBackToSurveys: 'გამოკითხვებში დაბრუნება',
+  surveyCalendarCompletedLabel: 'დასრულებული გამოკითხვები:',
+  surveyCalendarSelectDay: 'აირჩიე დასრულებული დღე პასუხების სანახავად.',
+  surveyCalendarNoData: 'ამ თვეში გამოკითხვა არ დაგისრულებია.',
 };
 
 export const en = {
@@ -343,6 +357,8 @@ export const en = {
   coins: 'Coins',
   close: 'Close',
   loading: 'Loading data...',
+  back: 'Back',
+  next: 'Next',
   noDataFound: 'No data found in this category.',
   welcome: 'Welcome',
   signIn: 'Sign In',
@@ -556,10 +572,6 @@ export const en = {
   loginFooterSecured: 'Secured by Ertoba Intelligence System',
   loginBackHome: '← Back to Home',
 
-  // --- COMMON NAVIGATION ---
-  back: 'Back',
-  next: 'Next',
-
   // --- ASSESSMENTS HUB ---
   assessmentsHubTitle: 'Assessments Hub',
   assessmentsHubSubtitle: 'Psychometric tests to gain insights and earn ERTC tokens.',
@@ -604,14 +616,10 @@ export const en = {
   // --- SURVEYS ---
   surveysTitle: 'Available Surveys',
   surveysSubtitle: 'Complete tasks to earn ERTC tokens and contribute to the Ertoba ecosystem.',
-  surveyDailyTitle: 'Daily Feedback Survey',
-  surveyDailyDesc: 'Share your thoughts on recent geopolitical events to help train our models.',
   surveyOnboardingTitle: 'Onboarding Questionnaire',
   surveyOnboardingDesc: 'Initial setup questionnaire.',
-  surveyStartBtn: 'Start Survey',
   surveyDoneBtn: 'Done',
   surveyCompleted: 'Completed',
-  surveyEstTime: 'Est. 2 mins',
   surveyRewardLabel: 'Reward:',
 
   // --- PROFILE ---
@@ -654,6 +662,26 @@ export const en = {
   privacySection7Body: 'Access, rectification, erasure, portability, and objection — email us at contact@ertoba.info.',
   privacySection8Title: '8. Contact',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'Daily Feedback Survey',
+  surveyDailyDesc: 'Classify how recent Georgian headlines are framed — your answers help train our models.',
+  surveyDailyDuration: 'Est. 2 mins',
+  surveyStartButton: 'Start Survey',
+  surveyViewHistory: 'View history',
+  surveyQuestionPrompt: 'Which narrative does this headline push?',
+  surveySubmit: 'See Results',
+  surveySubmitting: 'Saving...',
+  surveyResultTitle: 'Your Results',
+  surveyResultMatchLabel: 'Matches with our model:',
+  surveyYouSaid: 'You said',
+  surveyModelSaid: 'Our model said',
+  surveyRewardEarned: '+15 ETC earned',
+  surveyAlreadyDone: 'You have already completed today’s survey. Come back tomorrow!',
+  surveyBackToSurveys: 'Back to Surveys',
+  surveyCalendarCompletedLabel: 'Surveys completed:',
+  surveyCalendarSelectDay: 'Select a completed day to see your answers.',
+  surveyCalendarNoData: 'No surveys completed this month.',
 };
 
 export const de = {
@@ -671,6 +699,8 @@ export const de = {
   coins: 'Münzen',
   close: 'Schließen',
   loading: 'Lade Daten...',
+  back: 'Zurück',
+  next: 'Weiter',
   noDataFound: 'Keine Daten in dieser Kategorie gefunden.',
   welcome: 'Willkommen',
   signIn: 'Anmelden',
@@ -884,10 +914,6 @@ export const de = {
   loginFooterSecured: 'Gesichert durch das Ertoba Intelligence System',
   loginBackHome: '← Zurück zur Startseite',
 
-  // --- COMMON NAVIGATION ---
-  back: 'Zurück',
-  next: 'Weiter',
-
   // --- ASSESSMENTS HUB ---
   assessmentsHubTitle: 'Bewertungen',
   assessmentsHubSubtitle: 'Psychometrische Tests für persönliche Erkenntnisse und ERTC-Token.',
@@ -932,14 +958,10 @@ export const de = {
   // --- SURVEYS ---
   surveysTitle: 'Verfügbare Umfragen',
   surveysSubtitle: 'Erledige Aufgaben, um ERTC-Token zu verdienen und zum Ertoba-Ökosystem beizutragen.',
-  surveyDailyTitle: 'Tägliche Feedback-Umfrage',
-  surveyDailyDesc: 'Teile deine Gedanken zu aktuellen geopolitischen Ereignissen mit.',
   surveyOnboardingTitle: 'Onboarding-Fragebogen',
   surveyOnboardingDesc: 'Erster Einrichtungsfragebogen.',
-  surveyStartBtn: 'Umfrage starten',
   surveyDoneBtn: 'Erledigt',
   surveyCompleted: 'Abgeschlossen',
-  surveyEstTime: 'Ca. 2 Min.',
   surveyRewardLabel: 'Belohnung:',
 
   // --- PROFILE ---
@@ -982,6 +1004,26 @@ export const de = {
   privacySection7Body: 'Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch — schreib uns an contact@ertoba.info.',
   privacySection8Title: '8. Kontakt',
   privacySection8Body: 'contact@ertoba.info',
+
+  // --- DAILY FEEDBACK SURVEY ---
+  surveyDailyTitle: 'Tägliche Feedback-Umfrage',
+  surveyDailyDesc: 'Klassifiziere, wie aktuelle georgische Schlagzeilen gerahmt werden — deine Antworten helfen, unsere Modelle zu trainieren.',
+  surveyDailyDuration: 'ca. 2 Min.',
+  surveyStartButton: 'Umfrage starten',
+  surveyViewHistory: 'Verlauf ansehen',
+  surveyQuestionPrompt: 'Welches Narrativ verbreitet diese Schlagzeile?',
+  surveySubmit: 'Ergebnisse ansehen',
+  surveySubmitting: 'Wird gespeichert...',
+  surveyResultTitle: 'Deine Ergebnisse',
+  surveyResultMatchLabel: 'Übereinstimmungen mit unserem Modell:',
+  surveyYouSaid: 'Du sagtest',
+  surveyModelSaid: 'Unser Modell sagte',
+  surveyRewardEarned: '+15 ETC erhalten',
+  surveyAlreadyDone: 'Du hast die heutige Umfrage bereits abgeschlossen. Komm morgen wieder!',
+  surveyBackToSurveys: 'Zurück zu den Umfragen',
+  surveyCalendarCompletedLabel: 'Abgeschlossene Umfragen:',
+  surveyCalendarSelectDay: 'Wähle einen abgeschlossenen Tag, um deine Antworten zu sehen.',
+  surveyCalendarNoData: 'In diesem Monat keine Umfragen abgeschlossen.',
 };
 
 export function isLanguage(value: string | null | undefined): value is Language {

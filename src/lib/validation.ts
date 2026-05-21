@@ -6,6 +6,7 @@
  */
 
 import { z } from 'zod'
+import { FRAMINGS } from '@/lib/framing'
 
 // ---------------------------------------------------------------------------
 // Reusable primitives
@@ -98,4 +99,19 @@ export const signupSchema = z.object({
     .max(320, { message: 'Email is too long.' }),
   password: z.string().min(8, { message: 'Password must be at least 8 characters.' }).max(512),
   accountType: z.enum(['PERSONAL', 'ORGANIZATIONAL']).default('PERSONAL'),
+})
+
+// ---------------------------------------------------------------------------
+// dailyFeedback.ts
+// ---------------------------------------------------------------------------
+
+export const submitDailyFeedbackSchema = z.object({
+  picks: z
+    .array(
+      z.object({
+        articleId: z.string().uuid({ message: 'Invalid article ID.' }),
+        userFraming: z.enum(FRAMINGS, { error: 'Invalid framing choice.' }),
+      })
+    )
+    .length(3, { message: 'Exactly 3 answers are required.' }),
 })
