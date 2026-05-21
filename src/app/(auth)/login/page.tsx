@@ -5,12 +5,22 @@ import { login, signup } from '@/app/auth/actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
-import { ShieldCheck, Mail, BarChart3 } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu'
+import { ShieldCheck, Mail, BarChart3, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { type Language } from '@/lib/i18n/dictionaries'
+
+const LANG_FLAGS: Record<Language, string> = { ka: '🇬🇪', en: '🇬🇧', de: '🇩🇪' }
+const LANG_LABELS: Record<Language, string> = { ka: 'ქართული', en: 'English', de: 'Deutsch' }
 
 export default function LoginPage() {
-  const { t } = useLanguage()
+  const { t, language, setLanguage } = useLanguage()
   const [isLogin, setIsLogin] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
@@ -63,6 +73,28 @@ export default function LoginPage() {
     <div className="relative min-h-screen flex items-center justify-center bg-[#050505] overflow-hidden">
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-600/15 rounded-full blur-[120px] hidden sm:block" aria-hidden="true" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[150px] hidden sm:block" aria-hidden="true" />
+
+      {/* Language switcher — top right */}
+      <div className="absolute top-5 right-5 z-20">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full px-3 py-1.5 transition-all outline-none">
+            <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[language]}</span>
+            <ChevronDown className="h-3 w-3 text-slate-400" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent side="bottom" align="end" className="min-w-0 w-auto bg-[#111] border-white/10">
+            {(Object.keys(LANG_FLAGS) as Language[]).map((l) => (
+              <DropdownMenuItem
+                key={l}
+                onClick={() => setLanguage(l)}
+                className={`flex items-center gap-2.5 px-3 py-2 cursor-pointer ${language === l ? 'text-white' : 'text-slate-400'}`}
+              >
+                <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[l]}</span>
+                <span className="text-xs font-medium">{LANG_LABELS[l]}</span>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
       <div className="animate-in fade-in zoom-in-95 duration-500 ease-out z-10 w-full max-w-md px-4">
 

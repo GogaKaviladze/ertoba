@@ -10,11 +10,11 @@ import { Suspense } from 'react'
 const dashboardBackgroundClass =
   'absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.12),_transparent_32%),linear-gradient(180deg,_rgba(7,7,10,0.94)_0%,_#050505_72%)]'
 
-async function HeaderWithBalance({ initialLanguage }: { initialLanguage: 'ka' | 'en' | 'de' }) {
+async function HeaderWithBalance() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   const balance = user ? await getUserBalance(user.id).catch(() => 0) : 0
-  return <Header initialLanguage={initialLanguage} balance={balance} />
+  return <Header balance={balance} />
 }
 
 function HeaderSkeleton() {
@@ -56,7 +56,7 @@ export default async function DashboardLayout({
 
       <div className="md:pl-64 flex flex-col min-h-screen relative z-10">
         <Suspense fallback={<HeaderSkeleton />}>
-          <HeaderWithBalance initialLanguage={initialLanguage} />
+          <HeaderWithBalance />
         </Suspense>
 
         <main className="flex-1 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">

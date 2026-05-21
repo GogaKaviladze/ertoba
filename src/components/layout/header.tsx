@@ -1,8 +1,18 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { LogOut, Menu, Globe, Coins } from 'lucide-react'
+import { LogOut, Menu, Coins, ChevronDown } from 'lucide-react'
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { type Language } from '@/lib/i18n/dictionaries'
+
+const LANG_FLAGS: Record<Language, string> = { ka: '🇬🇪', en: '🇬🇧', de: '🇩🇪' }
+const LANG_LABELS: Record<Language, string> = { ka: 'ქართული', en: 'English', de: 'Deutsch' }
 
 const mobileNav = [
   { name: 'Dashboard', href: '/dashboard' },
@@ -13,24 +23,14 @@ const mobileNav = [
   { name: 'Profile', href: '/dashboard/profile' },
 ]
 
-type Language = 'ka' | 'en' | 'de'
-
-export function Header({ initialLanguage = 'ka', balance = 0 }: { initialLanguage?: Language; balance?: number }) {
-  const [language, setLanguage] = useState<Language>(initialLanguage)
+export function Header({ balance = 0 }: { balance?: number }) {
+  const { language, setLanguage } = useLanguage()
 
   const handleLogout = async () => {
     const { createClient } = await import('@/lib/supabase/client')
     const supabase = createClient()
     await supabase.auth.signOut()
     window.location.assign('/login')
-  }
-
-  const switchLanguage = (nextLanguage: Language) => {
-    setLanguage(nextLanguage)
-    document.cookie = `ertoba_lang=${nextLanguage}; path=/; max-age=31536000; samesite=lax${
-      window.location.protocol === 'https:' ? '; secure' : ''
-    }`
-    window.location.reload()
   }
 
   return (
@@ -74,20 +74,24 @@ export function Header({ initialLanguage = 'ka', balance = 0 }: { initialLanguag
           <span className="text-xs font-bold text-indigo-50 sm:text-sm">{balance.toLocaleString()} ERTC</span>
         </div>
 
-        <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 p-1">
-          <Globe className="ml-1 hidden h-4 w-4 text-indigo-400 sm:block" />
-          {(['ka', 'en', 'de'] as const).map((lang) => (
-            <button
-              key={lang}
-              type="button"
-              onClick={() => switchLanguage(lang)}
-              className={`rounded px-2 py-1.5 text-xs font-bold uppercase transition-all focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none sm:px-3 sm:py-2 ${language === lang ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}
-              aria-pressed={language === lang}
-            >
-              {lang}
-            </button>
-          ))}
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full px-3 py-1.5 transition-all outline-none">
+            <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[language]}</span>
+            <ChevronDown className="h-3 w-3 text-slate-400" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent side="bottom" align="end" className="min-w-0 w-auto bg-[#111] border-white/10">
+            {(Object.keys(LANG_FLAGS) as Language[]).map((l) => (
+              <DropdownMenuItem
+                key={l}
+                onClick={() => setLanguage(l)}
+                className={`flex items-center gap-2.5 px-3 py-2 cursor-pointer ${language === l ? 'text-white' : 'text-slate-400'}`}
+              >
+                <span className="text-base leading-none" aria-hidden="true">{LANG_FLAGS[l]}</span>
+                <span className="text-xs font-medium">{LANG_LABELS[l]}</span>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <button
           type="button"
