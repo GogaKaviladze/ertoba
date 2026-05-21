@@ -42,7 +42,7 @@ export default async function DashboardOverview() {
       </Link>
 
       {/* Secondary */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 mt-8">
         <Link href="/dashboard/reports" className="group">
           <Card className="border-white/5 bg-white/5 hover:bg-white/10 transition-colors h-full">
             <CardContent className="p-4 flex flex-col gap-3">
