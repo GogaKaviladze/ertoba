@@ -97,17 +97,6 @@ export default function LoginPage() {
 
                 <div className="grid gap-4">
                   <button
-                    onClick={() => setAccountType('B2B')}
-                    className="group flex flex-col items-start p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-indigo-500/30 transition-all text-left"
-                  >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg">🏢</span>
-                      <span className="text-white font-bold group-hover:text-indigo-300 transition-colors">{t('loginOrgTitle')}</span>
-                    </div>
-                    <span className="text-xs text-slate-500">{t('loginOrgDesc')}</span>
-                  </button>
-
-                  <button
                     onClick={() => setAccountType('PERSONAL')}
                     className="group flex flex-col items-start p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-teal-500/30 transition-all text-left"
                   >
@@ -117,6 +106,24 @@ export default function LoginPage() {
                     </div>
                     <span className="text-xs text-slate-500">{t('loginAnonDesc')}</span>
                   </button>
+
+                  <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] space-y-1.5">
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
+                      თუ თქვენი ორგანიზაციისთვის ეძებთ ანონიმურ გამოკითხვებს, დაგვიკავშირდით.
+                    </p>
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
+                      Benötigt Ihr Team anonyme Umfragen? Schreiben Sie uns.
+                    </p>
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
+                      If your team needs anonymous surveys, let&apos;s talk.
+                    </p>
+                    <a
+                      href="mailto:ertoba@anthronode.io"
+                      className="block text-[11px] text-indigo-400 hover:text-indigo-300 transition-colors font-mono mt-2"
+                    >
+                      ertoba@anthronode.io
+                    </a>
+                  </div>
                 </div>
               </div>
             ) : (
