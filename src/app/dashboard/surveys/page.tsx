@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 import { getDictionary, isLanguage } from '@/lib/i18n/dictionaries'
 
 export default async function SurveysPage() {
@@ -44,7 +42,7 @@ export default async function SurveysPage() {
               <Link
                 href="/dashboard/surveys/daily"
                 data-testid="start-survey-link"
-                className={cn(buttonVariants({ size: 'lg' }), 'bg-indigo-500 hover:bg-indigo-600 text-white border-0')}
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium px-4 h-9 transition-colors"
               >
                 {dictionary.surveyStartButton} <ArrowRight className="ml-1.5 h-4 w-4" />
               </Link>
