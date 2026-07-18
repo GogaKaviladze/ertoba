@@ -1,0 +1,15 @@
+# Deployed to /home/deploy/ertoba/ on the VPS. Requires the pre-existing
+# external Docker network `caddy_net` (shared with the other services on the
+# host) and a sibling `.env` file (not committed — see docs/DEPLOYMENT.md).
+services:
+  app:
+    image: ghcr.io/gogakaviladze/ertoba:latest
+    container_name: ertoba-app
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - caddy_net
+
+networks:
+  caddy_net:
+    external: true

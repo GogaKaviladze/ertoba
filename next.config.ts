@@ -16,6 +16,8 @@ if (process.env.NEXT_PUBLIC_SITE_URL) {
 }
 
 const nextConfig: NextConfig = {
+  // Standalone build for a minimal Docker runtime image (only traced deps + server.js).
+  output: 'standalone',
   // Prevent Turbopack from bundling native Node.js packages — required so
   // pg's TLS options (including functions like checkServerIdentity) are
   // preserved at runtime instead of being lost during bundling.
