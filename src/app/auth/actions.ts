@@ -7,6 +7,7 @@ import { ensureUserExists } from '@/services/userService'
 import { AccountType } from '@prisma/client'
 import { rateLimit } from '@/lib/rateLimit'
 import { loginSchema, signupSchema } from '@/lib/validation'
+import { deriveAnonymousCredentials } from '@/lib/zeroKnowledge'
 
 async function syncUserSafely(userId: string, email: string | undefined, accountType: AccountType) {
   try {
@@ -39,13 +40,14 @@ export async function login(formData: FormData) {
     return { error: 'Too many login attempts. Please try again later.', success: false }
   }
 
-  // For PERSONAL logins, the "email" field in UI is the Private Key
-  // We mapped it to password in the form hidden fields if it was a signup,
-  // but for login we need to handle it.
-  if (accountType === 'PERSONAL' && !email.includes('@')) {
-    const key = email
-    email = `${key}@ertoba.anon`
-    password = key
+  // For PERSONAL logins, derive pseudo-email and password using one-way SHA-256
+  if (accountType === 'PERSONAL') {
+    const rawKey = email.endsWith('@ertoba.anon')
+      ? email.replace(/@ertoba\.anon$/, '')
+      : email
+    const { pseudoEmail, derivedPassword } = deriveAnonymousCredentials(rawKey)
+    email = pseudoEmail
+    password = derivedPassword
   }
 
   const supabase = await createClient()
@@ -91,9 +93,13 @@ export async function signup(formData: FormData) {
   // Use localized site URL fallback
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
-  // For PERSONAL accounts, use the admin client to auto-confirm the email so that
-  // the @ertoba.anon address (which can never receive mail) does not block login.
+  // For PERSONAL accounts, derive pseudo-email and password using one-way SHA-256
   if (accountType === 'PERSONAL') {
+    const rawKey = email.endsWith('@ertoba.anon')
+      ? email.replace(/@ertoba\.anon$/, '')
+      : (password && password !== 'dummy' ? password : email)
+    const { pseudoEmail, derivedPassword } = deriveAnonymousCredentials(rawKey)
+
     const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
     if (!serviceRoleKey) {
       return {
@@ -108,8 +114,8 @@ export async function signup(formData: FormData) {
     )
 
     const { data: adminData, error: adminError } = await adminClient.auth.admin.createUser({
-      email,
-      password,
+      email: pseudoEmail,
+      password: derivedPassword,
       email_confirm: true,
     })
 
@@ -119,8 +125,8 @@ export async function signup(formData: FormData) {
 
     // Sign in immediately with the newly confirmed account
     const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+      email: pseudoEmail,
+      password: derivedPassword,
     })
 
     if (loginError || !loginData.session) {
@@ -128,7 +134,7 @@ export async function signup(formData: FormData) {
     }
 
     if (adminData.user) {
-      await syncUserSafely(adminData.user.id, email, accountType)
+      await syncUserSafely(adminData.user.id, pseudoEmail, accountType)
     }
 
     redirect('/dashboard')

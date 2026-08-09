@@ -102,9 +102,15 @@ export async function ensureUserExists(userId: string, email?: string, accountTy
     let storedEmail: string | null = email || null
     let storedUsername: string | null = null
 
-    if (accountType === 'PERSONAL' && storedEmail?.endsWith('@ertoba.anon')) {
-      // Strip the pseudo-email suffix and keep the key as the username.
-      storedUsername = storedEmail?.replace(/@ertoba\.anon$/, '') ?? null
+    if (accountType === 'PERSONAL') {
+      // Never store raw private keys in username or email columns.
+      // Store a non-reversible truncated hash tag for display.
+      if (storedEmail?.endsWith('@ertoba.anon')) {
+        const hashPrefix = storedEmail.replace(/@ertoba\.anon$/, '').substring(0, 8)
+        storedUsername = `Anon-${hashPrefix}`
+      } else {
+        storedUsername = 'Anon-User'
+      }
       storedEmail = null
     }
 
