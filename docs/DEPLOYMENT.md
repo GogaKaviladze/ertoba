@@ -39,7 +39,7 @@ These steps are done once by hand on the VPS, outside of this repository.
 ### 1. Create the `deploy` Linux user
 
 Ertoba's files, SSH access, and Docker Compose project are owned by a
-dedicated non-root user, kept separate from whatever user runs Affine/n8n:
+dedicated non-root user.
 
 ```bash
 adduser deploy
@@ -61,7 +61,61 @@ GitHub secret (see below). Password login can be disabled for `deploy` in
 `Match User deploy` block) once the key-based login is confirmed working —
 this only affects `deploy`, not root or other users on the box.
 
-### 2. Create the app directory and `.env`
+### 2. Harden the deploy key (forced command)
+
+`deploy` is in the `docker` group, which is effectively root-equivalent for
+the whole VPS (a member can always `docker run -v /:/host --rm -it alpine
+chroot /host /bin/sh`). Since this VPS also runs other services (Affine,
+n8n, …), a leaked `VPS_SSH_KEY` would put the entire box at risk, not just
+Ertoba — not just `sudo`. Restrict the key so sshd only ever runs one fixed
+script for it, ignoring whatever command the client actually sends.
+
+First, make the GHCR package (`ertoba`) **public** in its package settings
+(Package → Package settings → Danger Zone → Change visibility). The repo is
+already public, so this removes no real confidentiality, and it means the
+VPS no longer needs to `docker login` to pull the image — one less thing the
+forced command has to do, and one less credential (`GITHUB_TOKEN`) that
+would otherwise need to be forwarded over SSH into a restricted session.
+
+Create the wrapper script as `deploy` (not root):
+
+```bash
+cat > ~/deploy.sh <<'EOF'
+#!/bin/bash
+set -euo pipefail
+cd /home/deploy/ertoba
+docker compose pull
+docker compose up -d --remove-orphans
+docker image prune -f
+EOF
+chmod +x ~/deploy.sh
+```
+
+Then edit `~/.ssh/authorized_keys` and prefix the `github-actions-deploy`
+key's line with a forced `command=` and the restriction flags — replace the
+whole line for that key with:
+
+```
+command="/home/deploy/deploy.sh",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-ed25519 AAAA...github-actions-deploy
+```
+
+(Keep the actual key material from your existing line — only the prefix is
+new.) With this in place, sshd runs `deploy.sh` for every login with this
+key regardless of what command the client requested
+(`$SSH_ORIGINAL_COMMAND` is set but ignored — the script doesn't reference
+it, so there's nothing to inject into). `no-pty` blocks an interactive
+shell, and the other `no-*` flags block port/X11/agent forwarding as
+additional tunnels out of the restricted session. A personal interactive
+key (e.g. for `deploy`'s own login) should **not** get this prefix.
+
+Verify before relying on it:
+
+```bash
+sshd -t          # syntax-check sshd_config if you touched it too
+ssh -i github_actions_ed25519 deploy@<vps-ip> "rm -rf /"   # should run deploy.sh, NOT rm
+```
+
+### 3. Create the app directory and `.env`
 
 ```bash
 mkdir -p /home/deploy/ertoba
@@ -72,11 +126,11 @@ and create `/home/deploy/ertoba/.env` by hand with the production values listed
 under [Environment Variables](#environment-variables-production) below. This
 file is never committed and is not managed by CI.
 
-### 3. DNS
+### 4. DNS
 
 Point an A record for `yourdomain.com` at the VPS's IP address.
 
-### 4. Add Ertoba to the central Caddyfile
+### 5. Add Ertoba to the central Caddyfile
 
 The central Caddy container's Caddyfile lives under `/srv` on the VPS
 (root-owned, shared across all hosted domains). Add:
@@ -95,7 +149,7 @@ docker exec <central-caddy-container> caddy reload --config /etc/caddy/Caddyfile
 
 (Exact container name/config path depends on the existing central Caddy setup.)
 
-### 5. GitHub repository secrets
+### 6. GitHub repository secrets
 
 Set these under **Settings → Secrets and variables → Actions**:
 
@@ -179,7 +233,9 @@ On every push to `main`, `.github/workflows/deploy.yml` runs:
    `NEXT_PUBLIC_*` secrets as build args
 4. Push the image to `ghcr.io/gogakaviladze/ertoba` tagged `:latest` and
    `:<commit-sha>`
-5. SSH into the VPS as `deploy` and run:
+5. SSH into the VPS as `deploy`. If the forced-command hardening above is in
+   place, sshd ignores the script in the workflow file and always runs
+   `~/deploy.sh` instead:
    ```bash
    cd /home/deploy/ertoba
    docker compose pull

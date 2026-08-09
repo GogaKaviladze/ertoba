@@ -64,13 +64,13 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          envs: GITHUB_TOKEN,GITHUB_ACTOR
+          # The VPS_SSH_KEY is a forced-command key (see docs/DEPLOYMENT.md,
+          # "Hardening the deploy key") — the actual command below is ignored
+          # by sshd and /home/deploy/deploy.sh runs instead. Kept here only
+          # so the workflow's intent stays readable and still works if the
+          # forced-command restriction is ever lifted.
           script: |
-            echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
             cd /home/deploy/ertoba
             docker compose pull
             docker compose up -d --remove-orphans
             docker image prune -f
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ github.actor }}
