@@ -40,3 +40,6 @@ next-env.d.ts
 
 # Private Claude.md
 Claude.md
+
+#AGENTS
+.agents/
