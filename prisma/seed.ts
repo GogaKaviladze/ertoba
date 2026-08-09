@@ -65,6 +65,32 @@ async function main() {
     let savedArticles = 0;
 
     const filePath = path.join(__dirname, '../../Propaganda.json');
+    if (!fs.existsSync(filePath)) {
+      console.log("Propaganda.json dataset file not found. Seeding default Assessments & Rewards...");
+      
+      // Seed default Assessments
+      await prisma.assessment.createMany({
+        data: [
+          { type: 'BigFive', title: 'Big Five Personality Assessment', description: 'Comprehensive 5-factor psychological model assessment.', rewardCoins: 25 },
+          { type: 'Burnout', title: 'Burnout & Fatigue Index', description: 'Evaluate workload stress and emotional exhaustion.', rewardCoins: 20 },
+          { type: 'Pulse', title: 'Daily Media Sentiment Pulse', description: 'Daily feedback on Georgian media framing signals.', rewardCoins: 15 }
+        ],
+        skipDuplicates: true
+      });
+
+      // Seed default Rewards
+      await prisma.rewardItem.createMany({
+        data: [
+          { title: 'OSINT Deep-Dive Analysis', description: 'Detailed custom propaganda report on media framing.', cost: 50 },
+          { title: 'Community Governance Badge', description: 'Verify your civic contributor status.', cost: 100 }
+        ],
+        skipDuplicates: true
+      });
+
+      console.log("Default Assessments and Rewards seeded successfully!");
+      return;
+    }
+
     const fileStream = fs.createReadStream(filePath);
     const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity });
 
