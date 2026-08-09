@@ -32,7 +32,6 @@ export async function updateSession(request: NextRequest) {
 
   // ROUTE PROTECTION
   const isDashboardPage = request.nextUrl.pathname.startsWith('/dashboard')
-  const isLoginPage = request.nextUrl.pathname.startsWith('/login')
 
   if (!user && isDashboardPage) {
     // Redirect unauthenticated user to login page

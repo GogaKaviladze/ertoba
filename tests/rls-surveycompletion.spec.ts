@@ -6,12 +6,13 @@ import { test, expect } from '@playwright/test'
  */
 
 test.describe('RLS: SurveyCompletion Access Control', () => {
-  let userAId: string
-  let userBId: string
-  let surveyCompletionIdA: string
-  let surveyCompletionIdB: string
+  // Test fixtures for user IDs and survey completion IDs
+  const userAId: string = ''
+  const userBId: string = ''
+  const surveyCompletionIdA: string = ''
+  const surveyCompletionIdB: string = ''
 
-  test.beforeAll(async ({ browser }) => {
+  test.beforeAll(async () => {
     /**
      * Setup: Create two users and have each complete an assessment
      */

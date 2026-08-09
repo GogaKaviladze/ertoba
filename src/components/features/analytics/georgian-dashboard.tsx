@@ -52,16 +52,16 @@ const renderCustomizedLabel = ({ cx = 0, cy = 0, midAngle, innerRadius = 0, oute
   )
 }
 
+const framingKeyMap: Record<string, string> = {
+  'როგორ გვთრგუნავენ': 'howTheySuppressUs',
+  'როგორ გვზღუდავენ': 'howTheyRestrictUs',
+  'გავლენები და ეკლესია': 'influencesAndChurch',
+  'როგორ გვყოფენ': 'howTheyDivideUs',
+  'სხვა / ნეიტრალური': 'otherNeutral'
+};
+
 export function GeorgianAnalyticsDashboard() {
   const { t, language } = useLanguage();
-
-  const framingKeyMap: Record<string, string> = {
-    'როგორ გვთრგუნავენ': 'howTheySuppressUs',
-    'როგორ გვზღუდავენ': 'howTheyRestrictUs',
-    'გავლენები და ეკლესია': 'influencesAndChurch',
-    'როგორ გვყოფენ': 'howTheyDivideUs',
-    'სხვა / ნეიტრალური': 'otherNeutral'
-  };
 
   const translatedCategories = React.useMemo(() => {
     const result: Record<string, string> = {}
@@ -69,7 +69,7 @@ export function GeorgianAnalyticsDashboard() {
       result[item.name] = t(framingKeyMap[item.name] || item.name)
     })
     return result
-  }, [language, t]);
+  }, [t]);
 
   const getTranslatedCategory = (name: string) => {
     return translatedCategories[name] || name
