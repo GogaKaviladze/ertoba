@@ -5,7 +5,7 @@
 
 ---
 
-## Phase 1: Foundation ✅ Done
+## Phase 1: Foundation ✅ Done 
 
 | Feature | Status |
 |---|---|
