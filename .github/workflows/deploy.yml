@@ -62,14 +62,10 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          # The VPS_SSH_KEY is a forced-command key (see docs/DEPLOYMENT.md,
-          # "Hardening the deploy key") — the actual command below is ignored
-          # by sshd and /home/deploy/deploy.sh runs instead. Kept here only
-          # so the workflow's intent stays readable and still works if the
-          # forced-command restriction is ever lifted.
-          script: ~/deploy.sh
+          script: |
+            ~/deploy.sh
