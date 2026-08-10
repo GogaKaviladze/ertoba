@@ -72,8 +72,4 @@ jobs:
           # by sshd and /home/deploy/deploy.sh runs instead. Kept here only
           # so the workflow's intent stays readable and still works if the
           # forced-command restriction is ever lifted.
-          script: |
-            cd /home/deploy/ertoba
-            docker compose pull
-            docker compose up -d --remove-orphans
-            docker image prune -f
+          script: ~/deploy.sh
