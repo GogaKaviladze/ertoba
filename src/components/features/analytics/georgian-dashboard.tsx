@@ -410,7 +410,7 @@ export function GeorgianAnalyticsDashboard() {
                 <div className="space-y-3">
                   <p className="text-red-400 font-medium">{errorMsg}</p>
                   <p className="text-xs text-slate-500 max-w-xs mx-auto">
-                    Tip: Ensure the <code className="text-indigo-400">DATABASE_URL</code> environment variable is set in your Vercel project settings and that Prisma is generated.
+                    Tip: Ensure the <code className="text-indigo-400">DATABASE_URL</code> environment variable is set in your server environment variables and that Prisma is generated.
                   </p>
                 </div>
               ) : (

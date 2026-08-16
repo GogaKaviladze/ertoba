@@ -105,7 +105,7 @@ For Supabase Auth to work locally you must add the redirect URL in your Supabase
 
 ## Troubleshooting
 
-### Prisma TLS error on Vercel / production
+### Prisma TLS error in production
 
 Prisma v7's `adapter-pg` wraps TLS errors before `pg` can apply its flags. Add both options:
 

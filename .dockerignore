@@ -18,7 +18,6 @@ data/*.json
 
 .DS_Store
 *.pem
-.vercel
 *.tsbuildinfo
 next-env.d.ts
 /src/generated/prisma

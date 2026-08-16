@@ -121,7 +121,7 @@ New features require E2E test coverage. Use `data-testid` attributes for selecto
 - **Server Actions** for mutations, not API routes
 - **Service layer** for business logic — keep components thin
 - **RLS** for all database access — never bypass row-level security
-- **No secrets in code** — use `.env.local` locally, Vercel env vars in production
+- **No secrets in code** — use `.env.local` locally, server environment variables / secrets in production
 
 For full architecture details and design patterns, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 

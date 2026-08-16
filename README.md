@@ -43,7 +43,7 @@ Ertoba Analytics turns open-source intelligence into actionable insight — with
 | Database | Supabase PostgreSQL (Port 6543) |
 | Security | AES-256-GCM, Rate Limiting, RLS |
 | E2E Tests | Playwright |
-| Deployment | Vercel |
+| Deployment | Docker / VPS (GHCR) |
 | AI Agents | LangGraph / LangChain |
 
 ---
@@ -144,7 +144,7 @@ npm run test:e2e -- --debug   # Step-through debugger
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute, branch naming, PR process, team roles |
 | [ROADMAP.md](ROADMAP.md) | Project phases: done, in progress, planned |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Tech stack, database schema, data flow, file structure |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Vercel deployment, production env vars, database pooling |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Docker & VPS deployment, production env vars, database pooling |
 | [docs/DATABASE.md](docs/DATABASE.md) | Prisma schema, migrations, database models |
 | [docs/SECURITY.md](docs/SECURITY.md) | RLS policies, encryption workflow, security practices |
 | [docs/TESTING.md](docs/TESTING.md) | E2E test setup, Playwright patterns, test selectors |

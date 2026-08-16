@@ -26,7 +26,7 @@ export async function getHeadlinesByFraming(framing: string, limit: number = 5) 
     return {
       success: false,
       error: message,
-      db_status: 'Error connecting to DB. Check DATABASE_URL on Vercel.',
+      db_status: 'Error connecting to DB. Check DATABASE_URL in environment.',
     }
   }
 }

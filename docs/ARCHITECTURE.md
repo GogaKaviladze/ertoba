@@ -17,7 +17,7 @@ Technical design, data models, and system flow.
 | **Encryption** | Node.js crypto (AES-256-GCM) | Built-in |
 | **Charts** | Recharts | Latest |
 | **E2E Tests** | Playwright | Latest |
-| **Deployment** | Vercel | Serverless Functions |
+| **Deployment** | Docker / VPS (GHCR) | Containerized Next.js |
 | **AI Agents** | LangGraph / LangChain | Latest |
 
 ---
@@ -226,18 +226,17 @@ export const supabaseAdmin = createClient(
 ### Secrets Management
 - Never commit `.env.local` or credentials
 - Use `.env.example` as template
-- Production secrets via Vercel Environment Variables
+- Production secrets configured via server environment / GitHub Actions secrets
 - Rotate keys quarterly via SECURITY.md checklist
 
 ---
 
-## Deployment: Vercel
+## Deployment: Docker & VPS
 
-- **Serverless Functions:** App Router routes → Lambda functions
-- **Static Generation:** Pages pre-built at deploy time
-- **Edge Middleware:** Rate limiting, redirects
-- **Environment Variables:** Set via Vercel dashboard
-- **Database:** Vercel Postgres (Supabase connection pooler on Port 6543)
+- **Containerization:** Multi-stage Dockerfile running Next.js standalone server
+- **Image Registry:** GitHub Container Registry (ghcr.io)
+- **CI/CD:** Automated build and SSH deployment to VPS via GitHub Actions
+- **Database:** Supabase PostgreSQL connection pooler (Port 6543)
 
 ---
 
@@ -258,8 +257,6 @@ export const supabaseAdmin = createClient(
 | LCP (Largest Contentful Paint) | < 2.5s |
 | FID (First Input Delay) | < 100ms |
 | CLS (Cumulative Layout Shift) | < 0.1 |
-
-Track via [docs/DEPLOYMENT.md](DEPLOYMENT.md) Vercel Analytics dashboard.
 
 ---
 
