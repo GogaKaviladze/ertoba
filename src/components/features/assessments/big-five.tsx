@@ -13,8 +13,9 @@ import { Progress } from '@/components/ui/progress'
 import { Slider } from '@/components/ui/slider'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { saveAssessmentResult } from '@/app/actions/assessments'
+import { calculateBigFiveScores, type BigFiveScores, type BigFiveDomain } from '@/lib/scoring'
 
-const QUESTIONS_META = [
+const QUESTIONS_META: Array<{ id: number; trait: BigFiveDomain; key: string }> = [
   { id: 1, trait: 'extraversion', key: 'q_b5_1' },
   { id: 2, trait: 'agreeableness', key: 'q_b5_2' },
   { id: 3, trait: 'conscientiousness', key: 'q_b5_3' },
@@ -31,14 +32,6 @@ const QUESTIONS_META = [
   { id: 14, trait: 'neuroticism', key: 'q_b5_14' },
   { id: 15, trait: 'openness', key: 'q_b5_15' },
 ]
-
-type BigFiveScores = {
-  extraversion: number
-  agreeableness: number
-  conscientiousness: number
-  neuroticism: number
-  openness: number
-}
 
 export type { BigFiveScores }
 
@@ -76,27 +69,7 @@ export function BigFive({ initialScores = null }: Props) {
 
   const finishTest = async () => {
     setIsSubmitting(true)
-    const raw: Record<string, number[]> = {
-      extraversion: [], agreeableness: [], conscientiousness: [], neuroticism: [], openness: []
-    }
-
-    QUESTIONS_META.forEach(q => {
-      const val = answers[q.id] || 3
-      raw[q.trait].push(val)
-    })
-
-    const calcScore = (arr: number[]) => {
-      const sum = arr.reduce((a, b) => a + b, 0)
-      return (sum / (arr.length * 5)) * 100
-    }
-
-    const newScores = {
-      extraversion: calcScore(raw.extraversion),
-      agreeableness: calcScore(raw.agreeableness),
-      conscientiousness: calcScore(raw.conscientiousness),
-      neuroticism: calcScore(raw.neuroticism),
-      openness: calcScore(raw.openness),
-    }
+    const newScores = calculateBigFiveScores(answers, QUESTIONS_META, 1, 5)
 
     try {
       await saveAssessmentResult('BigFive', newScores, 50)
