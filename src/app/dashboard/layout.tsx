@@ -64,7 +64,7 @@ export default async function DashboardLayout({
             {children}
           </div>
         </main>
-        <Footer privacyLabel={dictionary.footerPrivacy} imprintLabel={dictionary.footerImprint} />
+        <Footer privacyLabel={dictionary.footerPrivacy} contactLabel={dictionary.footerContact} />
       </div>
     </div>
   )

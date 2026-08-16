@@ -4,10 +4,10 @@ import { type Language } from '@/lib/i18n/dictionaries'
 interface FooterProps {
   language?: Language
   privacyLabel?: string
-  imprintLabel?: string
+  contactLabel?: string
 }
 
-export function Footer({ privacyLabel = 'Privacy Policy', imprintLabel = 'Imprint' }: FooterProps) {
+export function Footer({ privacyLabel = 'Privacy Policy', contactLabel = 'Contact' }: FooterProps) {
   return (
     <footer className="relative z-10 border-t border-white/5 px-6 py-6 text-center">
       <p className="text-[10px] text-slate-600 uppercase tracking-widest">
@@ -18,8 +18,8 @@ export function Footer({ privacyLabel = 'Privacy Policy', imprintLabel = 'Imprin
           {privacyLabel}
         </Link>
         <span className="text-[10px] text-slate-700">·</span>
-        <Link href="/impressum" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
-          {imprintLabel}
+        <Link href="/contact" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
+          {contactLabel}
         </Link>
       </div>
     </footer>

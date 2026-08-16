@@ -210,10 +210,10 @@ export default function LoginPage() {
           <p className="text-[11px] text-slate-600 text-center leading-relaxed max-w-xs">
             {t('loginOrgContact')}{' '}
             <a
-              href="mailto:ertoba@anthronode.io"
+              href="mailto:contact@ertoba.info"
               className="text-indigo-400/70 hover:text-indigo-400 transition-colors font-mono"
             >
-              ertoba@anthronode.io
+              contact@ertoba.info
             </a>
           </p>
           <Link href="/" className="text-[10px] text-slate-600 hover:text-slate-400 transition-colors">

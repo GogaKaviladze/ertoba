@@ -56,7 +56,7 @@ export default async function PrivacyPage() {
 
         <div className="mt-8 flex gap-4">
           <Link href="/" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">← Home</Link>
-          <Link href="/impressum" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">{t.footerImprint}</Link>
+          <Link href="/contact" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">{t.footerContact}</Link>
         </div>
       </div>
     </div>

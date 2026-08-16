@@ -294,8 +294,8 @@ export default function LandingPage() {
             {t.footerPrivacy}
           </Link>
           <span className="text-[10px] text-slate-700">·</span>
-          <Link href="/impressum" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
-            {t.footerImprint}
+          <Link href="/contact" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
+            {t.footerContact}
           </Link>
         </div>
       </footer>

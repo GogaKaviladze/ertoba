@@ -6,8 +6,8 @@ import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Ertoba Analytics | Precision Insights',
-  description: 'Premium dashboard for psychological assessments and geopolitical analytics.',
+  title: 'Ertoba | Privacy-First Insights',
+  description: 'Privacy-first platform for psychological assessments, burnout evaluation, and media analysis.',
 }
 
 export default function RootLayout({
