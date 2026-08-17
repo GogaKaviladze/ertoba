@@ -29,14 +29,19 @@ describe('Landing Page i18n Dictionaries', () => {
     }
   })
 
-  it('all languages have burnout assessment questions defined with updated Georgian text', () => {
+  it('all languages have burnout assessment questions defined with standardized Georgian text', () => {
     for (const { code, dict } of languages) {
       for (let i = 1; i <= 10; i++) {
         const key = `q_bo_${i}` as keyof typeof dict
         assert.ok(dict[key], `${key} missing for ${code}`)
       }
     }
-    assert.strictEqual(ka.q_bo_4, 'სხვა ადამიანებთან ერთად მუშაობა ძალიან მიმარტივდება.')
+    assert.strictEqual(ka.q_bo_4, 'მთელი დღე ადამიანებთან მუშაობა ჩემთვის ძალიან დამღლელი და დამთრგუნველია.')
+    assert.strictEqual(ka.q_bo_5, 'ვგრძნობ, რომ სამსახურისგან სრულიად გადამწვარი ვარ.')
+    assert.strictEqual(ka.q_bo_7, 'ამ სამსახურის დაწყების შემდეგ ადამიანების მიმართ უფრო გულგრილი გავხდი.')
+    assert.strictEqual(ka.q_bo_9, 'ადამიანებთან მჭიდრო თანამშრომლობა ენერგიით მავსებს.')
+    assert.strictEqual(ka.q_bo_10, 'კოლეგების ან კლიენტების პრობლემებს ძალიან ეფექტურად ვაგვარებ.')
   })
 })
+
 
