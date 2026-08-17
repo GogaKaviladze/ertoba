@@ -28,4 +28,15 @@ describe('Landing Page i18n Dictionaries', () => {
       assert.ok(dict.neuroticism, `neuroticism missing for ${code}`)
     }
   })
+
+  it('all languages have burnout assessment questions defined with updated Georgian text', () => {
+    for (const { code, dict } of languages) {
+      for (let i = 1; i <= 10; i++) {
+        const key = `q_bo_${i}` as keyof typeof dict
+        assert.ok(dict[key], `${key} missing for ${code}`)
+      }
+    }
+    assert.strictEqual(ka.q_bo_4, 'სხვა ადამიანებთან ერთად მუშაობა ძალიან მიმარტივდება.')
+  })
 })
+
