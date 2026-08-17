@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
-const allowedOrigins = ["localhost:3000", "192.168.2.86:3000"];
+const allowedOrigins = [
+  "localhost:3000",
+  "192.168.2.66",
+  "192.168.2.66:3000",
+  "192.168.2.86",
+  "192.168.2.86:3000",
+];
 
 // Include the deployed site origin so server actions work in production
 if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -16,6 +22,13 @@ if (process.env.NEXT_PUBLIC_SITE_URL) {
 }
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: [
+    'localhost:3000',
+    '192.168.2.66',
+    '192.168.2.66:3000',
+    '192.168.2.86',
+    '192.168.2.86:3000',
+  ],
   // Standalone build for a minimal Docker runtime image (only traced deps + server.js).
   output: 'standalone',
   // Prevent Turbopack from bundling native Node.js packages — required so
