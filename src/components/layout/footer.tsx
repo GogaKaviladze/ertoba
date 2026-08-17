@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { type Language } from '@/lib/i18n/dictionaries'
 
 interface FooterProps {
@@ -7,7 +10,11 @@ interface FooterProps {
   contactLabel?: string
 }
 
-export function Footer({ privacyLabel = 'Privacy Policy', contactLabel = 'Contact' }: FooterProps) {
+export function Footer({ privacyLabel, contactLabel }: FooterProps) {
+  const { t } = useLanguage()
+  const activePrivacy = privacyLabel ?? t('footerPrivacy')
+  const activeContact = contactLabel ?? t('footerContact')
+
   return (
     <footer className="relative z-10 border-t border-white/5 px-6 py-6 text-center">
       <p className="text-[10px] text-slate-600 uppercase tracking-widest">
@@ -15,13 +22,14 @@ export function Footer({ privacyLabel = 'Privacy Policy', contactLabel = 'Contac
       </p>
       <div className="mt-2 flex items-center justify-center gap-4">
         <Link href="/privacy" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
-          {privacyLabel}
+          {activePrivacy}
         </Link>
         <span className="text-[10px] text-slate-700">·</span>
         <Link href="/contact" className="text-[10px] text-slate-600 hover:text-slate-400 uppercase tracking-widest transition-colors">
-          {contactLabel}
+          {activeContact}
         </Link>
       </div>
     </footer>
   )
 }
+

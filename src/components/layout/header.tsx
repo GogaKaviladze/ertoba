@@ -16,9 +16,9 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet'
-import { Sidebar, type SidebarLabels } from '@/components/layout/sidebar'
+import { Sidebar } from '@/components/layout/sidebar'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { getDictionary, type Language } from '@/lib/i18n/dictionaries'
+import { type Language } from '@/lib/i18n/dictionaries'
 
 const LANG_FLAGS: Record<Language, string> = { ka: '🇬🇪', en: '🇬🇧', de: '🇩🇪' }
 const LANG_LABELS: Record<Language, string> = { ka: 'ქართული', en: 'English', de: 'Deutsch' }
@@ -27,17 +27,6 @@ export function Header({ balance = 0 }: { balance?: number }) {
   const [open, setOpen] = useState(false)
   const { language, setLanguage } = useLanguage()
   const router = useRouter()
-  const dictionary = getDictionary(language)
-
-  const sidebarLabels: SidebarLabels = {
-    navDashboard: dictionary.navDashboard,
-    navAssessments: dictionary.navAssessments,
-    navSurveys: dictionary.navSurveys,
-    navMarket: dictionary.navMarket,
-    navProfile: dictionary.navProfile,
-    navAnalytics: dictionary.navAnalytics,
-    navReports: dictionary.navReports,
-  }
 
   const handleLogout = async () => {
     const { createClient } = await import('@/lib/supabase/client')
@@ -68,7 +57,6 @@ export function Header({ balance = 0 }: { balance?: number }) {
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <SheetDescription className="sr-only">Mobile navigation sidebar</SheetDescription>
             <Sidebar
-              labels={sidebarLabels}
               onNavigate={() => setOpen(false)}
             />
           </SheetContent>

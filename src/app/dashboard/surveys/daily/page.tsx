@@ -1,6 +1,3 @@
-import { cookies } from 'next/headers'
-import { LanguageProvider } from '@/lib/i18n/LanguageContext'
-import { isLanguage } from '@/lib/i18n/dictionaries'
 import { Card, CardContent } from '@/components/ui/card'
 import { getTodaysFeedback, getDailySurveyHeadlines, type FeedbackResponseItem } from '@/app/actions/dailyFeedback'
 import { DailySurvey } from '@/components/features/surveys/daily-survey'
@@ -11,36 +8,31 @@ export const metadata = {
 }
 
 export default async function DailySurveyPage() {
-  const cookieStore = await cookies()
-  const langCookie = cookieStore.get('ertoba_lang')?.value
-  const language = isLanguage(langCookie) ? langCookie : 'ka'
   const todays = await getTodaysFeedback()
   const headlines = todays ? [] : await getDailySurveyHeadlines()
 
   return (
-    <LanguageProvider initialLanguage={language}>
-      <div className="space-y-8" data-testid="daily-survey-page">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Daily Feedback Survey</h1>
-          <p className="text-slate-400">Classify how today&apos;s headlines are framed.</p>
-        </div>
-
-        {todays ? (
-          <DailyResult
-            responses={todays.responses as unknown as FeedbackResponseItem[]}
-            matchCount={todays.matchCount}
-            alreadyDone
-          />
-        ) : headlines.length < 3 ? (
-          <Card className="border-white/10 bg-white/5" data-testid="daily-survey-empty">
-            <CardContent className="p-8 text-center text-slate-400">
-              No headlines available right now. Please check back later.
-            </CardContent>
-          </Card>
-        ) : (
-          <DailySurvey headlines={headlines} />
-        )}
+    <div className="space-y-8" data-testid="daily-survey-page">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Daily Feedback Survey</h1>
+        <p className="text-slate-400">Classify how today&apos;s headlines are framed.</p>
       </div>
-    </LanguageProvider>
+
+      {todays ? (
+        <DailyResult
+          responses={todays.responses as unknown as FeedbackResponseItem[]}
+          matchCount={todays.matchCount}
+          alreadyDone
+        />
+      ) : headlines.length < 3 ? (
+        <Card className="border-white/10 bg-white/5" data-testid="daily-survey-empty">
+          <CardContent className="p-8 text-center text-slate-400">
+            No headlines available right now. Please check back later.
+          </CardContent>
+        </Card>
+      ) : (
+        <DailySurvey headlines={headlines} />
+      )}
+    </div>
   )
 }

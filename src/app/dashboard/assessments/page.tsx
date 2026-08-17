@@ -3,9 +3,9 @@
 import { Brain, HeartPulse } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
-import { LanguageProvider, useLanguage } from '@/lib/i18n/LanguageContext'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-function AssessmentsContent() {
+export default function AssessmentsPage() {
   const { t } = useLanguage()
 
   return (
@@ -50,10 +50,3 @@ function AssessmentsContent() {
   )
 }
 
-export default function AssessmentsPage() {
-  return (
-    <LanguageProvider>
-      <AssessmentsContent />
-    </LanguageProvider>
-  )
-}

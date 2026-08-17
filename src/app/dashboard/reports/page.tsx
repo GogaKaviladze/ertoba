@@ -1,19 +1,12 @@
+'use client'
+
 import Link from 'next/link'
-import { cookies } from 'next/headers'
-import { getDictionary, isLanguage } from '@/lib/i18n/dictionaries'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { ArrowRight, BarChart3, AlertTriangle, Sparkles } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 
-export const metadata = {
-  title: 'Reports | Ertoba',
-  description: 'In-depth intelligence reports on various topics.',
-}
-
-export default async function ReportsIndexPage() {
-  const cookieStore = await cookies()
-  const rawLang = cookieStore.get('ertoba_lang')?.value
-  const language = isLanguage(rawLang) ? rawLang : 'ka'
-  const d = getDictionary(language)
+export default function ReportsIndexPage() {
+  const { t } = useLanguage()
 
   const reports = [
     {
@@ -22,8 +15,8 @@ export default async function ReportsIndexPage() {
       iconColor: 'text-indigo-400',
       iconBg: 'bg-indigo-500/15',
       borderColor: 'border-indigo-500/20',
-      title: d.reportPropaganda,
-      desc: d.reportPropagandaDesc,
+      title: t('reportPropaganda'),
+      desc: t('reportPropagandaDesc'),
       badge: '47K+',
     },
     {
@@ -32,8 +25,8 @@ export default async function ReportsIndexPage() {
       iconColor: 'text-amber-400',
       iconBg: 'bg-amber-500/15',
       borderColor: 'border-amber-500/20',
-      title: d.reportFraud,
-      desc: d.reportFraudDesc,
+      title: t('reportFraud'),
+      desc: t('reportFraudDesc'),
       badge: '2026',
     },
   ]
@@ -42,8 +35,8 @@ export default async function ReportsIndexPage() {
     <div className="space-y-8 pb-10">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">{d.reportsIndexTitle}</h1>
-        <p className="text-sm text-slate-400">{d.reportsIndexSubtitle}</p>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">{t('reportsIndexTitle')}</h1>
+        <p className="text-sm text-slate-400">{t('reportsIndexSubtitle')}</p>
       </div>
 
       {/* Report Cards */}
@@ -63,7 +56,7 @@ export default async function ReportsIndexPage() {
                 href={report.href}
                 className="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors"
               >
-                {d.openErtobaIndex} <ArrowRight className="h-3.5 w-3.5" />
+                {t('openErtobaIndex')} <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </CardContent>
           </Card>
@@ -76,8 +69,8 @@ export default async function ReportsIndexPage() {
               <Sparkles className="h-5 w-5 text-slate-500" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-slate-400">{d.reportsComingSoon}</p>
-              <p className="text-xs text-slate-600 mt-1 max-w-[200px]">{d.reportsComingSoonDesc}</p>
+              <p className="text-sm font-semibold text-slate-400">{t('reportsComingSoon')}</p>
+              <p className="text-xs text-slate-600 mt-1 max-w-[200px]">{t('reportsComingSoonDesc')}</p>
             </div>
           </CardContent>
         </Card>
@@ -85,3 +78,4 @@ export default async function ReportsIndexPage() {
     </div>
   )
 }
+

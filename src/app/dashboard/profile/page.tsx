@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { getUserBalance } from '@/services/userService'
-import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 import { ProfileView } from '@/components/features/profile/ProfileView'
 
 function buildProfileIdentity(email: string | undefined, userId: string) {
@@ -57,9 +56,6 @@ export default async function ProfilePage() {
   const profile = buildProfileIdentity(user.email ?? undefined, user.id)
   const balance = await getUserBalance(user.id)
 
-  return (
-    <LanguageProvider>
-      <ProfileView profile={profile} balance={balance} />
-    </LanguageProvider>
-  )
+  return <ProfileView profile={profile} balance={balance} />
 }
+

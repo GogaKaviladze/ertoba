@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LayoutDashboard, Brain, ClipboardList, ShoppingBag, FileBarChart, User, Hexagon } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getDictionary } from '@/lib/i18n/dictionaries'
 
 export type SidebarLabels = {
   navDashboard: string
@@ -32,10 +34,21 @@ export function Sidebar({
   onNavigate,
 }: {
   className?: string
-  labels: SidebarLabels
+  labels?: SidebarLabels
   onNavigate?: () => void
 }) {
   const pathname = usePathname()
+  const { language } = useLanguage()
+  const dictionary = getDictionary(language)
+  const activeLabels: SidebarLabels = labels ?? {
+    navDashboard: dictionary.navDashboard,
+    navAssessments: dictionary.navAssessments,
+    navSurveys: dictionary.navSurveys,
+    navMarket: dictionary.navMarket,
+    navProfile: dictionary.navProfile,
+    navAnalytics: dictionary.navAnalytics,
+    navReports: dictionary.navReports,
+  }
 
   return (
     <div className={cn("flex flex-col h-full", className)}>
@@ -64,7 +77,7 @@ export function Sidebar({
                       >
                         <div className="flex items-center gap-3">
                           <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                          {labels[item.key]}
+                          {activeLabels[item.key]}
                         </div>
                         {item.badge ? (
                           <span className="flex h-5 items-center justify-center rounded-full bg-teal-500 px-2 text-[10px] font-bold text-white">
@@ -81,7 +94,7 @@ export function Sidebar({
                   <div className="flex justify-between items-center gap-x-3 rounded-lg p-3 text-sm/6 font-medium text-slate-600 cursor-not-allowed">
                     <div className="flex items-center gap-3">
                       <ShoppingBag className="h-5 w-5 shrink-0" aria-hidden="true" />
-                      {labels.navMarket}
+                      {activeLabels.navMarket}
                     </div>
                     <span className="text-[10px] text-slate-700 font-medium">Soon</span>
                   </div>
@@ -89,7 +102,7 @@ export function Sidebar({
               </ul>
             </li>
             <li>
-              <p className="px-1 text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-2 mb-1">{labels.navAnalytics}</p>
+              <p className="px-1 text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-2 mb-1">{activeLabels.navAnalytics}</p>
               <ul role="list" className="-mx-2 space-y-1">
                 {analyticsNavigation.map((item) => {
                   const isActive = pathname === item.href
@@ -106,7 +119,7 @@ export function Sidebar({
                         )}
                       >
                         <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                        {labels[item.key]}
+                        {activeLabels[item.key]}
                       </Link>
                     </li>
                   )

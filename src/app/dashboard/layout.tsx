@@ -1,8 +1,6 @@
 import { Sidebar } from '@/components/layout/sidebar'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { cookies } from 'next/headers'
-import { getDictionary, isLanguage } from '@/lib/i18n/dictionaries'
 import { createClient } from '@/lib/supabase/server'
 import { getUserBalance } from '@/services/userService'
 import { Suspense } from 'react'
@@ -26,11 +24,6 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  const cookieStore = await cookies()
-  const rawLang = cookieStore.get('ertoba_lang')?.value
-  const initialLanguage = isLanguage(rawLang) ? rawLang : 'ka'
-  const dictionary = getDictionary(initialLanguage)
-
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-[#050505]">
       {/* Decorative gradient backgrounds */}
@@ -43,15 +36,6 @@ export default async function DashboardLayout({
 
       <Sidebar
         className="hidden md:flex md:w-64 md:fixed md:inset-y-0 border-r border-white/10 bg-black/40 backdrop-blur-xl z-50"
-        labels={{
-          navDashboard: dictionary.navDashboard,
-          navAssessments: dictionary.navAssessments,
-          navSurveys: dictionary.navSurveys,
-          navMarket: dictionary.navMarket,
-          navProfile: dictionary.navProfile,
-          navAnalytics: dictionary.navAnalytics,
-          navReports: dictionary.navReports,
-        }}
       />
 
       <div className="md:pl-64 flex flex-col min-h-screen relative z-10">
@@ -64,7 +48,7 @@ export default async function DashboardLayout({
             {children}
           </div>
         </main>
-        <Footer privacyLabel={dictionary.footerPrivacy} contactLabel={dictionary.footerContact} />
+        <Footer />
       </div>
     </div>
   )

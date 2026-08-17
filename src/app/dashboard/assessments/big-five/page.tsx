@@ -1,8 +1,5 @@
 import { BigFive, type BigFiveScores } from '@/components/features/assessments/big-five'
-import { LanguageProvider } from '@/lib/i18n/LanguageContext'
-import { isLanguage } from '@/lib/i18n/dictionaries'
 import { getAssessmentCompletion } from '@/app/actions/assessments'
-import { cookies } from 'next/headers'
 
 export const metadata = {
   title: 'Big Five Personality Assessment | Ertoba Analytics',
@@ -10,10 +7,6 @@ export const metadata = {
 }
 
 export default async function BigFivePage() {
-  const cookieStore = await cookies()
-  const rawLang = cookieStore.get('ertoba_lang')?.value
-  const initialLanguage = isLanguage(rawLang) ? rawLang : 'ka'
-
   let initialScores: BigFiveScores | null = null
   try {
     const previousResult = await getAssessmentCompletion('BigFive')
@@ -23,15 +16,14 @@ export default async function BigFivePage() {
   }
 
   return (
-    <LanguageProvider initialLanguage={initialLanguage}>
-      <div className="space-y-8">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Big Five Assessment</h1>
-          <p className="text-slate-400">The scientific gold standard for personality testing.</p>
-        </div>
-
-        <BigFive initialScores={initialScores} />
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Big Five Assessment</h1>
+        <p className="text-slate-400">The scientific gold standard for personality testing.</p>
       </div>
-    </LanguageProvider>
+
+      <BigFive initialScores={initialScores} />
+    </div>
   )
 }
+

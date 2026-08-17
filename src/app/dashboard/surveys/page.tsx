@@ -1,21 +1,19 @@
+'use client'
+
 import { ClipboardList, CheckCircle2, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { cookies } from 'next/headers'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { getDictionary, isLanguage } from '@/lib/i18n/dictionaries'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-export default async function SurveysPage() {
-  const cookieStore = await cookies()
-  const languageCookie = cookieStore.get('ertoba_lang')?.value
-  const language = isLanguage(languageCookie) ? languageCookie : 'ka'
-  const dictionary = getDictionary(language)
+export default function SurveysPage() {
+  const { t } = useLanguage()
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8" data-testid="surveys-page">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-white mb-2">{dictionary.surveysTitle}</h1>
-        <p className="text-slate-400">{dictionary.surveysSubtitle}</p>
+        <h1 className="text-3xl font-bold tracking-tight text-white mb-2">{t('surveysTitle')}</h1>
+        <p className="text-slate-400">{t('surveysSubtitle')}</p>
       </div>
 
       <div className="grid gap-4">
@@ -26,14 +24,14 @@ export default async function SurveysPage() {
                 <ClipboardList className="h-6 w-6 text-teal-400" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">{dictionary.surveyDailyTitle}</h3>
-                <p className="text-sm text-slate-400 mb-2">{dictionary.surveyDailyDesc}</p>
+                <h3 className="text-lg font-semibold text-white">{t('surveyDailyTitle')}</h3>
+                <p className="text-sm text-slate-400 mb-2">{t('surveyDailyDesc')}</p>
                 <div className="flex gap-2">
                   <span className="inline-flex items-center rounded-md bg-indigo-400/10 px-2 py-1 text-xs font-medium text-indigo-400 ring-1 ring-inset ring-indigo-400/30">
-                    {dictionary.surveyRewardLabel} +15 ERTC
+                    {t('surveyRewardLabel')} +15 ERTC
                   </span>
                   <span className="inline-flex items-center rounded-md bg-slate-400/10 px-2 py-1 text-xs font-medium text-slate-400 ring-1 ring-inset ring-slate-400/20">
-                    {dictionary.surveyDailyDuration}
+                    {t('surveyDailyDuration')}
                   </span>
                 </div>
               </div>
@@ -44,14 +42,14 @@ export default async function SurveysPage() {
                 data-testid="start-survey-link"
                 className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium px-4 h-9 transition-colors"
               >
-                {dictionary.surveyStartButton} <ArrowRight className="ml-1.5 h-4 w-4" />
+                {t('surveyStartButton')} <ArrowRight className="ml-1.5 h-4 w-4" />
               </Link>
               <Link
                 href="/dashboard/surveys/history"
                 data-testid="survey-history-link"
                 className="text-center text-xs text-slate-400 hover:text-white transition-colors"
               >
-                {dictionary.surveyViewHistory}
+                {t('surveyViewHistory')}
               </Link>
             </div>
           </CardContent>
@@ -64,17 +62,17 @@ export default async function SurveysPage() {
                 <CheckCircle2 className="h-6 w-6 text-emerald-500" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-300">{dictionary.surveyOnboardingTitle}</h3>
-                <p className="text-sm text-slate-500 mb-2">{dictionary.surveyOnboardingDesc}</p>
+                <h3 className="text-lg font-semibold text-slate-300">{t('surveyOnboardingTitle')}</h3>
+                <p className="text-sm text-slate-500 mb-2">{t('surveyOnboardingDesc')}</p>
                 <div className="flex gap-2">
                   <span className="inline-flex items-center rounded-md bg-emerald-400/10 px-2 py-1 text-xs font-medium text-emerald-400 ring-1 ring-inset ring-emerald-400/30">
-                    {dictionary.surveyCompleted}
+                    {t('surveyCompleted')}
                   </span>
                 </div>
               </div>
             </div>
             <Button disabled variant="outline" className="w-full md:w-auto border-white/10 bg-transparent shrink-0 text-slate-500">
-              {dictionary.surveyDoneBtn}
+              {t('surveyDoneBtn')}
             </Button>
           </CardContent>
         </Card>
@@ -82,3 +80,4 @@ export default async function SurveysPage() {
     </div>
   )
 }
+

@@ -42,6 +42,30 @@ describe('Landing Page i18n Dictionaries', () => {
     assert.strictEqual(ka.q_bo_9, 'ადამიანებთან მჭიდრო თანამშრომლობა ენერგიით მავსებს.')
     assert.strictEqual(ka.q_bo_10, 'კოლეგების ან კლიენტების პრობლემებს ძალიან ეფექტურად ვაგვარებ.')
   })
+
+  it('all languages have survey hub and daily survey keys defined', () => {
+    const surveyKeys: Array<keyof typeof ka> = [
+      'surveysTitle',
+      'surveysSubtitle',
+      'surveyDailyTitle',
+      'surveyDailyDesc',
+      'surveyRewardLabel',
+      'surveyDailyDuration',
+      'surveyStartButton',
+      'surveyViewHistory',
+      'surveyOnboardingTitle',
+      'surveyOnboardingDesc',
+      'surveyCompleted',
+      'surveyDoneBtn',
+    ]
+
+    for (const { code, dict } of languages) {
+      for (const key of surveyKeys) {
+        assert.ok(dict[key], `${key} missing for ${code}`)
+      }
+    }
+  })
 })
+
 
 
