@@ -12,7 +12,7 @@ describe('Sidebar Navigation & i18n', () => {
 
   it('defines all required primary navigation items with valid paths and icons', () => {
     assert.ok(navigation.length >= 4)
-    const expectedKeys: (keyof SidebarLabels)[] = ['navDashboard', 'navAssessments', 'navSurveys', 'navProfile']
+    const expectedKeys = ['navDashboard', 'navAssessments', 'navSurveys', 'navProfile'] as const
     const keys = navigation.map((n) => n.key)
     for (const key of expectedKeys) {
       assert.ok(keys.includes(key), `Missing navigation key: ${key}`)
