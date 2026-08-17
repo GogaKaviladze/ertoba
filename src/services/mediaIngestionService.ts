@@ -10,23 +10,23 @@ export type MediaSource = {
 
 export const DEFAULT_MEDIA_SOURCES: MediaSource[] = [
   {
-    name: 'Interpressnews',
-    url: 'https://www.interpressnews.ge/ka/rss',
+    name: 'Netgazeti',
+    url: 'https://netgazeti.ge/feed/',
     type: 'rss',
   },
   {
-    name: 'Tabula',
-    url: 'https://tabula.ge/ge/rss.xml',
+    name: 'Publika',
+    url: 'https://publika.ge/feed/',
     type: 'rss',
   },
   {
-    name: '1TV',
-    url: 'https://1tv.ge/feed/',
+    name: 'Civil.ge',
+    url: 'https://civil.ge/ka/feed/',
     type: 'rss',
   },
   {
-    name: 'Radio Tavisupleba',
-    url: 'https://www.radiotavisupleba.ge/api/z$oq_iem_i',
+    name: 'Batumelebi',
+    url: 'https://batumelebi.netgazeti.ge/feed/',
     type: 'rss',
   },
 ]
@@ -136,10 +136,12 @@ export async function fetchFeedItems(source: MediaSource): Promise<RawFeedItem[]
   try {
     const res = await fetch(source.url, {
       headers: {
-        'User-Agent': 'Ertoba-Media-Ingestion/1.0 (+https://ertoba.ge)',
-        Accept: 'application/rss+xml, application/xml, text/xml, application/atom+xml, */*',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,application/rss+xml,*/*;q=0.8',
+        'Accept-Language': 'ka,en-US,en;q=0.9',
       },
-      signal: AbortSignal.timeout(8000), // 8s timeout per feed
+      redirect: 'follow',
+      signal: AbortSignal.timeout(10000),
     })
 
     if (!res.ok) {
