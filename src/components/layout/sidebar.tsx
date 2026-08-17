@@ -2,9 +2,10 @@
 
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { LayoutDashboard, Brain, ClipboardList, ShoppingBag, FileBarChart, User, Hexagon } from 'lucide-react'
 
-type SidebarLabels = {
+export type SidebarLabels = {
   navDashboard: string
   navAssessments: string
   navSurveys: string
@@ -14,24 +15,28 @@ type SidebarLabels = {
   navReports: string
 }
 
-const navigation = [
+export const navigation = [
   { key: 'navDashboard' as const, href: '/dashboard', icon: LayoutDashboard },
   { key: 'navAssessments' as const, href: '/dashboard/assessments', icon: Brain },
   { key: 'navSurveys' as const, href: '/dashboard/surveys', icon: ClipboardList, badge: 2 },
   { key: 'navProfile' as const, href: '/dashboard/profile', icon: User },
 ]
 
-const analyticsNavigation = [
+export const analyticsNavigation = [
   { key: 'navReports' as const, href: '/dashboard/reports', icon: FileBarChart },
 ]
 
 export function Sidebar({
   className,
   labels,
+  onNavigate,
 }: {
   className?: string
   labels: SidebarLabels
+  onNavigate?: () => void
 }) {
+  const pathname = usePathname()
+
   return (
     <div className={cn("flex flex-col h-full", className)}>
       <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4">
@@ -43,24 +48,33 @@ export function Sidebar({
           <ul role="list" className="flex flex-1 flex-col gap-y-2">
             <li>
               <ul role="list" className="-mx-2 space-y-1">
-                {navigation.map((item) => (
-                  <li key={item.key}>
-                    <Link
-                      href={item.href}
-                      className="group flex justify-between gap-x-3 rounded-lg p-3 text-sm/6 font-medium text-slate-400 hover:bg-white/5 hover:text-white transition-colors"
-                    >
-                      <div className="flex items-center gap-3">
-                        <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                        {labels[item.key]}
-                      </div>
-                      {item.badge ? (
-                        <span className="flex h-5 items-center justify-center rounded-full bg-teal-500 px-2 text-[10px] font-bold text-white">
-                          {item.badge}
-                        </span>
-                      ) : null}
-                    </Link>
-                  </li>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = pathname === item.href
+                  return (
+                    <li key={item.key}>
+                      <Link
+                        href={item.href}
+                        onClick={onNavigate}
+                        className={cn(
+                          "group flex justify-between gap-x-3 rounded-lg p-3 text-sm/6 font-medium transition-colors",
+                          isActive
+                            ? "bg-white/10 text-white"
+                            : "text-slate-400 hover:bg-white/5 hover:text-white"
+                        )}
+                      >
+                        <div className="flex items-center gap-3">
+                          <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                          {labels[item.key]}
+                        </div>
+                        {item.badge ? (
+                          <span className="flex h-5 items-center justify-center rounded-full bg-teal-500 px-2 text-[10px] font-bold text-white">
+                            {item.badge}
+                          </span>
+                        ) : null}
+                      </Link>
+                    </li>
+                  )
+                })}
 
                 {/* Market — Coming Soon */}
                 <li>
@@ -77,17 +91,26 @@ export function Sidebar({
             <li>
               <p className="px-1 text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-2 mb-1">{labels.navAnalytics}</p>
               <ul role="list" className="-mx-2 space-y-1">
-                {analyticsNavigation.map((item) => (
-                  <li key={item.key}>
-                    <Link
-                      href={item.href}
-                      className="group flex gap-x-3 rounded-lg p-3 text-sm/6 font-medium text-slate-400 hover:bg-white/5 hover:text-white transition-colors"
-                    >
-                      <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                      {labels[item.key]}
-                    </Link>
-                  </li>
-                ))}
+                {analyticsNavigation.map((item) => {
+                  const isActive = pathname === item.href
+                  return (
+                    <li key={item.key}>
+                      <Link
+                        href={item.href}
+                        onClick={onNavigate}
+                        className={cn(
+                          "group flex gap-x-3 rounded-lg p-3 text-sm/6 font-medium transition-colors",
+                          isActive
+                            ? "bg-white/10 text-white"
+                            : "text-slate-400 hover:bg-white/5 hover:text-white"
+                        )}
+                      >
+                        <item.icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                        {labels[item.key]}
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </li>
           </ul>

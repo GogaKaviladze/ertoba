@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { useState } from 'react'
 import { LogOut, Menu, Coins, ChevronDown } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import {
@@ -9,24 +9,35 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+} from '@/components/ui/sheet'
+import { Sidebar, type SidebarLabels } from '@/components/layout/sidebar'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-import { type Language } from '@/lib/i18n/dictionaries'
+import { getDictionary, type Language } from '@/lib/i18n/dictionaries'
 
 const LANG_FLAGS: Record<Language, string> = { ka: '🇬🇪', en: '🇬🇧', de: '🇩🇪' }
 const LANG_LABELS: Record<Language, string> = { ka: 'ქართული', en: 'English', de: 'Deutsch' }
 
-const mobileNav = [
-  { name: 'Dashboard', href: '/dashboard' },
-  { name: 'Assessments', href: '/dashboard/assessments' },
-  { name: 'Surveys', href: '/dashboard/surveys' },
-  { name: 'Market', href: '/dashboard/market' },
-  { name: 'Ertoba Index', href: '/dashboard/reports/propaganda' },
-  { name: 'Profile', href: '/dashboard/profile' },
-]
-
 export function Header({ balance = 0 }: { balance?: number }) {
+  const [open, setOpen] = useState(false)
   const { language, setLanguage } = useLanguage()
   const router = useRouter()
+  const dictionary = getDictionary(language)
+
+  const sidebarLabels: SidebarLabels = {
+    navDashboard: dictionary.navDashboard,
+    navAssessments: dictionary.navAssessments,
+    navSurveys: dictionary.navSurveys,
+    navMarket: dictionary.navMarket,
+    navProfile: dictionary.navProfile,
+    navAnalytics: dictionary.navAnalytics,
+    navReports: dictionary.navReports,
+  }
 
   const handleLogout = async () => {
     const { createClient } = await import('@/lib/supabase/client')
@@ -38,36 +49,30 @@ export function Header({ balance = 0 }: { balance?: number }) {
   return (
     <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center justify-between gap-x-3 border-b border-white/5 bg-black/80 px-4 shadow-sm sm:gap-x-6 sm:bg-black/20 sm:px-6 sm:backdrop-blur-md lg:px-8">
       <div className="flex items-center gap-4">
-        <details
-          className="relative md:hidden"
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') {
-              (e.currentTarget as HTMLDetailsElement).open = false
-            }
-          }}
-        >
-          <summary
-            className="list-none cursor-pointer rounded-md p-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
-            aria-label="Toggle navigation menu"
-          >
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          </summary>
-          <nav
-            className="absolute left-0 top-12 w-56 rounded-xl border border-white/10 bg-slate-950/95 p-2 shadow-xl backdrop-blur-md"
-            role="navigation"
-            aria-label="Mobile navigation"
-          >
-            {mobileNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block rounded-md px-3 py-2 text-sm text-slate-300 transition-colors hover:bg-white/5 hover:text-white focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger
+            render={
+              <button
+                type="button"
+                className="md:hidden rounded-lg p-2 text-slate-400 transition-colors hover:bg-white/5 hover:text-white focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:outline-none"
+                aria-label="Toggle navigation menu"
               >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </details>
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              </button>
+            }
+          />
+          <SheetContent
+            side="left"
+            className="p-0 w-72 bg-[#07070a]/95 backdrop-blur-xl border-r border-white/10 text-white"
+          >
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <SheetDescription className="sr-only">Mobile navigation sidebar</SheetDescription>
+            <Sidebar
+              labels={sidebarLabels}
+              onNavigate={() => setOpen(false)}
+            />
+          </SheetContent>
+        </Sheet>
       </div>
 
       <div className="flex items-center gap-x-2 sm:gap-x-4 lg:gap-x-6">
