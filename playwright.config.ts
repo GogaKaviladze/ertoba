@@ -17,6 +17,12 @@ export default defineConfig({
       testMatch: /auth\.setup\.ts/,
     },
     {
+      name: 'guest',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+    {
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
