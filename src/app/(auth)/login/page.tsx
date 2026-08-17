@@ -11,7 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
-import { ShieldCheck, Mail, BarChart3, ChevronDown } from 'lucide-react'
+import { ShieldCheck, Mail, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { type Language } from '@/lib/i18n/dictionaries'
@@ -96,18 +96,7 @@ export default function LoginPage() {
         </DropdownMenu>
       </div>
 
-      <div className="animate-in fade-in zoom-in-95 duration-500 ease-out z-10 w-full max-w-md px-4">
-
-        {/* Mission Banner */}
-        <div className="mb-4 flex items-center gap-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 px-4 py-3">
-          <div className="shrink-0 p-1.5 rounded-lg bg-indigo-500/20">
-            <BarChart3 className="h-4 w-4 text-indigo-400" />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-indigo-300">{t('loginBannerTitle')}</p>
-            <p className="text-[11px] text-slate-500 mt-0.5">{t('loginBannerSubtitle')}</p>
-          </div>
-        </div>
+      <div className="animate-in fade-in zoom-in-95 duration-500 ease-out z-10 w-full max-w-md px-4 py-8 sm:py-0">
 
         <Card className="glass-morphism border-white/10 overflow-hidden">
           <CardContent className="p-8">
