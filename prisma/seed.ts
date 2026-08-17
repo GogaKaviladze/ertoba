@@ -87,7 +87,77 @@ async function main() {
         skipDuplicates: true
       });
 
-      console.log("Default Assessments and Rewards seeded successfully!");
+      // Seed default Propaganda Articles across the 4 key framings
+      await prisma.propagandaArticle.createMany({
+        data: [
+          {
+            headline: 'სასამართლომ აქციის მონაწილეებს ადმინისტრაციული ჯარიმები დააკისრა',
+            sourcePublisher: 'IPN',
+            dominantFraming: 'როგორ გვზღუდავენ',
+            framingScore: 85,
+          },
+          {
+            headline: 'პარლამენტში ახალი რეგულაციებისა და შეზღუდვების პაკეტი დარეგისტრირდა',
+            sourcePublisher: 'Tabula',
+            dominantFraming: 'როგორ გვზღუდავენ',
+            framingScore: 78,
+          },
+          {
+            headline: 'ექსპერტები რეგიონში ესკალაციისა და მეორე ფრონტის გახსნის საფრთხეზე საუბრობენ',
+            sourcePublisher: '1TV',
+            dominantFraming: 'როგორ გვთრგუნავენ',
+            framingScore: 92,
+          },
+          {
+            headline: 'დეზინფორმაციის ტალღა და მუქარა მოსახლეობაში შიშისა და პანიკის დათესვას ემსახურება',
+            sourcePublisher: 'Radio Tavisupleba',
+            dominantFraming: 'როგორ გვთრგუნავენ',
+            framingScore: 88,
+          },
+          {
+            headline: 'დებატები ტრადიციული ღირებულებებისა და საზოგადოებრივი პოლარიზაციის ირგვლივ',
+            sourcePublisher: 'Tabula',
+            dominantFraming: 'როგორ გვყოფენ',
+            framingScore: 82,
+          },
+          {
+            headline: 'პოლიტიკოსები ოპონენტებს ერის ღალატსა და უცხო ინტერესების გატარებაში ადანაშაულებენ',
+            sourcePublisher: 'IPN',
+            dominantFraming: 'როგორ გვყოფენ',
+            framingScore: 80,
+          },
+          {
+            headline: 'საპატრიარქო ეკლესიისა და მართლმადიდებლური რწმენის გარშემო განვითარებულ მოვლენებს ეხმაურება',
+            sourcePublisher: '1TV',
+            dominantFraming: 'გავლენები და ეკლესია',
+            framingScore: 90,
+          },
+          {
+            headline: 'ანალიტიკოსები გლობალური ომის პარტიისა და უცხოური გავლენების ნარატივს აფასებენ',
+            sourcePublisher: 'Radio Tavisupleba',
+            dominantFraming: 'გავლენები და ეკლესია',
+            framingScore: 87,
+          },
+        ],
+        skipDuplicates: true,
+      });
+
+      // Seed today's DailyPulse
+      const today = new Date();
+      today.setUTCHours(0, 0, 0, 0);
+      await prisma.dailyPulse.upsert({
+        where: { date: today },
+        create: {
+          date: today,
+          institutional: 2,
+          psychological: 2,
+          societal: 2,
+          geopolitical: 2,
+        },
+        update: {},
+      });
+
+      console.log("Default Assessments, Rewards, and Propaganda Articles seeded successfully!");
       return;
     }
 

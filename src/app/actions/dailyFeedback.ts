@@ -35,7 +35,7 @@ async function getUserId(): Promise<string | null> {
 
 /** 3 random PropagandaArticle rows that carry one of the 4 real framings. */
 export async function getDailySurveyHeadlines(): Promise<SurveyHeadline[]> {
-  const rows = await prisma.$queryRaw<
+  let rows = await prisma.$queryRaw<
     { id: string; headline: string | null; sourcePublisher: string | null }[]
   >`
     SELECT "id", "headline", "sourcePublisher"
@@ -45,6 +45,50 @@ export async function getDailySurveyHeadlines(): Promise<SurveyHeadline[]> {
     ORDER BY random()
     LIMIT 3
   `
+
+  if (rows.length < 3) {
+    await prisma.propagandaArticle.createMany({
+      data: [
+        {
+          headline: 'სასამართლომ აქციის მონაწილეებს ადმინისტრაციული ჯარიმები დააკისრა',
+          sourcePublisher: 'IPN',
+          dominantFraming: 'როგორ გვზღუდავენ',
+          framingScore: 85,
+        },
+        {
+          headline: 'ექსპერტები რეგიონში ესკალაციისა და მეორე ფრონტის გახსნის საფრთხეზე საუბრობენ',
+          sourcePublisher: '1TV',
+          dominantFraming: 'როგორ გვთრგუნავენ',
+          framingScore: 92,
+        },
+        {
+          headline: 'დებატები ტრადიციული ღირებულებებისა და საზოგადოებრივი პოლარიზაციის ირგვლივ',
+          sourcePublisher: 'Tabula',
+          dominantFraming: 'როგორ გვყოფენ',
+          framingScore: 82,
+        },
+        {
+          headline: 'საპატრიარქო ეკლესიისა და მართლმადიდებლური რწმენის გარშემო განვითარებულ მოვლენებს ეხმაურება',
+          sourcePublisher: 'Radio Tavisupleba',
+          dominantFraming: 'გავლენები და ეკლესია',
+          framingScore: 90,
+        },
+      ],
+      skipDuplicates: true,
+    })
+
+    rows = await prisma.$queryRaw<
+      { id: string; headline: string | null; sourcePublisher: string | null }[]
+    >`
+      SELECT "id", "headline", "sourcePublisher"
+      FROM "PropagandaArticle"
+      WHERE "dominantFraming" IN (${Prisma.join(FRAMING_DB_VALUES)})
+        AND "headline" IS NOT NULL
+      ORDER BY random()
+      LIMIT 3
+    `
+  }
+
   return rows
     .filter((r): r is { id: string; headline: string; sourcePublisher: string | null } => Boolean(r.headline))
     .map((r) => ({ articleId: r.id, headline: r.headline, sourcePublisher: r.sourcePublisher }))

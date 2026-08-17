@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/**/*.test.ts",
     "test:e2e": "playwright test",
+    "ingest:daily": "tsx scripts/ingest-media.ts",
+    "seed": "tsx prisma/seed.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {
