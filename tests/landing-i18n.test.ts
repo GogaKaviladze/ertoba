@@ -65,6 +65,12 @@ describe('Landing Page i18n Dictionaries', () => {
       }
     }
   })
+
+  it('all languages have dashboard activeTasks translated correctly', () => {
+    assert.strictEqual(ka.activeTasks, 'ყოველდღიური გამოკითხვები')
+    assert.strictEqual(en.activeTasks, 'Daily Surveys')
+    assert.strictEqual(de.activeTasks, 'Tägliche Umfragen')
+  })
 })
 
 
