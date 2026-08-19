@@ -70,6 +70,9 @@ describe('Landing Page i18n Dictionaries', () => {
     assert.strictEqual(ka.activeTasks, 'ყოველდღიური გამოკითხვები')
     assert.strictEqual(en.activeTasks, 'Daily Surveys')
     assert.strictEqual(de.activeTasks, 'Tägliche Umfragen')
+    assert.strictEqual(ka.activeTasksSub, 'დააგროვე ERTC')
+    assert.strictEqual(en.activeTasksSub, 'Earn ERTC')
+    assert.strictEqual(de.activeTasksSub, 'ERTC sammeln')
   })
 })
 

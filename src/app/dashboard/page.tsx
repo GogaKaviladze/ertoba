@@ -31,7 +31,7 @@ export default function DashboardOverview() {
                   <h2 className="text-base sm:text-lg font-bold text-white">{t('activeTasks')}</h2>
                   <span className="bg-teal-500 text-white text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0">2</span>
                 </div>
-                <p className="text-sm text-slate-400">Daily Feedback · +15 ETC</p>
+                <p className="text-sm text-slate-400">{t('activeTasksSub')}</p>
               </div>
             </div>
             <ArrowRight className="h-5 w-5 text-teal-400 shrink-0 group-hover:translate-x-1 transition-transform" />
