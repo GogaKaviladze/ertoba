@@ -145,7 +145,7 @@ export const ka = {
 
   // --- SIDEBAR & NAV ---
   navDashboard: 'მთავარი',
-  navAssessments: 'შეფასებები',
+  navAssessments: 'თვითშემეცნება',
   navSurveys: 'გამოკითხვები',
   navMarket: 'მარკეტი',
   navProfile: 'პროფილი',
@@ -233,7 +233,7 @@ export const ka = {
   loginBackHome: '← მთავარ გვერდზე',
 
   // --- ASSESSMENTS HUB ---
-  assessmentsHubTitle: 'შეფასებები',
+  assessmentsHubTitle: 'თვითშემეცნება',
   assessmentsHubSubtitle: 'ფსიქომეტრული ტესტები პიროვნული შეხედულებებისთვის და ERTC ჟეტონების საპოვნელად.',
   assessmentBigFiveTitle: 'Big Five — პიროვნება',
   assessmentBigFiveDesc: 'გაიგე შენი ძირითადი პიროვნული თვისებები OCEAN მოდელის საფუძველზე.',
@@ -488,7 +488,7 @@ export const en = {
 
   // --- SIDEBAR & NAV ---
   navDashboard: 'Dashboard',
-  navAssessments: 'Assessments',
+  navAssessments: 'Self-Discovery',
   navSurveys: 'Surveys',
   navMarket: 'Market',
   navProfile: 'Profile',
@@ -831,7 +831,7 @@ export const de = {
 
   // --- SIDEBAR & NAV ---
   navDashboard: 'Dashboard',
-  navAssessments: 'Bewertungen',
+  navAssessments: 'Selbsterkenntnis',
   navSurveys: 'Umfragen',
   navMarket: 'Markt',
   navProfile: 'Profil',
